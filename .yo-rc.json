@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "baseName": "appstore",
+    "packageName": "com.appstore",
+    "packageFolder": "com/appstore",
+    "authenticationType": "session",
+    "hibernateCache": "ehcache",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "useSass": true,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "enableTranslation": false,
+    "enableSocialSignIn": false,
+    "rememberMeKey": "db0f78d9eaa0fcc5198e97053fe9be6266cc2283",
+    "testFrameworks": [
+      "gatling"
+    ]
+  }
+}

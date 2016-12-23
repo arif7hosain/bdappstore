@@ -1,0 +1,129 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myComBranchLabel">Create or edit a ComBranch</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="comBranch.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_branchName">BranchName</label>
+            <input type="text" class="form-control" name="branchName" id="field_branchName"
+                    ng-model="comBranch.branchName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_branchDescription">BranchDescription</label>
+            <input type="text" class="form-control" name="branchDescription" id="field_branchDescription"
+                    ng-model="comBranch.branchDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_branchType">BranchType</label>
+            <select class="form-control" name="branchType" ng-model="comBranch.branchType" id="field_branchType">
+                <option value="Headquarter">Headquarter</option>
+                <option value="Regional">Regional</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_facebook">Facebook</label>
+            <input type="text" class="form-control" name="facebook" id="field_facebook"
+                    ng-model="comBranch.facebook"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_googlePlus">GooglePlus</label>
+            <input type="text" class="form-control" name="googlePlus" id="field_googlePlus"
+                    ng-model="comBranch.googlePlus"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_youtube">Youtube</label>
+            <input type="text" class="form-control" name="youtube" id="field_youtube"
+                    ng-model="comBranch.youtube"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_linkedin">Linkedin</label>
+            <input type="text" class="form-control" name="linkedin" id="field_linkedin"
+                    ng-model="comBranch.linkedin"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_twitter">Twitter</label>
+            <input type="text" class="form-control" name="twitter" id="field_twitter"
+                    ng-model="comBranch.twitter"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                    ng-model="comBranch.website"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="comBranch.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createdDate">CreatedDate</label>
+            <input type="date" class="form-control" name="createdDate" id="field_createdDate"
+                    ng-model="comBranch.createdDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedDate">UpdatedDate</label>
+            <input type="date" class="form-control" name="updatedDate" id="field_updatedDate"
+                    ng-model="comBranch.updatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createBy">CreateBy</label>
+            <input type="text" class="form-control" name="createBy" id="field_createBy"
+                    ng-model="comBranch.createBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedBy">UpdatedBy</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="comBranch.updatedBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_isActive">IsActive</label>
+            <input type="number" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="comBranch.isActive"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_companyInformation">companyInformation</label>
+            <select class="form-control" id="field_companyInformation" name="companyInformation" ng-model="comBranch.companyInformation" ng-options="companyInformation as companyInformation.companyName for companyInformation in companyinformations track by companyInformation.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_serviceCategory">serviceCategory</label>
+            <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="comBranch.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,151 @@
+
+<div>
+    <h2><span>CompanyInformation</span> {{companyInformation.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CompanyName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.companyName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.shortName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CompanyInformation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.companyInformation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BusinessDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.businessDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.shortDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Logo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.logo}}</span>
+                    <div>{{companyInformation.logoContentType}}  {{byteSize(companyInformation.logo)}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Website</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.website}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CompanyType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'appstoreApp.CompanyType.' + companyInformation.companyType}}">{{companyInformation.companyType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.CreatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.updatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreateBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.createBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.updatedBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ActiveStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{companyInformation.activeStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:companyInformation.country.id})">{{companyInformation.country.countryName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>serviceCategory</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="serviceCategory.detail({id:companyInformation.serviceCategory.id})">{{companyInformation.serviceCategory.serviceName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>user</span>
+                </td>
+                <td>
+                    {{companyInformation.user.login}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

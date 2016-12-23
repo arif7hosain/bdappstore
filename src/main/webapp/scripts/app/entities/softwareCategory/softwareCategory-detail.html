@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span>SoftwareCategory</span> {{softwareCategory.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>CategoryName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{softwareCategory.categoryName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Description</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{softwareCategory.description}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{softwareCategory.shortDescription}}</span>
+                </td>
+            </tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{softwareCategory.CreatedDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{softwareCategory.updatedDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreateBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{softwareCategory.createBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{softwareCategory.updatedBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <tr>
+                <td>
+                    <span>IsActive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{softwareCategory.isActive}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

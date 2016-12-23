@@ -1,0 +1,31 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "division",
+            "otherEntityName": "division",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "divisionName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "districtName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053106",
+    "dto": "no",
+    "pagination": "pagination"
+}

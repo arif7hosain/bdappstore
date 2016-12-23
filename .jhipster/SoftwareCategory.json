@@ -1,0 +1,48 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "categoryName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "shortDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "CreatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053103",
+    "dto": "no",
+    "pagination": "pagination"
+}

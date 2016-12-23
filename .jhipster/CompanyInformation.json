@@ -1,0 +1,98 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "countryName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "serviceCategory",
+            "otherEntityName": "serviceCategory",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "serviceName"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "one-to-one",
+            "otherEntityField": "login",
+            "ownerSide":true,
+            "otherEntityRelationshipName": "user"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "shortName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "companyInformation",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "businessDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "shortDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "logo",
+            "fieldType": "byte[]"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "companyType",
+            "fieldType": "CompanyType",
+            "fieldValues": "National, International"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "CreatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "activeStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053103",
+    "dto": "no",
+    "pagination": "pagination"
+}

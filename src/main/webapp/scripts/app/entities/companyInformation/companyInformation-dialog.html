@@ -1,0 +1,139 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myCompanyInformationLabel">Create or edit a CompanyInformation</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="companyInformation.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_companyName">CompanyName</label>
+            <input type="text" class="form-control" name="companyName" id="field_companyName"
+                    ng-model="companyInformation.companyName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shortName">ShortName</label>
+            <input type="text" class="form-control" name="shortName" id="field_shortName"
+                    ng-model="companyInformation.shortName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_companyInformation">CompanyInformation</label>
+            <input type="text" class="form-control" name="companyInformation" id="field_companyInformation"
+                    ng-model="companyInformation.companyInformation"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_businessDescription">BusinessDescription</label>
+            <input type="text" class="form-control" name="businessDescription" id="field_businessDescription"
+                    ng-model="companyInformation.businessDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shortDescription">ShortDescription</label>
+            <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                    ng-model="companyInformation.shortDescription"
+                     />
+        </div>
+        <div class="form-group" ngf-drop ngf-change="setLogo($file, companyInformation)">
+            <label class="control-label" for="field_logo">Logo</label>
+            <div>
+                <div class="help-block clearfix">
+                    <span class="pull-left">{{companyInformation.logoContentType}} {{byteSize(companyInformation.logo)}}</span>
+                    <button ng-click="companyInformation.logo=null;companyInformation.logoContentType=null;"
+                            ng-if="companyInformation.logo"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setLogo($file, companyInformation)">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="logo" id="field_logo"
+                    ng-model="companyInformation.logo"
+                     />
+            <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                    ng-model="companyInformation.logoContentType" />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                    ng-model="companyInformation.website"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_companyType">CompanyType</label>
+            <select class="form-control" name="companyType" ng-model="companyInformation.companyType" id="field_companyType">
+                <option value="National">National</option>
+                <option value="International">International</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_CreatedDate">CreatedDate</label>
+            <input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"
+                    ng-model="companyInformation.CreatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedDate">UpdatedDate</label>
+            <input type="date" class="form-control" name="updatedDate" id="field_updatedDate"
+                    ng-model="companyInformation.updatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createBy">CreateBy</label>
+            <input type="text" class="form-control" name="createBy" id="field_createBy"
+                    ng-model="companyInformation.createBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedBy">UpdatedBy</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="companyInformation.updatedBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_activeStatus">ActiveStatus</label>
+            <input type="number" class="form-control" name="activeStatus" id="field_activeStatus"
+                    ng-model="companyInformation.activeStatus"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_country">country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="companyInformation.country" ng-options="country as country.countryName for country in countrys track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_serviceCategory">serviceCategory</label>
+            <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="companyInformation.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_user">user</label>
+            <select class="form-control" id="field_user" name="user" ng-model="companyInformation.user" ng-options="user as user.login for user in users track by user.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

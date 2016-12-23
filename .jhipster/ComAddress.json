@@ -1,0 +1,84 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "comBranch",
+            "otherEntityName": "comBranch",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "branchName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "upazila",
+            "otherEntityName": "upazila",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "upazila_name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "addressType",
+            "fieldType": "AddressType",
+            "fieldValues": "National,International"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "contactNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "house",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "RoadNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "CreatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053120",
+    "dto": "no",
+    "pagination": "pagination"
+}

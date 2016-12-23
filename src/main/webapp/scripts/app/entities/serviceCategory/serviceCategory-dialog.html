@@ -1,0 +1,74 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myServiceCategoryLabel">Create or edit a ServiceCategory</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="serviceCategory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_serviceName">ServiceName</label>
+            <input type="text" class="form-control" name="serviceName" id="field_serviceName"
+                    ng-model="serviceCategory.serviceName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_serviceDescription">ServiceDescription</label>
+            <input type="text" class="form-control" name="serviceDescription" id="field_serviceDescription"
+                    ng-model="serviceCategory.serviceDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_shortDescription">ShortDescription</label>
+            <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
+                    ng-model="serviceCategory.shortDescription"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_CreatedDate">CreatedDate</label>
+            <input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"
+                    ng-model="serviceCategory.CreatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedDate">UpdatedDate</label>
+            <input type="date" class="form-control" name="updatedDate" id="field_updatedDate"
+                    ng-model="serviceCategory.updatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createBy">CreateBy</label>
+            <input type="text" class="form-control" name="createBy" id="field_createBy"
+                    ng-model="serviceCategory.createBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedBy">UpdatedBy</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="serviceCategory.updatedBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_isActive">IsActive</label>
+            <input type="number" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="serviceCategory.isActive"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+        <form role="form" ng-submit="search(q)">
+            <input type="text" class="form-control" name="q" ng-model="q" placeholder="Search by Software's Name, Category, Feature ...">
+        </form>
+    </div>
+    <div class="col-sm-3">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-4">
+        <ul class="side-var">
+            <li ng-repeat="category in categories" class="left-menu"><a href="#hlw">{{category.categoryName}}</a></li>
+        </ul>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+<!--ng-options="category in categories track by category.id"-->

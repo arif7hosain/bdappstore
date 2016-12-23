@@ -1,0 +1,28 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "countryName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "capital",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053104",
+    "dto": "no",
+    "pagination": "pagination"
+}

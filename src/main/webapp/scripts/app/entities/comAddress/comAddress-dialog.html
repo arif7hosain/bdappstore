@@ -1,0 +1,111 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myComAddressLabel">Create or edit a ComAddress</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="comAddress.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_addressType">AddressType</label>
+            <select class="form-control" name="addressType" ng-model="comAddress.addressType" id="field_addressType">
+                <option value="National">National</option>
+                <option value="International">International</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_officePhone">OfficePhone</label>
+            <input type="text" class="form-control" name="officePhone" id="field_officePhone"
+                    ng-model="comAddress.officePhone"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactNumber">ContactNumber</label>
+            <input type="text" class="form-control" name="contactNumber" id="field_contactNumber"
+                    ng-model="comAddress.contactNumber"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_postalCode">PostalCode</label>
+            <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                    ng-model="comAddress.postalCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_house">House</label>
+            <input type="text" class="form-control" name="house" id="field_house"
+                    ng-model="comAddress.house"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_RoadNo">RoadNo</label>
+            <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
+                    ng-model="comAddress.RoadNo"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                    ng-model="comAddress.city"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_CreatedDate">CreatedDate</label>
+            <input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"
+                    ng-model="comAddress.CreatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedDate">UpdatedDate</label>
+            <input type="date" class="form-control" name="updatedDate" id="field_updatedDate"
+                    ng-model="comAddress.updatedDate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_createBy">CreateBy</label>
+            <input type="text" class="form-control" name="createBy" id="field_createBy"
+                    ng-model="comAddress.createBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_updatedBy">UpdatedBy</label>
+            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
+                    ng-model="comAddress.updatedBy"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_isActive">IsActive</label>
+            <input type="number" class="form-control" name="isActive" id="field_isActive"
+                    ng-model="comAddress.isActive"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_comBranch">comBranch</label>
+            <select class="form-control" id="field_comBranch" name="comBranch" ng-model="comAddress.comBranch" ng-options="comBranch as comBranch.branchName for comBranch in combranchs track by comBranch.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_upazila">upazila</label>
+            <select class="form-control" id="field_upazila" name="upazila" ng-model="comAddress.upazila" ng-options="upazila as upazila.upazila_name for upazila in upazilas track by upazila.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

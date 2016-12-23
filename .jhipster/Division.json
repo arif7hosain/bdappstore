@@ -1,0 +1,23 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "divisionName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "comments",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053105",
+    "dto": "no",
+    "pagination": "pagination"
+}

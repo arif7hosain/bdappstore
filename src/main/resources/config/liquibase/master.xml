@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053104_added_entity_Country.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053105_added_entity_Division.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053106_added_entity_District.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053107_added_entity_Upazila.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053103_added_entity_SoftwareCategory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053102_added_entity_ServiceCategory.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053103_added_entity_CompanyInformation.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053120_added_entity_ComAddress.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053121_added_entity_ComBranch.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-005 - JHipster will add liquibase changelogs here -->
+</databaseChangeLog>

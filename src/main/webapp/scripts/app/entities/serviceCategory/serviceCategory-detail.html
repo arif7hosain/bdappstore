@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span>ServiceCategory</span> {{serviceCategory.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>ServiceName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.serviceName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ServiceDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.serviceDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.shortDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.CreatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.updatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreateBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.createBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.updatedBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsActive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{serviceCategory.isActive}}</span>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

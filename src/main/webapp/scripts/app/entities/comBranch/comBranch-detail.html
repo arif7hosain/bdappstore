@@ -1,0 +1,158 @@
+
+<div>
+    <h2><span>ComBranch</span> {{comBranch.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>BranchName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.branchName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BranchDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.branchDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BranchType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'appstoreApp.BranchType.' + comBranch.branchType}}">{{comBranch.branchType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Facebook</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.facebook}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>GooglePlus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.googlePlus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Youtube</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.youtube}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Linkedin</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.linkedin}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Twitter</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.twitter}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Website</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.website}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>City</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.city}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.createdDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.updatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreateBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.createBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.updatedBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsActive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{comBranch.isActive}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>companyInformation</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="companyInformation.detail({id:comBranch.companyInformation.id})">{{comBranch.companyInformation.companyName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>serviceCategory</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="serviceCategory.detail({id:comBranch.serviceCategory.id})">{{comBranch.serviceCategory.serviceName}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
