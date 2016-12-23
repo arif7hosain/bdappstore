@@ -80,6 +80,10 @@ public class ComBranch implements Serializable {
     @JoinColumn(name = "service_category_id")
     private ServiceCategory serviceCategory;
 
+    @ManyToOne
+    @JoinColumn(name = "country_id")
+    private Country country;
+
     
     public Long getId() {
         return id;
@@ -223,6 +227,14 @@ public class ComBranch implements Serializable {
 
     public void setServiceCategory(ServiceCategory serviceCategory) {
         this.serviceCategory = serviceCategory;
+    }
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
     }
 
     @Override

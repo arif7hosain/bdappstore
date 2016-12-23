@@ -1,21 +1,24 @@
 <div>
-    <h2>CompanyInformations</h2>
+
     <jh-alert></jh-alert>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary" ui-sref="companyInformation.new">
-                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new CompanyInformation</span>
+                    <span class="glyphicon glyphicon-flash"></span> <span>Add Publisher</span>
                 </button>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form name="searchForm" class="form-inline">
                     <div class="form-group">
-                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Company Name....">
                     </div>
-                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a CompanyInformation</span>
-                    </button>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a CompanyInformation</span>-->
+                    <!--</button>-->
                 </form>
+            </div>
+            <div class="col-md-4">
+                <h4>List of companies</h4>
             </div>
         </div>
     </div>
@@ -24,73 +27,78 @@
         <table class="table table-striped">
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="companyName"><span>CompanyName</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="shortName"><span>ShortName</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="companyInformation"><span>CompanyInformation</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="businessDescription"><span>BusinessDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="shortDescription"><span>ShortDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="logo"><span>Logo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="website"><span>Website</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="companyType"><span>CompanyType</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="activeStatus"><span>ActiveStatus</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="country.countryName"><span>country</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="serviceCategory.serviceName"><span>serviceCategory</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="user.login"><span>user</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
+                    <!--<th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th>SN</th>
+                    <th jh-sort-by="companyName"><span>Company Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="shortName"><span>Short Name</span> </th>
+                    <!--<th jh-sort-by="companyInformation"><span>CompanyInformation</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="businessDescription"><span>BusinessDescription</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="shortDescription"><span>Short Description</span> </span></th>-->
+                    <th jh-sort-by="logo"><span>Logo</span></th>
+                    <!--<th jh-sort-by="website"><span>Website</span></th>-->
+                    <th jh-sort-by="companyType"><span>Company Type</span></th>
+                    <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="activeStatus"><span>ActiveStatus</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="country.countryName"><span>Location</span> </span></th>
+                    <th jh-sort-by="serviceCategory.serviceName"><span>Category</span> </th>
+                    <!--<th jh-sort-by="user.login"><span>user</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="companyInformation in companyInformations track by companyInformation.id">
-                    <td><a ui-sref="companyInformation.detail({id:companyInformation.id})">{{companyInformation.id}}</a></td>
+                    <!--<td><a ui-sref="companyInformation.detail({id:companyInformation.id})">{{companyInformation.id}}</a></td>-->
+                    <td>{{$index+1}}</td>
                     <td>{{companyInformation.companyName}}</td>
-                    <td>{{companyInformation.shortName}}</td>
-                    <td>{{companyInformation.companyInformation}}</td>
-                    <td>{{companyInformation.businessDescription}}</td>
+                    <!--<td>{{companyInformation.shortName}}</td>-->
+                    <!--<td>{{companyInformation.companyInformation}}</td>-->
+                    <!--<td>{{companyInformation.businessDescription}}</td>-->
                     <td>{{companyInformation.shortDescription}}</td>
                     <td>{{companyInformation.logo}}</td>
-                    <td>{{companyInformation.website}}</td>
+                    <!--<td>{{companyInformation.website}}</td>-->
                     <td translate="{{'appstoreApp.CompanyType.' + companyInformation.companyType}}">{{companyInformation.companyType}}</td>
-                        <td>{{companyInformation.CreatedDate | date:'mediumDate'}}</td>
-                        <td>{{companyInformation.updatedDate | date:'mediumDate'}}</td>
-                    <td>{{companyInformation.createBy}}</td>
-                    <td>{{companyInformation.updatedBy}}</td>
-                    <td>{{companyInformation.activeStatus}}</td>
+                        <!--<td>{{companyInformation.CreatedDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{companyInformation.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{companyInformation.createBy}}</td>-->
+                    <!--<td>{{companyInformation.updatedBy}}</td>-->
+                    <!--<td>{{companyInformation.activeStatus}}</td>-->
                     <td>
                         <a ui-sref="country.detail({id:companyInformation.country.id})">{{companyInformation.country.countryName}}</a>
                     </td>
                     <td>
                         <a ui-sref="serviceCategory.detail({id:companyInformation.serviceCategory.id})">{{companyInformation.serviceCategory.serviceName}}</a>
                     </td>
-                    <td>
-                        {{companyInformation.user.login}}
-                    </td>
+                    <!--<td>-->
+                        <!--{{companyInformation.user.login}}-->
+                    <!--</td>-->
                     <td>
                         <button type="submit"
                                 ui-sref="companyInformation.detail({id:companyInformation.id})"
                                 class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!--&nbsp;<span> View</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="companyInformation.edit({id:companyInformation.id})"
                                 class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!--&nbsp;<span> Edit</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="companyInformation.delete({id:companyInformation.id})"
                                 class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <!--&nbsp;<span> Delete</span>-->
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="text-center">
-        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
-    </div>
+    <!--<div class="text-center">-->
+        <!--<uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>-->
+    <!--</div>-->
 </div>

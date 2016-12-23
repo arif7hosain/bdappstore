@@ -2,7 +2,7 @@
 
 describe('ComBranch Detail Controller', function() {
     var $scope, $rootScope;
-    var MockEntity, MockComBranch, MockCompanyInformation, MockServiceCategory;
+    var MockEntity, MockComBranch, MockCompanyInformation, MockServiceCategory, MockCountry;
     var createController;
 
     beforeEach(inject(function($injector) {
@@ -12,6 +12,7 @@ describe('ComBranch Detail Controller', function() {
         MockComBranch = jasmine.createSpy('MockComBranch');
         MockCompanyInformation = jasmine.createSpy('MockCompanyInformation');
         MockServiceCategory = jasmine.createSpy('MockServiceCategory');
+        MockCountry = jasmine.createSpy('MockCountry');
         
 
         var locals = {
@@ -20,7 +21,8 @@ describe('ComBranch Detail Controller', function() {
             'entity': MockEntity ,
             'ComBranch': MockComBranch,
             'CompanyInformation': MockCompanyInformation,
-            'ServiceCategory': MockServiceCategory
+            'ServiceCategory': MockServiceCategory,
+            'Country': MockCountry
         };
         createController = function() {
             $injector.get('$controller')("ComBranchDetailController", locals);

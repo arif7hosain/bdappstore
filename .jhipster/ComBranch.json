@@ -13,6 +13,13 @@
             "otherEntityName": "serviceCategory",
             "relationshipType": "many-to-one",
             "otherEntityField": "serviceName"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "countryName"
         }
     ],
     "fields": [

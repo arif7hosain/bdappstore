@@ -1,22 +1,23 @@
 <div>
-    <h2>ServiceCategorys</h2>
+
     <jh-alert></jh-alert>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary" ui-sref="serviceCategory.new">
-                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new ServiceCategory</span>
+                    <span class="glyphicon glyphicon-flash"></span> <span>Add Service</span>
                 </button>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form name="searchForm" class="form-inline">
                     <div class="form-group">
-                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Service categories...">
                     </div>
-                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a ServiceCategory</span>
-                    </button>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a ServiceCategory</span>-->
+                    <!--</button>-->
                 </form>
             </div>
+            <div class="col-md-4"><h4>List of service categories</h4></div>
         </div>
     </div>
 
@@ -24,51 +25,55 @@
         <table class="table table-striped">
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="serviceName"><span>ServiceName</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="serviceDescription"><span>ServiceDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="shortDescription"><span>ShortDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="isActive"><span>IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
+                    <th jh-sort-by="id"><span>SN</span> </th>
+                    <th jh-sort-by="serviceName"><span>Service Name</span></th>
+                    <th jh-sort-by="serviceDescription"><span>Service Description</span> </th>
+                    <th jh-sort-by="shortDescription"><span>Short Description</span></th>
+                    <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <!--<th jh-sort-by="isActive"><span>IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th>CRUD</th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="serviceCategory in serviceCategorys track by serviceCategory.id">
-                    <td><a ui-sref="serviceCategory.detail({id:serviceCategory.id})">{{serviceCategory.id}}</a></td>
+                    <!--<td><a ui-sref="serviceCategory.detail({id:serviceCategory.id})">{{serviceCategory.id}}</a></td>-->
+                    <td>{{$index+1}}</td>
                     <td>{{serviceCategory.serviceName}}</td>
                     <td>{{serviceCategory.serviceDescription}}</td>
                     <td>{{serviceCategory.shortDescription}}</td>
-                        <td>{{serviceCategory.CreatedDate | date:'mediumDate'}}</td>
-                        <td>{{serviceCategory.updatedDate | date:'mediumDate'}}</td>
-                    <td>{{serviceCategory.createBy}}</td>
-                    <td>{{serviceCategory.updatedBy}}</td>
-                    <td>{{serviceCategory.isActive}}</td>
+                        <!--<td>{{serviceCategory.CreatedDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{serviceCategory.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{serviceCategory.createBy}}</td>-->
+                    <!--<td>{{serviceCategory.updatedBy}}</td>-->
+                    <!--<td>{{serviceCategory.isActive}}</td>-->
                     <td>
                         <button type="submit"
                                 ui-sref="serviceCategory.detail({id:serviceCategory.id})"
                                 class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!--&nbsp;<span> View</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="serviceCategory.edit({id:serviceCategory.id})"
                                 class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!--&nbsp;<span> Edit</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="serviceCategory.delete({id:serviceCategory.id})"
                                 class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <!--&nbsp;<span> Delete</span>-->
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="text-center">
-        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
-    </div>
+    <!--<div class="text-center">-->
+        <!--<uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>-->
+    <!--</div>-->
 </div>

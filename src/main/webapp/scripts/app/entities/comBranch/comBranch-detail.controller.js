@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('ComBranchDetailController', function ($scope, $rootScope, $stateParams, entity, ComBranch, CompanyInformation, ServiceCategory) {
+    .controller('ComBranchDetailController', function ($scope, $rootScope, $stateParams, entity, ComBranch, CompanyInformation, ServiceCategory, Country) {
         $scope.comBranch = entity;
         $scope.load = function (id) {
             ComBranch.get({id: id}, function(result) {

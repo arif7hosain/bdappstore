@@ -1,12 +1,15 @@
 'use strict';
 
 angular.module('appstoreApp').controller('ComBranchDialogController',
-    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'ComBranch', 'CompanyInformation', 'ServiceCategory',
-        function($scope, $stateParams, $uibModalInstance, entity, ComBranch, CompanyInformation, ServiceCategory) {
+    ['$scope', '$stateParams', '$uibModalInstance', 'entity', 'ComBranch', 'CompanyInformation', 'ServiceCategory', 'Country',
+        function($scope, $stateParams, $uibModalInstance, entity, ComBranch, CompanyInformation, ServiceCategory, Country) {
 
         $scope.comBranch = entity;
         $scope.companyinformations = CompanyInformation.query();
         $scope.servicecategorys = ServiceCategory.query();
+        $scope.countrys = Country.query();
+        console.log('.....country list');
+        console.log($scope.countrys);
         $scope.load = function(id) {
             ComBranch.get({id : id}, function(result) {
                 $scope.comBranch = result;
