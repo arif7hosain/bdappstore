@@ -130,6 +130,12 @@
         <div class="col-sm-12">
             <h4>Publisher Branch and Address</h4>
         </div>
+        <div class="form-group col-sm-12">
+            <label class="control-label" for="field_branchName">Branch Name</label>
+            <input type="text" class="form-control" name="branchName" id="field_branchName"
+                   ng-model="comBranch.branchName" placeholder="e.g. Dhaka office"
+                />
+        </div>
         <div class="form-group  col-sm-6">
             <label class="control-label" for="field_branchType">Branch Type</label>
             <select class="form-control" name="branchType" ng-model="comBranch.branchType" id="field_branchType">
@@ -137,17 +143,42 @@
                 <option value="Regional">Regional</option>
             </select>
         </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="field_branchName">Branch Name</label>
-            <input type="text" class="form-control" name="branchName" id="field_branchName"
-                   ng-model="comBranch.branchName"
+
+        <div class="form-group col-md-6">
+            <label for="field_country">Select country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="comBranch.country" ng-options="country as country.countryName for country in countrys track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label" for="field_city">City/Town</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                   ng-model="comAddress.city" placeholder="e.g.Dhaka"
                 />
         </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="field_countryName">Country Name</label>
-            <input type="text" class="form-control" name="countryName" id="field_countryName"
-                   ng-model="country.countryName"
+        <div class="form-group col-md-6">
+            <label class="control-label" for="field_postalCode">Postal Code</label>
+            <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                   ng-model="comAddress.postalCode" placeholder="4 digits code"
                 />
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label" for="field_house">House Number</label>
+            <input type="text" class="form-control" name="house" id="field_house"
+                   ng-model="comAddress.house" placeholder="#12"
+                />
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label" for="field_RoadNo">Road No</label>
+            <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
+                   ng-model="comAddress.RoadNo" placeholder="e.g.Road A11"
+                />
+        </div>
+        <div class="form-group col-md-12 pull right">
+            <label class="control-label" for="field_RoadNo"></label>
+        <button type="reset" class="btn btn-default">Reset</button>
+        <button class="btn btn-danger">Cancel</button>
+        <button type="submit" class="btn btn-primary">Submit Request</button>
         </div>
 
 
