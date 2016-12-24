@@ -24,14 +24,48 @@
         <![endif]-->
         <!--<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>-->
         <div ui-view="navbar" ng-cloak=""></div>
-        <div class="container">
+        <div class="container-fluid">
             <!--class="well"-->
             <div ui-view="content"></div>
 
-            <div class="footer">
-                <p translate="footer">This is your footer</p>
+            <!--<div class="footer">-->
+                <!--<p translate="footer">This is your footer</p>-->
+            <!--</div>-->
+            <div id="footer" >
+
+                <div class="col-md-3"></div>
+                <div class="col-md-2 ">
+                    <h5>Company Information</h5>
+                    <ul id="about">
+                        <li><a href="">About</a></li>
+                        <li><a href="">Support</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Services</a></li>
+                        <li><a href="">FAQ</a></li>
+                        <li><a href="">Developer</a></li>
+                        <li><a href="">News</a></li>
+                    </ul>
+                </div><div class="col-md-2 ">
+                    <h5>Company Information</h5>
+                    <ul id="social">
+                        <li><a href="">Facebook</a></li>
+                        <li><a href="">Google</a></li>
+                        <li><a href="">Youtube</a></li>
+                        <li><a href="">Twitter</a></li>
+                        <li><a href="">Google +</a></li>
+                        <li><a href="">LinkedIn</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2" id="contact">
+                    <h5>Contacts</h5>
+                    <address>
+                        <p>BDAppStore Inc<br>Section 1, Mirpur<br>Dhaka, Bangladesh 1215</p>
+                    </address>
+                </div>
+                <div class="col-md-3"></div>
             </div>
         </div>
+
 
         <!-- Google Analytics: uncomment and change UA-XXXXX-X to be your site's ID.
         <script>
