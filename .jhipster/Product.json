@@ -1,0 +1,101 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "companyInformation",
+            "otherEntityName": "companyInformation",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "companyName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "serviceCategory",
+            "otherEntityName": "serviceCategory",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "serviceName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "productTitle",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "productDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "productType",
+            "fieldType": "ProductType",
+            "fieldValues": "Web,Mobile,Desktop"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "Currency",
+            "fieldType": "CurrencyType",
+            "fieldValues": "USD,BDT"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "durationType",
+            "fieldType": "DurationType",
+            "fieldValues": "Monthly,Yearly,Permanently"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "isFurtherDevelopment",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "liveUrl",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "additionalLink",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "isAvailable",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "createdDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 14,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 15,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053123",
+    "dto": "no",
+    "pagination": "pagination"
+}

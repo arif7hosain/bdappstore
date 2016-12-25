@@ -7,115 +7,115 @@
         <h4 class="modal-title" id="myTempCompanyLabel">Create or edit a TempCompany</h4>
     </div>
     <div class="modal-body">
-        <jh-alert-error></jh-alert-error>
-        <div class="form-group">
-            <label for="id">ID</label>
-            <input type="text" class="form-control" id="id" name="id"
-                    ng-model="tempCompany.id" readonly />
-        </div>
-        <div class="form-group">
+        <!--<jh-alert-error></jh-alert-error>-->
+        <!--<div class="form-group col-md-6">-->
+            <!--<label for="id">ID</label>-->
+            <!--<input type="text" class="form-control" id="id" name="id"-->
+                    <!--ng-model="tempCompany.id" readonly />-->
+        <!--</div>-->
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_username">Username</label>
             <input type="text" class="form-control" name="username" id="field_username"
                     ng-model="tempCompany.username"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_email">Email</label>
             <input type="text" class="form-control" name="email" id="field_email"
                     ng-model="tempCompany.email"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_password">Password</label>
             <input type="text" class="form-control" name="password" id="field_password"
                     ng-model="tempCompany.password"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_branchName">BranchName</label>
             <input type="text" class="form-control" name="branchName" id="field_branchName"
                     ng-model="tempCompany.branchName"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_BranchType">BranchType</label>
             <input type="text" class="form-control" name="BranchType" id="field_BranchType"
                     ng-model="tempCompany.BranchType"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_companyName">CompanyName</label>
             <input type="text" class="form-control" name="companyName" id="field_companyName"
                     ng-model="tempCompany.companyName"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_shortName">ShortName</label>
             <input type="text" class="form-control" name="shortName" id="field_shortName"
                     ng-model="tempCompany.shortName"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_companyInformation">CompanyInformation</label>
             <input type="text" class="form-control" name="companyInformation" id="field_companyInformation"
                     ng-model="tempCompany.companyInformation"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_businessDescription">BusinessDescription</label>
             <input type="text" class="form-control" name="businessDescription" id="field_businessDescription"
                     ng-model="tempCompany.businessDescription"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_facebook">Facebook</label>
             <input type="text" class="form-control" name="facebook" id="field_facebook"
                     ng-model="tempCompany.facebook"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_googlePlus">GooglePlus</label>
             <input type="text" class="form-control" name="googlePlus" id="field_googlePlus"
                     ng-model="tempCompany.googlePlus"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_youtube">Youtube</label>
             <input type="text" class="form-control" name="youtube" id="field_youtube"
                     ng-model="tempCompany.youtube"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_linkedin">Linkedin</label>
             <input type="text" class="form-control" name="linkedin" id="field_linkedin"
                     ng-model="tempCompany.linkedin"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_twitter">Twitter</label>
             <input type="text" class="form-control" name="twitter" id="field_twitter"
                     ng-model="tempCompany.twitter"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_website">Website</label>
             <input type="text" class="form-control" name="website" id="field_website"
                     ng-model="tempCompany.website"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_city">City</label>
             <input type="text" class="form-control" name="city" id="field_city"
                     ng-model="tempCompany.city"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_shortDescription">ShortDescription</label>
             <input type="text" class="form-control" name="shortDescription" id="field_shortDescription"
                     ng-model="tempCompany.shortDescription"
                      />
         </div>
-        <div class="form-group" ngf-drop ngf-change="setLogo($file, tempCompany)">
+        <div class="form-group col-md-6" ngf-drop ngf-change="setLogo($file, tempCompany)">
             <label class="control-label" for="field_logo">Logo</label>
             <div>
                 <div class="help-block clearfix">
@@ -137,94 +137,94 @@
             <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
                     ng-model="tempCompany.logoContentType" />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_companyType">CompanyType</label>
             <select class="form-control" name="companyType" ng-model="tempCompany.companyType" id="field_companyType">
                 <option value="National">National</option>
                 <option value="International">International</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_addressType">AddressType</label>
             <select class="form-control" name="addressType" ng-model="tempCompany.addressType" id="field_addressType">
                 <option value="National">National</option>
                 <option value="International">International</option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_officePhone">OfficePhone</label>
             <input type="text" class="form-control" name="officePhone" id="field_officePhone"
                     ng-model="tempCompany.officePhone"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_contactNumber">ContactNumber</label>
             <input type="text" class="form-control" name="contactNumber" id="field_contactNumber"
                     ng-model="tempCompany.contactNumber"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_postalCode">PostalCode</label>
             <input type="text" class="form-control" name="postalCode" id="field_postalCode"
                     ng-model="tempCompany.postalCode"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_house">House</label>
             <input type="text" class="form-control" name="house" id="field_house"
                     ng-model="tempCompany.house"
                      />
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_RoadNo">RoadNo</label>
             <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
                     ng-model="tempCompany.RoadNo"
                      />
         </div>
-        <div class="form-group">
-            <label class="control-label" for="field_CreatedDate">CreatedDate</label>
-            <input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"
-                    ng-model="tempCompany.CreatedDate"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="field_updatedDate">UpdatedDate</label>
-            <input type="date" class="form-control" name="updatedDate" id="field_updatedDate"
-                    ng-model="tempCompany.updatedDate"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="field_createBy">CreateBy</label>
-            <input type="text" class="form-control" name="createBy" id="field_createBy"
-                    ng-model="tempCompany.createBy"
-                     />
-        </div>
-        <div class="form-group">
-            <label class="control-label" for="field_updatedBy">UpdatedBy</label>
-            <input type="text" class="form-control" name="updatedBy" id="field_updatedBy"
-                    ng-model="tempCompany.updatedBy"
-                     />
-        </div>
-        <div class="form-group">
+        <!--<div class="form-group col-md-6">-->
+            <!--<label class="control-label" for="field_CreatedDate">CreatedDate</label>-->
+            <!--<input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"-->
+                    <!--ng-model="tempCompany.CreatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-6">-->
+            <!--<label class="control-label" for="field_updatedDate">UpdatedDate</label>-->
+            <!--<input type="date" class="form-control" name="updatedDate" id="field_updatedDate"-->
+                    <!--ng-model="tempCompany.updatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-6">-->
+            <!--<label class="control-label" for="field_createBy">CreateBy</label>-->
+            <!--<input type="text" class="form-control" name="createBy" id="field_createBy"-->
+                    <!--ng-model="tempCompany.createBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group col-md-6">-->
+            <!--<label class="control-label" for="field_updatedBy">UpdatedBy</label>-->
+            <!--<input type="text" class="form-control" name="updatedBy" id="field_updatedBy"-->
+                    <!--ng-model="tempCompany.updatedBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <div class="form-group col-md-6">
             <label class="control-label" for="field_activeStatus">ActiveStatus</label>
             <input type="number" class="form-control" name="activeStatus" id="field_activeStatus"
                     ng-model="tempCompany.activeStatus"
                      />
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="field_country">country</label>
             <select class="form-control" id="field_country" name="country" ng-model="tempCompany.country" ng-options="country as country.countryName for country in countrys track by country.id">
                 <option value=""></option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="field_serviceCategory">serviceCategory</label>
             <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="tempCompany.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
                 <option value=""></option>
             </select>
         </div>
-        <div class="form-group">
+        <div class="form-group col-md-6">
             <label for="field_upazila">upazila</label>
             <select class="form-control" id="field_upazila" name="upazila" ng-model="tempCompany.upazila" ng-options="upazila as upazila.upazilaName for upazila in upazilas track by upazila.id">
                 <option value=""></option>

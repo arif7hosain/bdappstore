@@ -94,13 +94,13 @@
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_companyName">Company Name</label>
             <input type="text" class="form-control" name="companyName" id="field_companyName"
-                   ng-model="companyInformation.companyName" required placeholder="Publisher name is here..."
+                   ng-model="tempCompany.companyName" required placeholder="Publisher name is here..."
                 />
         </div>
         <div class="form-group col-sm-6">
             <label class="control-label" for="field_shortName">Short Name</label>
             <input type="text" class="form-control" name="shortName" id="field_shortName"
-                   ng-model="companyInformation.shortName" required placeholder="LEADS"
+                   ng-model="tempCompany.shortName" required placeholder="LEADS"
                 />
         </div>
         <div class="form-group col-sm-6">
@@ -110,7 +110,7 @@
             <!--/>-->
 
             <textarea cols="30" rows="4" class="form-control" name="shortDescription" id="field_shortDescription"
-                      ng-model="companyInformation.shortDescription" placeholder="Publisher's services"></textarea>
+                      ng-model="tempCompany.shortDescription" placeholder="Publisher's services"></textarea>
         </div>
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_companyInformation">Publisher Information</label>
@@ -118,7 +118,7 @@
             <!--ng-model="companyInformation.companyInformation"-->
             <!--/>-->
             <textarea cols="30" rows="4" class="form-control" name="companyInformation" id="field_companyInformation"
-                      ng-model="companyInformation.companyInformation" placeholder="Publisher overview.."></textarea>
+                      ng-model="tempCompany.companyInformation" placeholder="Publisher overview.."></textarea>
         </div>
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_businessDescription">Business Description</label>
@@ -126,7 +126,7 @@
             <!--ng-model="companyInformation.businessDescription"-->
             <!--/>-->
              <textarea cols="30" rows="4" class="form-control" name="businessDescription" id="field_businessDescription"
-                       ng-model="companyInformation.businessDescription" placeholder="Publisher businesses.."></textarea>
+                       ng-model="tempCompany.businessDescription" placeholder="Publisher businesses.."></textarea>
         </div>
         <div class="col-sm-12">
             <h4>Publisher Branch and Address</h4>
@@ -134,45 +134,45 @@
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_branchName">Branch Name</label>
             <input type="text" class="form-control" name="branchName" id="field_branchName"
-                   ng-model="comBranch.branchName" required placeholder="e.g. Dhaka office"
+                   ng-model="tempCompany.branchName" required placeholder="e.g. Dhaka office"
                 />
         </div>
         <div class="form-group  col-sm-6">
             <label class="control-label" for="field_branchType">Branch Type</label>
-            <select class="form-control" name="branchType" ng-model="comBranch.branchType" required id="field_branchType">
+            <select class="form-control" name="branchType" ng-model="tempCompany.BranchType" required id="field_branchType">
                 <option value="Headquarter">Headquarter</option>
                 <option value="Regional">Regional</option>
             </select>
         </div>
 
-        <div class="form-group col-md-6">
-            <label for="field_country">Select country</label>
-            <select required class="form-control" id="field_country" name="country" ng-model="comBranch.country" ng-options="country as country.countryName for country in countries track by country.id">
-                <option value=""></option>
-            </select>
-        </div>
+            <div class="form-group col-md-6">
+                <label for="field_country">Select Country</label>
+                <select class="form-control" id="field_country" name="country" ng-model="tempCompany.country" ng-options="country as country.countryName for country in countries track by country.id">
+                    <option value=""></option>
+                </select>
+            </div>
         <div class="form-group col-md-6">
             <label class="control-label" for="field_city">City/Town</label>
             <input type="text" class="form-control" required name="city" id="field_city"
-                   ng-model="comAddress.city" placeholder="e.g.Dhaka"
+                   ng-model="tempCompany.city" placeholder="e.g.Dhaka"
                 />
         </div>
         <div class="form-group col-md-6">
             <label class="control-label" for="field_postalCode">Postal Code</label>
             <input type="text" class="form-control" name="postalCode" id="field_postalCode"
-                   ng-model="comAddress.postalCode" placeholder="4 digits code"
+                   ng-model="tempCompany.postalCode" placeholder="4 digits code"
                 />
         </div>
         <div class="form-group col-md-6">
             <label class="control-label" for="field_house">House Number</label>
             <input type="text" class="form-control" name="house" id="field_house"
-                   ng-model="comAddress.house" placeholder="#12"
+                   ng-model="tempCompany.house" placeholder="#12"
                 />
         </div>
         <div class="form-group col-md-6">
             <label class="control-label" for="field_RoadNo">Road No</label>
             <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
-                   ng-model="comAddress.RoadNo" placeholder="e.g.Road A11"
+                   ng-model="tempCompany.RoadNo" placeholder="e.g.Road A11"
                 />
         </div>
         <div class="form-group col-md-12 pull right">
