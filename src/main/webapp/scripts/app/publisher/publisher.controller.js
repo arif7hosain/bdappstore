@@ -1,8 +1,48 @@
 'use strict';
 
 angular.module('appstoreApp').controller('CreatePublisher',
-    ['$scope', '$stateParams',  '$q', 'DataUtils',  'CompanyInformation', 'Country', 'ServiceCategory', 'User',
-        function($scope, $stateParams,  $q, DataUtils, CompanyInformation, Country, ServiceCategory, User) {
+    ['$scope', '$stateParams',  '$q', 'DataUtils', '$timeout', 'CompanyInformation', 'Country', 'ServiceCategory', 'User','Auth',
+        function($scope, $stateParams,  $q, DataUtils,$timeout, CompanyInformation, Country, ServiceCategory, User,Auth) {
+
+        $scope.countries=Country.query();
+          $scope.registerAccount = {};
+          $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
+                $scope.register = function () {
+                    if ($scope.registerAccount.password !== $scope.confirmPassword) {
+                        $scope.doNotMatch = 'ERROR';
+                    } else {
+                        $scope.registerAccount.langKey =  'en' ;
+                        $scope.doNotMatch = null;
+                        $scope.error = null;
+                        $scope.errorUserExists = null;
+                        $scope.errorEmailExists = null;
+
+                        Auth.createAccount($scope.registerAccount).then(function () {
+                            $scope.success = 'OK';
+                        }).catch(function (response) {
+                            $scope.success = null;
+                            if (response.status === 400 && response.data === 'login already in use') {
+                                $scope.errorUserExists = 'ERROR';
+                            } else if (response.status === 400 && response.data === 'e-mail address already in use') {
+                                $scope.errorEmailExists = 'ERROR';
+                            } else {
+                                $scope.error = 'ERROR';
+                            }
+                        });
+                    }
+                };
+
+
+
+
+
+        $scope.create_publisher_account=function(){
+            $scope.register();//create credentials
+//            $scope.create_publisher_info();//create details about publisher
+//            $scope.create_branch();//publisher branch information
+//            $scope.create_publisher_address();//address about publisher
+//            $state.go('/home');
+        };
 
 //        $scope.companyInformation = entity;
 //        $scope.countrys = Country.query();

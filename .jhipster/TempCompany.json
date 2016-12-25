@@ -1,0 +1,182 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "countryName"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipName": "serviceCategory",
+            "otherEntityName": "serviceCategory",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "serviceName"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipName": "upazila",
+            "otherEntityName": "upazila",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "upazilaName"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "username",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "email",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "password",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "branchName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "BranchType",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "companyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 7,
+            "fieldName": "shortName",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 8,
+            "fieldName": "companyInformation",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 9,
+            "fieldName": "businessDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 10,
+            "fieldName": "facebook",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 11,
+            "fieldName": "googlePlus",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 12,
+            "fieldName": "youtube",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 13,
+            "fieldName": "linkedin",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 14,
+            "fieldName": "twitter",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 15,
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 16,
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 17,
+            "fieldName": "shortDescription",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 18,
+            "fieldName": "logo",
+            "fieldType": "byte[]"
+        },
+        {
+            "fieldId": 19,
+            "fieldName": "companyType",
+            "fieldType": "CompanyType",
+            "fieldValues": "National, International"
+        },
+        {
+            "fieldId": 20,
+            "fieldName": "addressType",
+            "fieldType": "AddressType",
+            "fieldValues": "National,International"
+        },
+        {
+            "fieldId": 21,
+            "fieldName": "officePhone",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 22,
+            "fieldName": "contactNumber",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 23,
+            "fieldName": "postalCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 24,
+            "fieldName": "house",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 25,
+            "fieldName": "RoadNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 26,
+            "fieldName": "CreatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 27,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 28,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 29,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 30,
+            "fieldName": "activeStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053122",
+    "dto": "no",
+    "pagination": "pagination"
+}

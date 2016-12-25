@@ -1,6 +1,7 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="jumbotron col-sm-8">
+        <form ng-submit="create_publisher_account()" method="post" role="form">
         <h4>Create Your Software Publisher</h4><hr>
         <div class="form-group col-sm-6">
             <label class="control-label" for="login">Username</label>
@@ -99,7 +100,7 @@
         <div class="form-group col-sm-6">
             <label class="control-label" for="field_shortName">Short Name</label>
             <input type="text" class="form-control" name="shortName" id="field_shortName"
-                   ng-model="companyInformation.shortName" placeholder="LEADS"
+                   ng-model="companyInformation.shortName" required placeholder="LEADS"
                 />
         </div>
         <div class="form-group col-sm-6">
@@ -133,12 +134,12 @@
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_branchName">Branch Name</label>
             <input type="text" class="form-control" name="branchName" id="field_branchName"
-                   ng-model="comBranch.branchName" placeholder="e.g. Dhaka office"
+                   ng-model="comBranch.branchName" required placeholder="e.g. Dhaka office"
                 />
         </div>
         <div class="form-group  col-sm-6">
             <label class="control-label" for="field_branchType">Branch Type</label>
-            <select class="form-control" name="branchType" ng-model="comBranch.branchType" id="field_branchType">
+            <select class="form-control" name="branchType" ng-model="comBranch.branchType" required id="field_branchType">
                 <option value="Headquarter">Headquarter</option>
                 <option value="Regional">Regional</option>
             </select>
@@ -146,13 +147,13 @@
 
         <div class="form-group col-md-6">
             <label for="field_country">Select country</label>
-            <select class="form-control" id="field_country" name="country" ng-model="comBranch.country" ng-options="country as country.countryName for country in countrys track by country.id">
+            <select required class="form-control" id="field_country" name="country" ng-model="comBranch.country" ng-options="country as country.countryName for country in countries track by country.id">
                 <option value=""></option>
             </select>
         </div>
         <div class="form-group col-md-6">
             <label class="control-label" for="field_city">City/Town</label>
-            <input type="text" class="form-control" name="city" id="field_city"
+            <input type="text" class="form-control" required name="city" id="field_city"
                    ng-model="comAddress.city" placeholder="e.g.Dhaka"
                 />
         </div>
@@ -181,7 +182,7 @@
         <button type="submit" class="btn btn-primary">Submit Request</button>
         </div>
 
-
+</form>
 
     </div>
     <div class="col-md-2"></div>

@@ -32,5 +32,5 @@ angular.module('appstoreApp')
                     }
                 });
             }
-        };
+        };z
     });

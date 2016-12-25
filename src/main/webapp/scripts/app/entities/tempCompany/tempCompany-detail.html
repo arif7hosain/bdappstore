@@ -1,0 +1,287 @@
+
+<div>
+    <h2><span>TempCompany</span> {{tempCompany.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>Username</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.username}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Email</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.email}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Password</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.password}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BranchName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.branchName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BranchType</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.BranchType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CompanyName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.companyName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortName</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.shortName}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CompanyInformation</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.companyInformation}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>BusinessDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.businessDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Facebook</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.facebook}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>GooglePlus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.googlePlus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Youtube</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.youtube}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Linkedin</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.linkedin}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Twitter</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.twitter}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Website</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.website}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>City</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.city}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ShortDescription</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.shortDescription}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>Logo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.logo}}</span>
+                    <div>{{tempCompany.logoContentType}}  {{byteSize(tempCompany.logo)}}</div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CompanyType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'appstoreApp.CompanyType.' + tempCompany.companyType}}">{{tempCompany.companyType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>AddressType</span>
+                </td>
+                <td>
+                    <span class="form-control-static" translate="{{'appstoreApp.AddressType.' + tempCompany.addressType}}">{{tempCompany.addressType}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>OfficePhone</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.officePhone}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ContactNumber</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.contactNumber}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>PostalCode</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.postalCode}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>House</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.house}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>RoadNo</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.RoadNo}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.CreatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.updatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreateBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.createBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.updatedBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>ActiveStatus</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{tempCompany.activeStatus}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>country</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="country.detail({id:tempCompany.country.id})">{{tempCompany.country.countryName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>serviceCategory</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="serviceCategory.detail({id:tempCompany.serviceCategory.id})">{{tempCompany.serviceCategory.serviceName}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>upazila</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="upazila.detail({id:tempCompany.upazila.id})">{{tempCompany.upazila.upazilaName}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

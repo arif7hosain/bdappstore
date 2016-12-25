@@ -28,13 +28,13 @@
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
                     <!--<th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>-->
+                    <th jh-sort-by="logo"><span>Icon</span></th>
                     <th>SN</th>
                     <th jh-sort-by="companyName"><span>Company Name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="shortName"><span>Short Name</span> </th>
                     <!--<th jh-sort-by="companyInformation"><span>CompanyInformation</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <!--<th jh-sort-by="businessDescription"><span>BusinessDescription</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <!--<th jh-sort-by="shortDescription"><span>Short Description</span> </span></th>-->
-                    <th jh-sort-by="logo"><span>Logo</span></th>
                     <!--<th jh-sort-by="website"><span>Website</span></th>-->
                     <th jh-sort-by="companyType"><span>Company Type</span></th>
                     <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>-->
@@ -43,21 +43,22 @@
                     <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <!--<th jh-sort-by="activeStatus"><span>ActiveStatus</span> <span class="glyphicon glyphicon-sort"></span></th>-->
                     <th jh-sort-by="country.countryName"><span>Location</span> </span></th>
-                    <th jh-sort-by="serviceCategory.serviceName"><span>Category</span> </th>
+                    <th jh-sort-by="serviceCategory.serviceName"><span>Service Category</span> </th>
                     <!--<th jh-sort-by="user.login"><span>user</span> <span class="glyphicon glyphicon-sort"></span></th>-->
-                    <th>Action</th>
+                    <th>CRUD</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="companyInformation in companyInformations track by companyInformation.id">
+                <tr ng-repeat="companyInformation in companyInformations | filter:{companyName:searchQuery} track by companyInformation.id">
                     <!--<td><a ui-sref="companyInformation.detail({id:companyInformation.id})">{{companyInformation.id}}</a></td>-->
+                    <td>{{companyInformation.logo}}</td>
                     <td>{{$index+1}}</td>
                     <td>{{companyInformation.companyName}}</td>
-                    <!--<td>{{companyInformation.shortName}}</td>-->
+                    <td>{{companyInformation.shortName}}</td>
                     <!--<td>{{companyInformation.companyInformation}}</td>-->
                     <!--<td>{{companyInformation.businessDescription}}</td>-->
-                    <td>{{companyInformation.shortDescription}}</td>
-                    <td>{{companyInformation.logo}}</td>
+                    <!--<td>{{companyInformation.shortDescription}}</td>-->
+
                     <!--<td>{{companyInformation.website}}</td>-->
                     <td translate="{{'appstoreApp.CompanyType.' + companyInformation.companyType}}">{{companyInformation.companyType}}</td>
                         <!--<td>{{companyInformation.CreatedDate | date:'mediumDate'}}</td>-->
