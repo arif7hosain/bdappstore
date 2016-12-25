@@ -1,21 +1,24 @@
 <div>
-    <h2>Products</h2>
+
     <jh-alert></jh-alert>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
                 <button class="btn btn-primary" ui-sref="product.new">
-                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new Product</span>
+                    <span class="glyphicon glyphicon-flash"></span> <span>Add Product</span>
                 </button>
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form name="searchForm" class="form-inline">
                     <div class="form-group">
-                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Search Company">
                     </div>
-                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Product</span>
-                    </button>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Product</span>-->
+                    <!--</button>-->
                 </form>
+            </div>
+            <div class="col-md-4">
+                <h4>List of Products</h4>
             </div>
         </div>
     </div>
@@ -24,44 +27,46 @@
         <table class="table table-striped">
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="productTitle"><span>ProductTitle</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="productDescription"><span>ProductDescription</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="productType"><span>ProductType</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="Currency"><span>Currency</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="price"><span>Price</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="durationType"><span>DurationType</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="isFurtherDevelopment"><span>IsFurtherDevelopment</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="liveUrl"><span>LiveUrl</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="additionalLink"><span>AdditionalLink</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="isAvailable"><span>IsAvailable</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createdDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="isActive"><span>IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="companyInformation.companyName"><span>companyInformation</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="serviceCategory.serviceName"><span>serviceCategory</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="id"><span>SN</span> </span></th>
+                    <th jh-sort-by="id"><span>ID</span> </span></th>
+                    <th jh-sort-by="productTitle"><span>ProductTitle</span> </span></th>
+                    <!--<th jh-sort-by="productDescription"><span>ProductDescription</span> </span></th>-->
+                    <th jh-sort-by="productType"><span>ProductType</span> </span></th>
+                    <th jh-sort-by="Currency"><span>Currency</span> </span></th>
+                    <th jh-sort-by="price"><span>Price</span> </span></th>
+                    <th jh-sort-by="durationType"><span>DurationType</span> </span></th>
+                    <th jh-sort-by="isFurtherDevelopment"><span>IsFurtherDevelopment</span> </span></th>
+                    <!--<th jh-sort-by="liveUrl"><span>LiveUrl</span> </span></th>-->
+                    <!--<th jh-sort-by="additionalLink"><span>AdditionalLink</span> </span></th>-->
+                    <th jh-sort-by="isAvailable"><span>IsAvailable</span> </span></th>
+                    <!--<th jh-sort-by="createdDate"><span>CreatedDate</span> </span></th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> </span></th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> </span></th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> </span></th>-->
+                    <th jh-sort-by="isActive"><span>IsActive</span> </span></th>
+                    <th jh-sort-by="companyInformation.companyName"><span>companyInformation</span> </span></th>
+                    <th jh-sort-by="serviceCategory.serviceName"><span>serviceCategory</span> </span></th>
                     <th></th>
                 </tr>
             </thead>
             <tbody>
                 <tr ng-repeat="product in products track by product.id">
+                    <td>{{$index+1}}</td>
                     <td><a ui-sref="product.detail({id:product.id})">{{product.id}}</a></td>
                     <td>{{product.productTitle}}</td>
-                    <td>{{product.productDescription}}</td>
+                    <!--<td>{{product.productDescription}}</td>-->
                     <td translate="{{'appstoreApp.ProductType.' + product.productType}}">{{product.productType}}</td>
                     <td translate="{{'appstoreApp.CurrencyType.' + product.Currency}}">{{product.Currency}}</td>
                     <td>{{product.price}}</td>
                     <td translate="{{'appstoreApp.DurationType.' + product.durationType}}">{{product.durationType}}</td>
                     <td>{{product.isFurtherDevelopment}}</td>
-                    <td>{{product.liveUrl}}</td>
-                    <td>{{product.additionalLink}}</td>
+                    <!--<td>{{product.liveUrl}}</td>-->
+                    <!--<td>{{product.additionalLink}}</td>-->
                     <td>{{product.isAvailable}}</td>
-                        <td>{{product.createdDate | date:'mediumDate'}}</td>
-                        <td>{{product.updatedDate | date:'mediumDate'}}</td>
-                    <td>{{product.createBy}}</td>
-                    <td>{{product.updatedBy}}</td>
+                        <!--<td>{{product.createdDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{product.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{product.createBy}}</td>-->
+                    <!--<td>{{product.updatedBy}}</td>-->
                     <td>{{product.isActive}}</td>
                     <td>
                         <a ui-sref="companyInformation.detail({id:product.companyInformation.id})">{{product.companyInformation.companyName}}</a>
@@ -73,17 +78,20 @@
                         <button type="submit"
                                 ui-sref="product.detail({id:product.id})"
                                 class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            <!--&nbsp;<span> View</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="product.edit({id:product.id})"
                                 class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>
+                            <!--&nbsp;<span> Edit</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="product.delete({id:product.id})"
                                 class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <!--&nbsp;<span> Delete</span>-->
                         </button>
                     </td>
                 </tr>
@@ -91,6 +99,6 @@
         </table>
     </div>
     <div class="text-center">
-        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+        <!--<uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>-->
     </div>
 </div>
