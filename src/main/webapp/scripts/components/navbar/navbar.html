@@ -9,8 +9,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#/"><span>App Store</span></a>
+
+            <div class="navbar-brand">
+                <span><img src="assets/images/success.png" height="20px" width="20px"></span>
+                <span><a  href="#/"><span>App Store</span></a></span>
+            </div>
         </div>
+        <!--<form class="navbar-form navbar-right" role="search">-->
+            <!--<a class="btn btn-success">Create Publisher</a>-->
+            <!--<a class="btn btn-primary" ui-sref="login" >Login</a>-->
+            <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
+            <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
+        <!--</form>-->
         <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
                 <!--<li ui-sref-active="active">-->
@@ -20,46 +30,46 @@
                     <!--</a>-->
                 <!--</li>-->
                 <!-- jhipster-needle-001 - JHipster will add new menu items here -->
-                <li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="glyphicon glyphicon-th-list"></span>
-                            <span class="hidden-sm">
-                                Entities
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active" ><a ui-sref="country" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Country</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="division" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Division</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="district" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >District</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="upazila" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Upazila</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="softwareCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Software Category</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="serviceCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Service Category</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >company Information</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="comAddress" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Company Address</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Branch</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Company</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >comBranch</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="tempCompany" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >tempCompany</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="product" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >product</span></a></li>
-                        <!-- jhipster-needle-002 - JHipster will add entities to the menu here -->
-                    </ul>
-                </li>
+                <!--<li ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="">-->
+                        <!--<span>-->
+                            <!--<span class="glyphicon glyphicon-th-list"></span>-->
+                            <!--<span class="hidden-sm">-->
+                                <!--Entities-->
+                            <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="country" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Country</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="division" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Division</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="district" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >District</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="upazila" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Upazila</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="softwareCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Software Category</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="serviceCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Service Category</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >company Information</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="comAddress" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Company Address</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Branch</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Company</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >comBranch</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="tempCompany" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >tempCompany</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="product" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >product</span></a></li>-->
+                        <!--&lt;!&ndash; jhipster-needle-002 - JHipster will add entities to the menu here &ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</li>-->
                 <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
                         <span>
