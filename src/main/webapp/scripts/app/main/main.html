@@ -10,7 +10,16 @@
                 <input type="text" class="form-control" name="q" ng-model="q" placeholder="Search by Software's Name, Category, Feature ...">
             </form>
         </div>
-        <div id="query_view"></div>
+        <div id="query_view">
+            <ul>
+                <li ng-repeat="product in products">
+                    <div id="product_desc">
+                        <h2>{{product.productTitle}}</h2>
+                        <p>{{product.productDescription}}</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
     </div>
     <div class=" col-sm-2 col-md-3">

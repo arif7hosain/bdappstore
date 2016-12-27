@@ -13,8 +13,8 @@
                     <div class="form-group">
                         <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Search Company">
                     </div>
-                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Product</span>-->
-                    <!--</button>-->
+                    <button ng-show="false" class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a Product</span>
+                    </button>
                 </form>
             </div>
             <div class="col-md-4">
@@ -50,7 +50,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="product in products | filter:{productTitle:searchQuery}">
+                <!--<tr ng-repeat="product in products | filter:{productTitle:searchQuery}">-->
+                <tr ng-repeat="product in products track by product.id">
                     <td>{{$index+1}}</td>
                     <!--<td><a ui-sref="product.detail({id:product.id})">{{product.id}}</a></td>-->
                     <td>{{product.productTitle}}</td>
