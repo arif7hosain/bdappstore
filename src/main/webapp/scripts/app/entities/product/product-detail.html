@@ -34,20 +34,20 @@
                     <span class="form-control-static" translate="{{'appstoreApp.ProductType.' + product.productType}}">{{product.productType}}</span>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <span>Currency</span>
-                </td>
-                <td>
-                    <span class="form-control-static" translate="{{'appstoreApp.CurrencyType.' + product.Currency}}">{{product.Currency}}</span>
-                </td>
-            </tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>Currency</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static" translate="{{'appstoreApp.CurrencyType.' + product.Currency}}">{{product.currency}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
             <tr>
                 <td>
                     <span>Price</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{product.price}}</span>
+                    <span class="form-control-static">{{product.price}}</span> <span class="form-control-static" translate="{{'appstoreApp.CurrencyType.' + product.Currency}}">{{product.currency}}</span>
                 </td>
             </tr>
             <tr>
@@ -90,38 +90,38 @@
                     <span class="form-control-static">{{product.isAvailable}}</span>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <span>CreatedDate</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{product.createdDate | date:'mediumDate'}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>UpdatedDate</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{product.updatedDate | date:'mediumDate'}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>CreateBy</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{product.createBy}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>UpdatedBy</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{product.updatedBy}}</span>
-                </td>
-            </tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{product.createdDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{product.updatedDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreateBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{product.createBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{product.updatedBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
             <tr>
                 <td>
                     <span>IsActive</span>

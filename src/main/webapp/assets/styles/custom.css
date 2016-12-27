@@ -2,18 +2,33 @@
 margin:0;
 padding:0;
 }
-h4,h5{
+h1,h2,h3,h4,h5{
 padding:0;
 }
+
 #footer ul li a{
 color:white;
 }
+
 #query_view{
     max-height:auto;
     min-height:1000px;
     width:100%;
     background-color:#FAEDE9;
     border-radius:5px;
+}
+#query_view ul li{
+    margin:0;
+    padding:0;
+    display:block;
+}
+
+#product_desc{
+    margin-top:5px;
+    height:auto;
+    padding:10px;
+    background:#B2BABB;
+    border-radius:10px;
 }
 
 #contact,#about,#social{

@@ -24,6 +24,7 @@ angular.module('appstoreApp').controller('ProductDialogController',
         };
 
         $scope.save = function () {
+        console.log($scope.product);
             $scope.isSaving = true;
             if ($scope.product.id != null) {
                 Product.update($scope.product, onSaveSuccess, onSaveError);

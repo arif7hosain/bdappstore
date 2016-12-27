@@ -4,5 +4,5 @@ package com.appstore.domain.enumeration;
  * The ProductType enumeration.
  */
 public enum ProductType {
-    Web,Mobile,Desktop
+    Web_App,Mobile_App,Desktop_App
 }

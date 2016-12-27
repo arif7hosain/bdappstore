@@ -14,13 +14,14 @@
             <ul>
                 <li ng-repeat="product in products">
                     <div id="product_desc">
-                        <h2>{{product.productTitle}}</h2>
+                        <h4>{{product.productTitle}}</h4>
+                        <h5><a href="#">by {{product.companyInformation.companyName}}</a></h5>
                         <p>{{product.productDescription}}</p>
+                        <button class="btn btn-primary">View Profile</button>
                     </div>
                 </li>
             </ul>
         </div>
-
     </div>
     <div class=" col-sm-2 col-md-3">
     </div>

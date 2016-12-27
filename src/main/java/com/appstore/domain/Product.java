@@ -42,7 +42,7 @@ public class Product implements Serializable {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "currency")
-    private CurrencyType Currency;
+    private CurrencyType currency;
 
     @Column(name = "price")
     private Double price;
@@ -86,7 +86,7 @@ public class Product implements Serializable {
     @JoinColumn(name = "service_category_id")
     private ServiceCategory serviceCategory;
 
-    
+
     public Long getId() {
         return id;
     }
@@ -120,11 +120,11 @@ public class Product implements Serializable {
     }
 
     public CurrencyType getCurrency() {
-        return Currency;
+        return currency;
     }
 
     public void setCurrency(CurrencyType Currency) {
-        this.Currency = Currency;
+        this.currency = Currency;
     }
 
     public Double getPrice() {
@@ -255,7 +255,7 @@ public class Product implements Serializable {
             ", productTitle='" + productTitle + "'" +
             ", productDescription='" + productDescription + "'" +
             ", productType='" + productType + "'" +
-            ", Currency='" + Currency + "'" +
+            ", Currency='" + currency + "'" +
             ", price='" + price + "'" +
             ", durationType='" + durationType + "'" +
             ", isFurtherDevelopment='" + isFurtherDevelopment + "'" +

@@ -9,6 +9,7 @@ angular.module('appstoreApp')
 //        });
 
      $scope.products = [];
+     $scope.products = Product.query();
      $scope.categories=SoftwareCategory.query();
 
         $scope.search = function (q) {
