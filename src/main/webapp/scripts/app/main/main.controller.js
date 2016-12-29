@@ -24,6 +24,9 @@ angular.module('appstoreApp')
                 }
             });
         };
+     $scope.getProducts=function(data){
+
+     };
 
      $scope.type=function(q){
         ProductSearch.query({query: q}, function(result) {

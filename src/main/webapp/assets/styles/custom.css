@@ -42,7 +42,7 @@ $social a:hover{
 color:white;
 text-decoration:none;
 }
-#contact li,#about li,#social li{
+#query_view li,#contact li,#about li,#social li{
 display:block;}
 #contact li a:hover,#about li a:hover,#social li a:hover{
 color:white;}
