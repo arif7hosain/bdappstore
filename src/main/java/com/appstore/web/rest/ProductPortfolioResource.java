@@ -34,13 +34,13 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class ProductPortfolioResource {
 
     private final Logger log = LoggerFactory.getLogger(ProductPortfolioResource.class);
-        
+
     @Inject
     private ProductPortfolioRepository productPortfolioRepository;
-    
+
     @Inject
     private ProductPortfolioSearchRepository productPortfolioSearchRepository;
-    
+
     /**
      * POST  /productPortfolios -> Create a new productPortfolio.
      */
@@ -89,9 +89,23 @@ public class ProductPortfolioResource {
     public ResponseEntity<List<ProductPortfolio>> getAllProductPortfolios(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of ProductPortfolios");
-        Page<ProductPortfolio> page = productPortfolioRepository.findAll(pageable); 
+        Page<ProductPortfolio> page = productPortfolioRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/productPortfolios");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/_search/productPortfolios/getPortfolioByProduct/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<ProductPortfolio> getAllProductPortfoliosByProduct(@PathVariable Long id)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of ProductPortfolios");
+        List<ProductPortfolio> portfolios=productPortfolioRepository.getAllPortfoliosByProduct(id);
+        if(portfolios.isEmpty()){
+            return null;
+        }
+        return portfolios;
     }
 
     /**

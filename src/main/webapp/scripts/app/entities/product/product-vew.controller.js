@@ -1,13 +1,18 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('ViewProduct', function ($scope, $rootScope, $stateParams, entity, Product, CompanyInformation, ServiceCategory) {
+    .controller('ViewProduct',function ($scope, $rootScope, $stateParams, entity, Product, CompanyInformation, ServiceCategory,GetAllProductPortfolio) {
         $scope.product = entity;
+        $scope.images=[];
+        console.log($scope.product);
         $scope.load = function (id) {
             Product.get({id: id}, function(result) {
                 $scope.product = result;
             });
         };
+        GetAllProductPortfolio.query({id:$scope.product.id},function(results){
+            $scope.images=results;
+        });
 
 
 
