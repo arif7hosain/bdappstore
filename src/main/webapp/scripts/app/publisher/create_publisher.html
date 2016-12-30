@@ -118,6 +118,37 @@
             <textarea cols="30" rows="4" class="form-control" name="shortDescription" id="field_shortDescription"
                       ng-model="tempCompany.shortDescription" placeholder="Publisher's services"></textarea>
         </div>
+            <div class="form-group col-md-6" ngf-drop ngf-change="setLogo($file, tempCompany)">
+                <div class="col-md-6">
+                    <button type="file" ngf-select class="btn btn-default"
+                            ngf-change="setLogo($file, tempCompany)">
+                        Add blob
+                    </button>
+                </div>
+                <div class="col-md-6">
+                    <img width="80px" height="80px"
+                         data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
+                         style="max-height: 100px;" ng-if="tempCompany.logo"/>
+                    <div>
+                        <div class="help-block clearfix">
+                            <!--<span class="pull-left">{{tempCompany.logoContentType}} {{byteSize(tempCompany.logo)}}</span>-->
+                            <button type="hidden" ng-click="tempCompany.logo=null;tempCompany.logoContentType=null;"
+                                    ng-if="tempCompany.logo"
+                                    class="btn btn-default btn-xs pull-right">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+
+                    </div>
+                    <input type="hidden" class="form-control" name="logo" id="field_logo"
+                           ng-model="tempCompany.logo"
+                        />
+                    <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
+                           ng-model="tempCompany.logoContentType" />
+                </div>
+                <!--<label class="control-label" for="field_logo">Logo</label>-->
+
+            </div><!--end div-->
         <div class="form-group col-sm-12">
             <label class="control-label" for="field_companyInformation">Publisher Information</label>
             <!--<input type="text" class="form-control" name="companyInformation" id="field_companyInformation"-->

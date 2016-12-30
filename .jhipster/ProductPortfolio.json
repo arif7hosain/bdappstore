@@ -1,0 +1,46 @@
+{
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipName": "product",
+            "otherEntityName": "product",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "productTitle"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "image",
+            "fieldType": "byte[]"
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "CreatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "updatedDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldId": 4,
+            "fieldName": "createBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 5,
+            "fieldName": "updatedBy",
+            "fieldType": "String"
+        },
+        {
+            "fieldId": 6,
+            "fieldName": "isActive",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20161125053118",
+    "dto": "no",
+    "pagination": "pagination"
+}

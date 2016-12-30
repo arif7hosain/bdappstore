@@ -151,8 +151,11 @@
                     <span>Logo</span>
                 </td>
                 <td>
-                    <span class="form-control-static">{{tempCompany.logo}}</span>
-                    <div>{{tempCompany.logoContentType}}  {{byteSize(tempCompany.logo)}}</div>
+                    <!--<span class="form-control-static">{{tempCompany.logo}}</span>-->
+                    <!--<div>{{tempCompany.logoContentType}}  {{byteSize(tempCompany.logo)}}</div>-->
+                    <img width="80px" height="80px"
+                         data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
+                         style="max-height: 100px;" ng-if="tempCompany.logo"/>
                 </td>
             </tr>
             <tr>
@@ -211,46 +214,46 @@
                     <span class="form-control-static">{{tempCompany.RoadNo}}</span>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <span>CreatedDate</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{tempCompany.CreatedDate | date:'mediumDate'}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>UpdatedDate</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{tempCompany.updatedDate | date:'mediumDate'}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>CreateBy</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{tempCompany.createBy}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>UpdatedBy</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{tempCompany.updatedBy}}</span>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <span>ActiveStatus</span>
-                </td>
-                <td>
-                    <span class="form-control-static">{{tempCompany.activeStatus}}</span>
-                </td>
-            </tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{tempCompany.CreatedDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedDate</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{tempCompany.updatedDate | date:'mediumDate'}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>CreateBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{tempCompany.createBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>UpdatedBy</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{tempCompany.updatedBy}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<span>ActiveStatus</span>-->
+                <!--</td>-->
+                <!--<td>-->
+                    <!--<span class="form-control-static">{{tempCompany.activeStatus}}</span>-->
+                <!--</td>-->
+            <!--</tr>-->
             <tr>
                 <td>
                     <span>country</span>

@@ -1,0 +1,89 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 ng-if="!productPortfolio.id" class="modal-title" id="myProductPortfolioLabel">Add Portfolio</h4>
+        <h4 ng-if="productPortfolio.id" class="modal-title" id="myProductPortfolioLabel">Update Portfolio</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <!--<div class="form-group">-->
+            <!--<label for="id">ID</label>-->
+            <!--<input type="text" class="form-control" id="id" name="id"-->
+                    <!--ng-model="productPortfolio.id" readonly />-->
+        <!--</div>-->
+        <div class="form-group col-md-12" ngf-drop ngf-change="setImage($file, productPortfolio)">
+            <label class="control-label" for="field_image">Image</label>
+            <div>
+                <div class="help-block clearfix">
+                    <img
+                        data-ng-src="{{'data:' + productPortfolio.imageContentType + ';base64,' + productPortfolio.image}}"
+                        style="max-height: 100px;" ng-if="productPortfolio.image"/>
+
+                    <span class="pull-left">{{productPortfolio.imageContentType}} {{byteSize(productPortfolio.image)}}</span>
+                    <button ng-click="productPortfolio.image=null;productPortfolio.imageContentType=null;"
+                            ng-if="productPortfolio.image"
+                            class="btn btn-default btn-xs pull-right">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </div>
+                <button type="file" ngf-select class="btn btn-default btn-block"
+                        ngf-change="setImage($file, productPortfolio)">
+                    Add blob
+                </button>
+            </div>
+            <input type="hidden" class="form-control" name="image" id="field_image"
+                    ng-model="productPortfolio.image"
+                     />
+            <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                    ng-model="productPortfolio.imageContentType" />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_CreatedDate">CreatedDate</label>-->
+            <!--<input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"-->
+                    <!--ng-model="productPortfolio.CreatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_updatedDate">UpdatedDate</label>-->
+            <!--<input type="date" class="form-control" name="updatedDate" id="field_updatedDate"-->
+                    <!--ng-model="productPortfolio.updatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_createBy">CreateBy</label>-->
+            <!--<input type="text" class="form-control" name="createBy" id="field_createBy"-->
+                    <!--ng-model="productPortfolio.createBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_updatedBy">UpdatedBy</label>-->
+            <!--<input type="text" class="form-control" name="updatedBy" id="field_updatedBy"-->
+                    <!--ng-model="productPortfolio.updatedBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_isActive">IsActive</label>-->
+            <!--<input type="number" class="form-control" name="isActive" id="field_isActive"-->
+                    <!--ng-model="productPortfolio.isActive"-->
+                     <!--/>-->
+        <!--</div>-->
+
+        <div class="form-group col-md-12">
+            <label for="field_product">Product Title</label>
+            <select class="form-control" id="field_product" name="product" ng-model="productPortfolio.product" ng-options="product as product.productTitle for product in products track by product.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

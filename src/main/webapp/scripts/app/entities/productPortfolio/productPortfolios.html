@@ -1,0 +1,77 @@
+<div>
+    <!--<h2>ProductPortfolios</h2>-->
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="productPortfolio.new">
+                    <span class="glyphicon glyphicon-plus"></span> <span>Add Portfolio</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Product Title">
+                    </div>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a ProductPortfolio</span>-->
+                    <!--</button>-->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <th jh-sort-by="id"><span>ID</span> </th>
+                    <th jh-sort-by="image"><span>Portfolio</span> </th>
+                    <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> </th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> </th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> </th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> </th>-->
+                    <!--<th jh-sort-by="isActive"><span>IsActive</span> </th>-->
+                    <th jh-sort-by="product.productTitle"><span>Product Title</span> </th>
+                    <th>CRUD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="productPortfolio in productPortfolios track by productPortfolio.id">
+                    <td><a ui-sref="productPortfolio.detail({id:productPortfolio.id})">{{productPortfolio.id}}</a></td>
+                    <td> <img width="30px" height="30px"
+                        data-ng-src="{{'data:' + productPortfolio.imageContentType + ';base64,' + productPortfolio.image}}"
+                        style="max-height: 100px;" ng-if="productPortfolio.image"/></td>
+                    <!--<td>{{productPortfolio.image}}</td>-->
+                        <!--<td>{{productPortfolio.CreatedDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{productPortfolio.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{productPortfolio.createBy}}</td>-->
+                    <!--<td>{{productPortfolio.updatedBy}}</td>-->
+                    <!--<td>{{productPortfolio.isActive}}</td>-->
+                    <td>
+                        <a ui-sref="product.detail({id:productPortfolio.product.id})">{{productPortfolio.product.productTitle}}</a>
+                    </td>
+                    <td>
+                        <button type="submit"
+                                ui-sref="productPortfolio.detail({id:productPortfolio.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="productPortfolio.edit({id:productPortfolio.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="productPortfolio.delete({id:productPortfolio.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
+    </div>
+</div>
