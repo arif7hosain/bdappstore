@@ -104,6 +104,12 @@
                 />
         </div>
         <div class="form-group col-sm-6">
+            <label for="field_serviceCategory">Service Type</label>
+            <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="companyInformation.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group col-sm-6">
             <label class="control-label" for="field_shortDescription">Publisher Summery</label>
             <!--<input type="text" class="form-control" name="shortDescription" id="field_shortDescription"-->
             <!--ng-model="companyInformation.shortDescription"-->

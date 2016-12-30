@@ -78,28 +78,45 @@ angular.module('appstoreApp')
                     })
                 }]
             })
-            .state('product.edit', {
+
+//            .state('product.edit', {
+//                parent: 'product',
+//                url: '/{id}/edit',
+//                data: {
+//                    authorities: ['ROLE_USER'],
+//                },
+//                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+//                    $uibModal.open({
+//                        templateUrl: 'scripts/app/entities/product/product-dialog.html',
+//                        controller: 'ProductDialogController',
+//                        size: 'lg',
+//                        resolve: {
+//                            entity: ['Product', function(Product) {
+//                                return Product.get({id : $stateParams.id});
+//                            }]
+//                        }
+//                    }).result.then(function(result) {
+//                        $state.go('product', null, { reload: true });
+//                    }, function() {
+//                        $state.go('^');
+//                    })
+//                }]
+//            })
+            .state('product.add', {
                 parent: 'product',
-                url: '/{id}/edit',
+                url: '/add-product',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
+                    pageTitle: 'New product from here.'
                 },
-                onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
-                    $uibModal.open({
-                        templateUrl: 'scripts/app/entities/product/product-dialog.html',
-                        controller: 'ProductDialogController',
-                        size: 'lg',
-                        resolve: {
-                            entity: ['Product', function(Product) {
-                                return Product.get({id : $stateParams.id});
-                            }]
-                        }
-                    }).result.then(function(result) {
-                        $state.go('product', null, { reload: true });
-                    }, function() {
-                        $state.go('^');
-                    })
-                }]
+                views: {
+                       'content@': {
+                           templateUrl: 'scripts/app/entities/product/add-product.html',
+                           controller: 'AddProduct'
+                       }
+                   },
+                    resolve: {
+                    }
             })
             .state('product.delete', {
                 parent: 'product',
