@@ -19,7 +19,7 @@
                         <h4>{{product.productTitle}}</h4>
                         <h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>
                         <p>{{product.productDescription}}</p>
-                        <button class="btn btn-primary">View Profile</button>
+                        <button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>
                     </div>
                 </li>
             </ul>

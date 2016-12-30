@@ -120,9 +120,13 @@
         </div>
             <div class="form-group col-md-6" ngf-drop ngf-change="setLogo($file, tempCompany)">
                 <div class="col-md-6">
-                    <button type="file" ngf-select class="btn btn-default"
+                    <button  ng-if="!tempCompany.logo" type="file" ngf-select class="btn btn-primary"
                             ngf-change="setLogo($file, tempCompany)">
-                        Add blob
+                        Attach Logo
+                    </button>
+                    <button  ng-if="tempCompany.logo" type="file" ngf-select class="btn btn-primary"
+                            ngf-change="setLogo($file, tempCompany)">
+                        Update Logo
                     </button>
                 </div>
                 <div class="col-md-6">
@@ -135,7 +139,7 @@
                             <button type="hidden" ng-click="tempCompany.logo=null;tempCompany.logoContentType=null;"
                                     ng-if="tempCompany.logo"
                                     class="btn btn-default btn-xs pull-right">
-                                <span class="glyphicon glyphicon-remove"></span>
+                                <!--<span class="glyphicon glyphicon-remove"></span>-->
                             </button>
                         </div>
 

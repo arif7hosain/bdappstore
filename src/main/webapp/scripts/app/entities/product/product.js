@@ -38,6 +38,25 @@ angular.module('appstoreApp')
                     }]
                 }
             })
+            .state('product.view', {
+                parent: 'entity',
+                url: '/publisher/product/{id}',
+                data: {
+                    authorities: ['ROLE_USER'],
+                    pageTitle: 'Preview full software details'
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/entities/product/view-product.html',
+                        controller: 'ViewProduct'
+                    }
+                },
+                resolve: {
+                    entity: ['$stateParams', 'Product', function($stateParams, Product) {
+                        return Product.get({id : $stateParams.id});
+                    }]
+                }
+            })
             .state('product.new', {
                 parent: 'product',
                 url: '/new',
