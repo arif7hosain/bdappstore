@@ -16,5 +16,6 @@
     <include file="classpath:config/liquibase/changelog/20161125053121_added_entity_ComBranch.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161125053122_added_entity_TempCompany.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20161125053123_added_entity_Product.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20161125053119_added_entity_ProductCategory.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-005 - JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

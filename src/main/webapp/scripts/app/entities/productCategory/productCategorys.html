@@ -1,0 +1,82 @@
+<div>
+    <!--<h2>ProductCategorys</h2>-->
+    <jh-alert></jh-alert>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button class="btn btn-primary" ui-sref="productCategory.new">
+                    <span class="glyphicon glyphicon-flash"></span> <span>Product & Category</span>
+                </button>
+            </div>
+            <div class="col-md-8">
+                <form name="searchForm" class="form-inline">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Product, Category">
+                    </div>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a ProductCategory</span>-->
+                    <!--</button>-->
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                    <!--<th jh-sort-by="id"><span>ID</span> </th>-->
+                    <th>SN</th>
+                    <th jh-sort-by="product.productTitle"><span>Software Name</span> </th>
+                    <th jh-sort-by="softwareCategory.categoryName"><span>Category</span> </th>
+                    <th jh-sort-by="comments"><span>Comments</span> </th>
+                    <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> </th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> </th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> </th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> </th>-->
+                    <!--<th jh-sort-by="isActive"><span>IsActive</span> </th>-->
+
+                    <th>CRUD</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="productCategory in productCategorys track by productCategory.id">
+                    <!--<td><a ui-sref="productCategory.detail({id:productCategory.id})">{{productCategory.id}}</a></td>-->
+                    <td>{{$index+1}}</td>
+                    <td>
+                        <a ui-sref="product.detail({id:productCategory.product.id})">{{productCategory.product.productTitle}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="softwareCategory.detail({id:productCategory.softwareCategory.id})">{{productCategory.softwareCategory.categoryName}}</a>
+                    </td>
+                    <td>{{productCategory.comments}}</td>
+                        <!--<td>{{productCategory.CreatedDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{productCategory.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{productCategory.createBy}}</td>-->
+                    <!--<td>{{productCategory.updatedBy}}</td>-->
+                    <!--<td>{{productCategory.isActive}}</td>-->
+
+                    <td>
+                        <button type="submit"
+                                ui-sref="productCategory.detail({id:productCategory.id})"
+                                class="btn btn-info btn-sm">
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="productCategory.edit({id:productCategory.id})"
+                                class="btn btn-primary btn-sm">
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                        </button>
+                        <button type="submit"
+                                ui-sref="productCategory.delete({id:productCategory.id})"
+                                class="btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--<div class="text-center">-->
+        <!--<uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>-->
+    <!--</div>-->
+</div>

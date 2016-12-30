@@ -1,0 +1,75 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myProductCategoryLabel">Create or edit a ProductCategory</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <!--<div class="form-group">-->
+            <!--<label for="id">ID</label>-->
+            <!--<input type="text" class="form-control" id="id" name="id"-->
+                    <!--ng-model="productCategory.id" readonly />-->
+        <!--</div>-->
+        <div class="form-group col-md-6">
+            <label for="field_product">Select Software</label>
+            <select class="form-control" id="field_product" name="product" ng-model="productCategory.product" ng-options="product as product.productTitle for product in products track by product.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="field_softwareCategory">Select Category</label>
+            <select class="form-control" id="field_softwareCategory" name="softwareCategory" ng-model="productCategory.softwareCategory" ng-options="softwareCategory as softwareCategory.categoryName for softwareCategory in softwarecategorys track by softwareCategory.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label class="control-label" for="field_comments">Comments</label>
+            <input type="text" class="form-control" name="comments" id="field_comments"
+                    ng-model="productCategory.comments"
+                     />
+        </div>
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_CreatedDate">CreatedDate</label>-->
+            <!--<input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"-->
+                    <!--ng-model="productCategory.CreatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_updatedDate">UpdatedDate</label>-->
+            <!--<input type="date" class="form-control" name="updatedDate" id="field_updatedDate"-->
+                    <!--ng-model="productCategory.updatedDate"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_createBy">CreateBy</label>-->
+            <!--<input type="text" class="form-control" name="createBy" id="field_createBy"-->
+                    <!--ng-model="productCategory.createBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_updatedBy">UpdatedBy</label>-->
+            <!--<input type="text" class="form-control" name="updatedBy" id="field_updatedBy"-->
+                    <!--ng-model="productCategory.updatedBy"-->
+                     <!--/>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<label class="control-label" for="field_isActive">IsActive</label>-->
+            <!--<input type="number" class="form-control" name="isActive" id="field_isActive"-->
+                    <!--ng-model="productCategory.isActive"-->
+                     <!--/>-->
+        <!--</div>-->
+
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

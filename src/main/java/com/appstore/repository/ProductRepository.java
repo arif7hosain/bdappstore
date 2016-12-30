@@ -11,4 +11,6 @@ import java.util.List;
  */
 public interface ProductRepository extends JpaRepository<Product,Long> {
 
+//    @Query("product as product for product in products where")
+
 }

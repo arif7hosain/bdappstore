@@ -34,13 +34,13 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class ProductResource {
 
     private final Logger log = LoggerFactory.getLogger(ProductResource.class);
-        
+
     @Inject
     private ProductRepository productRepository;
-    
+
     @Inject
     private ProductSearchRepository productSearchRepository;
-    
+
     /**
      * POST  /products -> Create a new product.
      */
@@ -89,7 +89,23 @@ public class ProductResource {
     public ResponseEntity<List<Product>> getAllProducts(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Products");
-        Page<Product> page = productRepository.findAll(pageable); 
+        Page<Product> page = productRepository.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/products");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+    /**
+     * GET  /products -> get all the products.
+     */
+    @RequestMapping(value = "/products",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public ResponseEntity<List<Product>> getAllProductsByCategoryId(Pageable pageable)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Products");
+        List<Product> products=productRepository.findAll();
+
+        Page<Product> page = productRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/products");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -139,4 +155,6 @@ public class ProductResource {
             .stream(productSearchRepository.search(queryStringQuery(query)).spliterator(), false)
             .collect(Collectors.toList());
     }
+
+
 }

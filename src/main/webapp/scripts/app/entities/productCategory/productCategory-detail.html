@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span>ProductCategory</span> {{productCategory.id}}</h2>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>
+                    <span>Comments</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.comments}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.CreatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedDate</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.updatedDate | date:'mediumDate'}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>CreateBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.createBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>UpdatedBy</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.updatedBy}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>IsActive</span>
+                </td>
+                <td>
+                    <span class="form-control-static">{{productCategory.isActive}}</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>product</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="product.detail({id:productCategory.product.id})">{{productCategory.product.productTitle}}</a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>softwareCategory</span>
+                </td>
+                <td>
+                    <a class="form-control-static" ui-sref="softwareCategory.detail({id:productCategory.softwareCategory.id})">{{productCategory.softwareCategory.categoryName}}</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>
