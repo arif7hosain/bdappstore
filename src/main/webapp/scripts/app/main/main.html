@@ -8,13 +8,13 @@
     <div class="  col-sm-8 col-md-6">
         <div class="jumbotron">
             <form role="form" ng-submit="search(q)">
-                <input ng-change="type(q)" ng-mouseover="type(q)" type="text" class="form-control" name="q" ng-model="q" placeholder="Search by Software's Name, Category, Feature ...">
+                <input ng-change="type(q)"type="text" class="form-control" name="q" ng-model="q" placeholder="Search by Software's Name, Category, Feature ...">
                     <center><span style="color:green;" ng-if="foundSug"><b>{{types.length}} Applications found !</b></span></center>
             </form>
         </div>
         <div id="query_view">
             <ul>
-                <li ng-repeat="product in products">
+                <li ng-repeat="product in products | orderBy:'productTitle'">
                     <div id="product_desc">
                         <h4>{{product.productTitle}}</h4>
                         <h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>

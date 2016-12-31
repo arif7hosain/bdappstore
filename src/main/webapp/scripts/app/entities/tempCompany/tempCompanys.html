@@ -66,6 +66,8 @@
                     <th jh-sort-by="country.countryName"><span>Country</span> </span></th>
                     <th jh-sort-by="serviceCategory.serviceName"><span>Service Category</span> </span></th>
                     <!--<th jh-sort-by="upazila.upazilaName"><span>upazila</span> </span></th>-->
+
+                    <th>Status</th>
                     <th>CRUD</th>
                 </tr>
             </thead>
@@ -114,6 +116,11 @@
                     <!--<td>-->
                         <!--<a ui-sref="upazila.detail({id:tempCompany.upazila.id})">{{tempCompany.upazila.upazilaName}}</a>-->
                     <!--</td>-->
+                    <td>
+                        <button ng-if="tempCompany.activeStatus==0 || tempCompany.activeStatus==null" class="form-control btn btn-info" type="button">Pending</button>
+                        <button ng-if="tempCompany.activeStatus==1" class="form-control btn btn-success" type="button">Approve</button>
+                        <button ng-if="tempCompany.activeStatus==2" class="form-control btn btn-danger" type="button">Rejected</button>
+                    </td>
                     <td>
                         <button type="submit"
                                 ui-sref="tempCompany.detail({id:tempCompany.id})"

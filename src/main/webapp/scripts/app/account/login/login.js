@@ -7,7 +7,7 @@ angular.module('appstoreApp')
                 parent: 'account',
                 url: '/login',
                 data: {
-                    authorities: [], 
+                    authorities: [],
                     pageTitle: 'Sign in'
                 },
                 views: {
@@ -17,7 +17,7 @@ angular.module('appstoreApp')
                     }
                 },
                 resolve: {
-                    
+
                 }
             });
     });
