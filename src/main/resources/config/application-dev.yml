@@ -20,10 +20,10 @@ spring:
             enabled: false # we use Grunt + BrowserSync for livereload
     datasource:
         driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://sql6.freesqldatabase.com:3306/sql6151367?useUnicode=true&characterEncoding=utf8
         name:
-        username: root
-        password: password
+        username: sql6151367
+        password: Wa6qIF3ZJm
     jpa:
         database-platform: org.hibernate.dialect.MySQLInnoDBDialect
         database: MYSQL
