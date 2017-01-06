@@ -73,7 +73,7 @@ public class ComBranch implements Serializable {
     private Integer isActive;
 
     @ManyToOne
-    @JoinColumn(name = "company_information_id")
+    @JoinColumn(name = "com_id")
     private CompanyInformation companyInformation;
 
     @ManyToOne
@@ -84,7 +84,7 @@ public class ComBranch implements Serializable {
     @JoinColumn(name = "country_id")
     private Country country;
 
-    
+
     public Long getId() {
         return id;
     }

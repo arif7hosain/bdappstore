@@ -187,10 +187,9 @@ public class TempCompanyResource {
         System.out.print(u);
         System.out.print("user.............>end");
         temp.setActiveStatus(1);
+
         TempCompany tepmResult = tempCompanyRepository.save(temp);
         tempCompanySearchRepository.save(tepmResult);
-
-
 
        //company create
         CompanyInformation com=new CompanyInformation();
@@ -209,16 +208,20 @@ public class TempCompanyResource {
         com.setServiceCategory(temp.getServiceCategory());
         CompanyInformation ci =companyInformationRepository.save(com);
         companyInformationSearchRepository.save(ci);
-
         //create branch
+
+        System.out.print("c.........."+ci);
         ComBranch branch=new ComBranch();
+        branch.setBranchName(temp.getBranchName());
         branch.setCountry(temp.getCountry());
         branch.setCity(temp.getCity());
-        if(temp.getBranchType().equalsIgnoreCase("Headquarter")){
-            branch.setBranchType(BranchType.Headquarter);
-        }else{
-            branch.setBranchType(BranchType.Regional);
-        }
+        branch.setCompanyInformation(ci);
+        System.out.print("---------------->" + BranchType.Headquarter + "<----------------");
+//        if(temp.getBranchType().equalsIgnoreCase("Headquarter")){
+//            branch.setBranchType(BranchType.Headquarter);
+//        }else{
+//            branch.setBranchType(BranchType.Regional);
+//       }
         ComBranch comBranch=comBranchRepository.save(branch);
         comBranchSearchRepository.save(comBranch);
 
@@ -226,12 +229,11 @@ public class TempCompanyResource {
         //address inforamation
         ComAddress address=new ComAddress();
         address.setCity(temp.getCity());
-//        address.setComBranch(temp);
         address.setOfficePhone(temp.getOfficePhone());
         address.setAddressType(temp.getAddressType());
         address.setContactNumber(temp.getContactNumber());
         address.setHouse(temp.getHouse());
-
+        address.setComBranch(comBranch);
         ComAddress comAddress=comAddressRepository.save(address);
         comAddressSearchRepository.save(comAddress);
 

@@ -5,7 +5,7 @@ angular.module('appstoreApp')
         $stateProvider
             .state('comAddress', {
                 parent: 'entity',
-                url: '/comAddresss',
+                url: '/addresses',
                 data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'ComAddresss'
@@ -21,7 +21,7 @@ angular.module('appstoreApp')
             })
             .state('comAddress.detail', {
                 parent: 'entity',
-                url: '/comAddress/{id}',
+                url: '/Address/{id}',
                 data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'ComAddress'

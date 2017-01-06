@@ -5,7 +5,7 @@ angular.module('appstoreApp')
         $stateProvider
             .state('tempCompany', {
                 parent: 'entity',
-                url: '/tempCompanys',
+                url: '/temp_company',
                 data: {
                     authorities: ['ROLE_USER'],
                     pageTitle: 'TempCompanys'

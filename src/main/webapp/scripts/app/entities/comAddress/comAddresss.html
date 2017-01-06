@@ -1,21 +1,24 @@
 <div>
-    <h2>ComAddresss</h2>
+
     <jh-alert></jh-alert>
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <button class="btn btn-primary" ui-sref="comAddress.new">
-                    <span class="glyphicon glyphicon-flash"></span> <span>Create a new ComAddress</span>
-                </button>
+                <!--<button class="btn btn-primary" ui-sref="comAddress.new">-->
+                    <!--<span class="glyphicon glyphicon-flash"></span> <span></span>-->
+                <!--</button>-->
             </div>
-            <div class="col-md-8">
+            <div class="col-md-4">
                 <form name="searchForm" class="form-inline">
                     <div class="form-group">
-                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="query">
+                        <input type="text" class="form-control" ng-model="searchQuery" id="searchQuery" placeholder="Company  name..">
                     </div>
-                    <button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Search a ComAddress</span>
-                    </button>
+                    <!--<button class="btn btn-info" ng-click="search()"><span class="glyphicon glyphicon-search"></span> <span>Company name</span>-->
+                    <!--</button>-->
                 </form>
+            </div>
+            <div class="col-md-4">
+                <h3>Add List</h3>
             </div>
         </div>
     </div>
@@ -24,21 +27,21 @@
         <table class="table table-striped">
             <thead>
                 <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
-                    <th jh-sort-by="id"><span>ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="addressType"><span>AddressType</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="officePhone"><span>OfficePhone</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contactNumber"><span>ContactNumber</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="postalCode"><span>PostalCode</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="house"><span>House</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="RoadNo"><span>RoadNo</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="city"><span>City</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="CreatedDate"><span>CreatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedDate"><span>UpdatedDate</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="createBy"><span>CreateBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="updatedBy"><span>UpdatedBy</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="isActive"><span>IsActive</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="comBranch.branchName"><span>comBranch</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="upazila.upazila_name"><span>upazila</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="id"><span>ID</span> </th>
+                    <th jh-sort-by="addressType"><span>Address Type</span> </th>
+                    <th jh-sort-by="officePhone"><span>Office Phone</span> </th>
+                    <th jh-sort-by="contactNumber"><span>Contact Number</span> </th>
+                    <th jh-sort-by="postalCode"><span>Postal Code</span> </th>
+                    <th jh-sort-by="house"><span>House</span> </th>
+                    <th jh-sort-by="RoadNo"><span>Road No</span> </th>
+                    <th jh-sort-by="city"><span>City</span> </th>
+                    <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> </th>-->
+                    <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> </th>-->
+                    <!--<th jh-sort-by="createBy"><span>CreateBy</span> </th>-->
+                    <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> </th>-->
+                    <!--<th jh-sort-by="isActive"><span>IsActive</span> </th>-->
+                    <th jh-sort-by="comBranch.branchName"><span>Branch</span> </th>
+                    <th jh-sort-by="upazila.upazila_name"><span>upazila</span> </th>
                     <th></th>
                 </tr>
             </thead>
@@ -52,11 +55,11 @@
                     <td>{{comAddress.house}}</td>
                     <td>{{comAddress.RoadNo}}</td>
                     <td>{{comAddress.city}}</td>
-                        <td>{{comAddress.CreatedDate | date:'mediumDate'}}</td>
-                        <td>{{comAddress.updatedDate | date:'mediumDate'}}</td>
-                    <td>{{comAddress.createBy}}</td>
-                    <td>{{comAddress.updatedBy}}</td>
-                    <td>{{comAddress.isActive}}</td>
+                        <!--<td>{{comAddress.CreatedDate | date:'mediumDate'}}</td>-->
+                        <!--<td>{{comAddress.updatedDate | date:'mediumDate'}}</td>-->
+                    <!--<td>{{comAddress.createBy}}</td>-->
+                    <!--<td>{{comAddress.updatedBy}}</td>-->
+                    <!--<td>{{comAddress.isActive}}</td>-->
                     <td>
                         <a ui-sref="comBranch.detail({id:comAddress.comBranch.id})">{{comAddress.comBranch.branchName}}</a>
                     </td>
@@ -67,24 +70,27 @@
                         <button type="submit"
                                 ui-sref="comAddress.detail({id:comAddress.id})"
                                 class="btn btn-info btn-sm">
-                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;<span> View</span>
+                            <span class="glyphicon glyphicon-eye-open"></span>&nbsp;
+                            <!--<span> View</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="comAddress.edit({id:comAddress.id})"
                                 class="btn btn-primary btn-sm">
-                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;<span> Edit</span>
+                            <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+                            <!--<span> Edit</span>-->
                         </button>
                         <button type="submit"
                                 ui-sref="comAddress.delete({id:comAddress.id})"
                                 class="btn btn-danger btn-sm">
-                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;<span> Delete</span>
+                            <span class="glyphicon glyphicon-remove-circle"></span>&nbsp;
+                            <!--<span> Delete</span>-->
                         </button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <div class="text-center">
-        <uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>
-    </div>
+    <!--<div class="text-center">-->
+        <!--<uib-pagination class="pagination-sm" total-items="totalItems" ng-model="page" ng-change="loadAll()"></uib-pagination>-->
+    <!--</div>-->
 </div>
