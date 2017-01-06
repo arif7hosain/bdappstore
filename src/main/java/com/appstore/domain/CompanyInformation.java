@@ -76,9 +76,10 @@ public class CompanyInformation implements Serializable {
     @JoinColumn(name = "service_category_id")
     private ServiceCategory serviceCategory;
 
-    @OneToOne    private User user;
+    @OneToOne
+    private User user;
 
-    
+
     public Long getId() {
         return id;
     }

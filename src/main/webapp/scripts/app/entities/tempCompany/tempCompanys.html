@@ -117,8 +117,8 @@
                         <!--<a ui-sref="upazila.detail({id:tempCompany.upazila.id})">{{tempCompany.upazila.upazilaName}}</a>-->
                     <!--</td>-->
                     <td>
-                        <button ng-if="tempCompany.activeStatus==0 || tempCompany.activeStatus==null" class="form-control btn btn-info" type="button">Pending</button>
-                        <button ng-if="tempCompany.activeStatus==1" class="form-control btn btn-success" type="button">Approve</button>
+                        <button ng-show="tempCompany.activeStatus==0 || tempCompany.activeStatus==null" ng-click="approve(tempCompany.id)"  ng-if="tempCompany.activeStatus==0 || tempCompany.activeStatus==null" class="form-control btn btn-info" type="button">Approve</button>
+                        <button ng-click="ban(tempCompany.id)" ng-if="tempCompany.activeStatus==1" class="form-control btn btn-success" type="button">Ban</button>
                         <button ng-if="tempCompany.activeStatus==2" class="form-control btn btn-danger" type="button">Rejected</button>
                     </td>
                     <td>

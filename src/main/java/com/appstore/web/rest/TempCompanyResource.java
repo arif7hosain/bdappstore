@@ -1,8 +1,13 @@
 package com.appstore.web.rest;
 
+import com.appstore.domain.*;
+import com.appstore.domain.enumeration.BranchType;
+import com.appstore.repository.*;
+import com.appstore.repository.search.ComAddressSearchRepository;
+import com.appstore.repository.search.ComBranchSearchRepository;
+import com.appstore.repository.search.CompanyInformationSearchRepository;
+import com.appstore.web.rest.dto.UserDTO;
 import com.codahale.metrics.annotation.Timed;
-import com.appstore.domain.TempCompany;
-import com.appstore.repository.TempCompanyRepository;
 import com.appstore.repository.search.TempCompanySearchRepository;
 import com.appstore.web.rest.util.HeaderUtil;
 import com.appstore.web.rest.util.PaginationUtil;
@@ -34,13 +39,39 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class TempCompanyResource {
 
     private final Logger log = LoggerFactory.getLogger(TempCompanyResource.class);
-        
+
     @Inject
     private TempCompanyRepository tempCompanyRepository;
-    
+
     @Inject
     private TempCompanySearchRepository tempCompanySearchRepository;
-    
+
+    @Inject
+    private CompanyInformationRepository companyInformationRepository;
+
+    @Inject
+    private CompanyInformationSearchRepository companyInformationSearchRepository;
+
+    @Inject
+    private UserRepository userRepository;
+
+    @Inject
+    private ComBranchRepository comBranchRepository;
+
+    @Inject
+    private ComBranchSearchRepository comBranchSearchRepository;
+
+    @Inject
+    private ComAddressRepository comAddressRepository;
+
+    @Inject
+    private ComAddressSearchRepository comAddressSearchRepository;
+
+
+
+    User user =new User();
+
+
     /**
      * POST  /tempCompanys -> Create a new tempCompany.
      */
@@ -89,7 +120,7 @@ public class TempCompanyResource {
     public ResponseEntity<List<TempCompany>> getAllTempCompanys(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of TempCompanys");
-        Page<TempCompany> page = tempCompanyRepository.findAll(pageable); 
+        Page<TempCompany> page = tempCompanyRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/tempCompanys");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -139,4 +170,73 @@ public class TempCompanyResource {
             .stream(tempCompanySearchRepository.search(queryStringQuery(query)).spliterator(), false)
             .collect(Collectors.toList());
     }
+
+    @RequestMapping(value = "/_search/tempCompanys/approveCompany/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public TempCompany approveCompany(@PathVariable Long id) {
+      log.debug("REST request to search TempCompanys for query {}", id);
+        TempCompany temp=tempCompanyRepository.findOne(id);
+        System.out.print("<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>");
+        System.out.print(temp);
+//        User currentUser=userRepository.getUserByEmail(temp.getEmail());
+        Optional<User> currentUser=userRepository.findOneByEmail(temp.getEmail());
+        User u=currentUser.get();
+        System.out.print("user.............>start");
+        System.out.print(u);
+        System.out.print("user.............>end");
+        temp.setActiveStatus(1);
+        TempCompany tepmResult = tempCompanyRepository.save(temp);
+        tempCompanySearchRepository.save(tepmResult);
+
+
+
+       //company create
+        CompanyInformation com=new CompanyInformation();
+        com.setActiveStatus(1);
+        com.setCompanyName(temp.getCompanyName());
+        com.setShortName(temp.getShortName());
+        com.setShortDescription(temp.getShortDescription());
+        com.setBusinessDescription(temp.getBusinessDescription());
+        com.setCompanyInformation(temp.getCompanyInformation());
+//        com.getCompanyType(temp.getCompanyType());
+        com.setLogo(temp.getLogo());
+        com.setLogoContentType(temp.getLogoContentType());
+        com.setWebsite(temp.getWebsite());
+        com.setUser(u);
+        com.setCountry(temp.getCountry());
+        com.setServiceCategory(temp.getServiceCategory());
+        CompanyInformation ci =companyInformationRepository.save(com);
+        companyInformationSearchRepository.save(ci);
+
+        //create branch
+        ComBranch branch=new ComBranch();
+        branch.setCountry(temp.getCountry());
+        branch.setCity(temp.getCity());
+        if(temp.getBranchType().equalsIgnoreCase("Headquarter")){
+            branch.setBranchType(BranchType.Headquarter);
+        }else{
+            branch.setBranchType(BranchType.Regional);
+        }
+        ComBranch comBranch=comBranchRepository.save(branch);
+        comBranchSearchRepository.save(comBranch);
+
+
+        //address inforamation
+        ComAddress address=new ComAddress();
+        address.setCity(temp.getCity());
+//        address.setComBranch(temp);
+        address.setOfficePhone(temp.getOfficePhone());
+        address.setAddressType(temp.getAddressType());
+        address.setContactNumber(temp.getContactNumber());
+        address.setHouse(temp.getHouse());
+
+        ComAddress comAddress=comAddressRepository.save(address);
+        comAddressSearchRepository.save(comAddress);
+
+
+        return tepmResult;
+    }
+
 }

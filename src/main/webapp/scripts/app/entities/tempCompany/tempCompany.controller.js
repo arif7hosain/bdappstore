@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('TempCompanyController', function ($scope, $state, DataUtils, TempCompany, TempCompanySearch, ParseLinks) {
+    .controller('TempCompanyController', function ($scope, $state, DataUtils, TempCompany, TempCompanySearch, ParseLinks,ApproveCompany) {
 
         $scope.tempCompanys = [];
         $scope.predicate = 'id';
@@ -19,6 +19,14 @@ angular.module('appstoreApp')
             $scope.loadAll();
         };
         $scope.loadAll();
+
+        $scope.approve=function(data){
+            alert(data);
+            ApproveCompany.query({id:data},function(results){
+                console.log(results);
+            });
+        };
+
 
 
         $scope.search = function () {

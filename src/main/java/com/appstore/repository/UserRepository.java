@@ -5,6 +5,7 @@ import com.appstore.domain.User;
 import java.time.ZonedDateTime;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,6 +26,9 @@ public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findOneByLogin(String login);
 
     Optional<User> findOneById(Long userId);
+
+    @Query("select user from User user where user.email=:email")
+    User getUserByEmail(@Param("email") String email);
 
     @Override
     void delete(User t);

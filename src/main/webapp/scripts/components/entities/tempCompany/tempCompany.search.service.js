@@ -5,4 +5,9 @@ angular.module('appstoreApp')
         return $resource('api/_search/tempCompanys/:query', {}, {
             'query': { method: 'GET', isArray: true}
         });
+    })
+    .factory('ApproveCompany', function ($resource) {
+        return $resource('api/_search/tempCompanys/approveCompany/:id', {}, {
+            'query': { method: 'GET', isArray: false}
+        });
     });

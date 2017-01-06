@@ -49,6 +49,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
                 if ($scope.tempCompany.id != null) {
                     TempCompany.update($scope.tempCompany, onSaveSuccess, onSaveError);
                 } else {
+                $scope.register();
                     TempCompany.save($scope.tempCompany, onSaveSuccess, onSaveError);
                 }
             };
@@ -93,10 +94,6 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.logo;
         $scope.tempCompany.logoContentType;
 
-
-
-
-
         $scope.create_publisher_account=function(){
             $scope.tempCompany.username=$scope.registerAccount.login;
             $scope.tempCompany.email=$scope.registerAccount.email;
@@ -110,5 +107,4 @@ angular.module('appstoreApp').controller('CreatePublisher',
                 alert('Fill all required fields');
             }
         };
-
 }]);

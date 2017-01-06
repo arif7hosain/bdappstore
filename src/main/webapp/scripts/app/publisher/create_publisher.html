@@ -2,129 +2,148 @@
     <div class="col-md-2"></div>
     <div class="jumbotron col-sm-8">
         <form ng-submit="create_publisher_account()" method="post" role="form">
-        <h4>Create Your Software Publisher</h4><hr>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="login">Username</label>
-            <input type="text" class="form-control" id="login" name="login" placeholder="Your username"
-                   ng-model="registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[a-z0-9]*$/" required>
-            <div ng-show="form.login.$dirty && form.login.$invalid">
-                <p class="help-block"
-                   ng-show="form.login.$error.required">
-                    Your username is required.
-                </p>
-                <p class="help-block"
-                   ng-show="form.login.$error.minlength">
-                    Your username is required to be at least 1 character.
-                </p>
-                <p class="help-block"
-                   ng-show="form.login.$error.maxlength">
-                    Your username cannot be longer than 50 characters.
-                </p>
-                <p class="help-block"
-                   ng-show="form.login.$error.pattern">
-                    Your username can only contain lower-case letters and digits.
-                </p>
+            <h4>Create Your Software Publisher</h4>
+            <hr>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="login">Username</label>
+                <input type="text" class="form-control" id="login" name="login" placeholder="Your username"
+                       ng-model="registerAccount.login" ng-minlength=1 ng-maxlength=50 ng-pattern="/^[a-z0-9]*$/"
+                       required>
+
+                <div ng-show="form.login.$dirty && form.login.$invalid">
+                    <p class="help-block"
+                       ng-show="form.login.$error.required">
+                        Your username is required.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.login.$error.minlength">
+                        Your username is required to be at least 1 character.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.login.$error.maxlength">
+                        Your username cannot be longer than 50 characters.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.login.$error.pattern">
+                        Your username can only contain lower-case letters and digits.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="email">E-mail</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail"
-                   ng-model="registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
-            <div ng-show="form.email.$dirty && form.email.$invalid">
-                <p class="help-block"
-                   ng-show="form.email.$error.required">
-                    Your e-mail is required.
-                </p>
-                <p class="help-block"
-                   ng-show="form.email.$error.email">
-                    Your e-mail is invalid.
-                </p>
-                <p class="help-block"
-                   ng-show="form.email.$error.minlength">
-                    Your e-mail is required to be at least 5 characters.
-                </p>
-                <p class="help-block"
-                   ng-show="form.email.$error.maxlength">
-                    Your e-mail cannot be longer than 100 characters.
-                </p>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="email">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Your e-mail"
+                       ng-model="registerAccount.email" ng-minlength=5 ng-maxlength=100 required>
+
+                <div ng-show="form.email.$dirty && form.email.$invalid">
+                    <p class="help-block"
+                       ng-show="form.email.$error.required">
+                        Your e-mail is required.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.email.$error.email">
+                        Your e-mail is invalid.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.email.$error.minlength">
+                        Your e-mail is required to be at least 5 characters.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.email.$error.maxlength">
+                        Your e-mail cannot be longer than 100 characters.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="password">New password</label>
-            <input type="password" class="form-control" id="password" name="password" placeholder="New password"
-                   ng-model="registerAccount.password" ng-minlength=5 ng-maxlength=50 required>
-            <div ng-show="form.password.$dirty && form.password.$invalid">
-                <p class="help-block"
-                   ng-show="form.password.$error.required">
-                    Your password is required.
-                </p>
-                <p class="help-block"
-                   ng-show="form.password.$error.minlength">
-                    Your password is required to be at least 5 characters.
-                </p>
-                <p class="help-block"
-                   ng-show="form.password.$error.maxlength">
-                    Your password cannot be longer than 50 characters.
-                </p>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="password">New password</label>
+                <input type="password" class="form-control" id="password" name="password" placeholder="New password"
+                       ng-model="registerAccount.password" ng-minlength=5 ng-maxlength=50 required>
+
+                <div ng-show="form.password.$dirty && form.password.$invalid">
+                    <p class="help-block"
+                       ng-show="form.password.$error.required">
+                        Your password is required.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.password.$error.minlength">
+                        Your password is required to be at least 5 characters.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.password.$error.maxlength">
+                        Your password cannot be longer than 50 characters.
+                    </p>
+                </div>
+                <password-strength-bar password-to-check="registerAccount.password"></password-strength-bar>
             </div>
-            <password-strength-bar password-to-check="registerAccount.password"></password-strength-bar>
-        </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="confirmPassword">New password confirmation</label>
-            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Confirm the new password"
-                   ng-model="confirmPassword" ng-minlength=5 ng-maxlength=50 required>
-            <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
-                <p class="help-block"
-                   ng-show="form.confirmPassword.$error.required">
-                    Your confirmation password is required.
-                </p>
-                <p class="help-block"
-                   ng-show="form.confirmPassword.$error.minlength">
-                    Your confirmation password is required to be at least 5 characters.
-                </p>
-                <p class="help-block"
-                   ng-show="form.confirmPassword.$error.maxlength">
-                    Your confirmation password cannot be longer than 50 characters.
-                </p>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="confirmPassword">New password confirmation</label>
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword"
+                       placeholder="Confirm the new password"
+                       ng-model="confirmPassword" ng-minlength=5 ng-maxlength=50 required>
+
+                <div ng-show="form.confirmPassword.$dirty && form.confirmPassword.$invalid">
+                    <p class="help-block"
+                       ng-show="form.confirmPassword.$error.required">
+                        Your confirmation password is required.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.confirmPassword.$error.minlength">
+                        Your confirmation password is required to be at least 5 characters.
+                    </p>
+
+                    <p class="help-block"
+                       ng-show="form.confirmPassword.$error.maxlength">
+                        Your confirmation password cannot be longer than 50 characters.
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="col-sm-12">
-            <h4>Publisher Basic Information</h4>
-        </div>
-        <div class="form-group col-sm-12">
-            <label class="control-label" for="field_companyName">Company Name</label>
-            <input type="text" class="form-control" name="companyName" id="field_companyName"
-                   ng-model="tempCompany.companyName" required placeholder="Publisher name is here..."
-                />
-        </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="field_shortName">Short Name</label>
-            <input type="text" class="form-control" name="shortName" id="field_shortName"
-                   ng-model="tempCompany.shortName" required placeholder="LEADS"
-                />
-        </div>
-        <div class="form-group col-sm-6">
-            <label for="field_serviceCategory">Service Type</label>
-            <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="companyInformation.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group col-sm-6">
-            <label class="control-label" for="field_shortDescription">Publisher Summery</label>
-            <!--<input type="text" class="form-control" name="shortDescription" id="field_shortDescription"-->
-            <!--ng-model="companyInformation.shortDescription"-->
-            <!--/>-->
+            <div class="col-sm-12">
+                <h4>Publisher Basic Information</h4>
+            </div>
+            <div class="form-group col-sm-12">
+                <label class="control-label" for="field_companyName">Company Name</label>
+                <input type="text" class="form-control" name="companyName" id="field_companyName"
+                       ng-model="tempCompany.companyName" required placeholder="Publisher name is here..."
+                    />
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="field_shortName">Short Name</label>
+                <input type="text" class="form-control" name="shortName" id="field_shortName"
+                       ng-model="tempCompany.shortName" required placeholder="LEADS"
+                    />
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="field_serviceCategory">Service Type</label>
+                <select class="form-control" id="field_serviceCategory" name="serviceCategory"
+                        ng-model="companyInformation.serviceCategory"
+                        ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                    <option value=""></option>
+                </select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label class="control-label" for="field_shortDescription">Publisher Summery</label>
+                <!--<input type="text" class="form-control" name="shortDescription" id="field_shortDescription"-->
+                <!--ng-model="companyInformation.shortDescription"-->
+                <!--/>-->
 
             <textarea cols="30" rows="4" class="form-control" name="shortDescription" id="field_shortDescription"
                       ng-model="tempCompany.shortDescription" placeholder="Publisher's services"></textarea>
-        </div>
+            </div>
             <div class="form-group col-md-6" ngf-drop ngf-change="setLogo($file, tempCompany)">
                 <div class="col-md-6">
-                    <button  ng-if="!tempCompany.logo" type="file" ngf-select class="btn btn-primary"
+                    <button ng-if="!tempCompany.logo" type="file" ngf-select class="btn btn-primary"
                             ngf-change="setLogo($file, tempCompany)">
                         Attach Logo
                     </button>
-                    <button  ng-if="tempCompany.logo" type="file" ngf-select class="btn btn-primary"
+                    <button ng-if="tempCompany.logo" type="file" ngf-select class="btn btn-primary"
                             ngf-change="setLogo($file, tempCompany)">
                         Update Logo
                     </button>
@@ -133,6 +152,7 @@
                     <img width="80px" height="80px"
                          data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
                          style="max-height: 100px;" ng-if="tempCompany.logo"/>
+
                     <div>
                         <div class="help-block clearfix">
                             <!--<span class="pull-left">{{tempCompany.logoContentType}} {{byteSize(tempCompany.logo)}}</span>-->
@@ -148,82 +168,85 @@
                            ng-model="tempCompany.logo"
                         />
                     <input type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"
-                           ng-model="tempCompany.logoContentType" />
+                           ng-model="tempCompany.logoContentType"/>
                 </div>
                 <!--<label class="control-label" for="field_logo">Logo</label>-->
 
-            </div><!--end div-->
-        <div class="form-group col-sm-12">
-            <label class="control-label" for="field_companyInformation">Publisher Information</label>
-            <!--<input type="text" class="form-control" name="companyInformation" id="field_companyInformation"-->
-            <!--ng-model="companyInformation.companyInformation"-->
-            <!--/>-->
+            </div>
+            <!--end div-->
+            <div class="form-group col-sm-12">
+                <label class="control-label" for="field_companyInformation">Publisher Information</label>
+                <!--<input type="text" class="form-control" name="companyInformation" id="field_companyInformation"-->
+                <!--ng-model="companyInformation.companyInformation"-->
+                <!--/>-->
             <textarea cols="30" rows="4" class="form-control" name="companyInformation" id="field_companyInformation"
                       ng-model="tempCompany.companyInformation" placeholder="Publisher overview.."></textarea>
-        </div>
-        <div class="form-group col-sm-12">
-            <label class="control-label" for="field_businessDescription">Business Description</label>
-            <!--<input type="text" class="form-control" name="businessDescription" id="field_businessDescription"-->
-            <!--ng-model="companyInformation.businessDescription"-->
-            <!--/>-->
+            </div>
+            <div class="form-group col-sm-12">
+                <label class="control-label" for="field_businessDescription">Business Description</label>
+                <!--<input type="text" class="form-control" name="businessDescription" id="field_businessDescription"-->
+                <!--ng-model="companyInformation.businessDescription"-->
+                <!--/>-->
              <textarea cols="30" rows="4" class="form-control" name="businessDescription" id="field_businessDescription"
                        ng-model="tempCompany.businessDescription" placeholder="Publisher businesses.."></textarea>
-        </div>
-        <div class="col-sm-12">
-            <h4>Publisher Branch and Address</h4>
-        </div>
-        <div class="form-group col-sm-12">
-            <label class="control-label" for="field_branchName">Branch Name</label>
-            <input type="text" class="form-control" name="branchName" id="field_branchName"
-                   ng-model="tempCompany.branchName" required placeholder="e.g. Dhaka office"
-                />
-        </div>
-        <div class="form-group  col-sm-6">
-            <label class="control-label" for="field_branchType">Branch Type</label>
-            <select class="form-control" name="branchType" ng-model="tempCompany.BranchType" required id="field_branchType">
-                <option value="Headquarter">Headquarter</option>
-                <option value="Regional">Regional</option>
-            </select>
-        </div>
+            </div>
+            <div class="col-sm-12">
+                <h4>Publisher Branch and Address</h4>
+            </div>
+            <div class="form-group col-sm-12">
+                <label class="control-label" for="field_branchName">Branch Name</label>
+                <input type="text" class="form-control" name="branchName" id="field_branchName"
+                       ng-model="tempCompany.branchName" required placeholder="e.g. Dhaka office"
+                    />
+            </div>
+            <div class="form-group  col-sm-6">
+                <label class="control-label" for="field_branchType">Branch Type</label>
+                <select class="form-control" name="branchType" ng-model="tempCompany.BranchType" required
+                        id="field_branchType">
+                    <option value="Headquarter">Headquarter</option>
+                    <option value="Regional">Regional</option>
+                </select>
+            </div>
 
             <div class="form-group col-md-6">
                 <label for="field_country">Select Country</label>
-                <select class="form-control" id="field_country" name="country" ng-model="tempCompany.country" ng-options="country as country.countryName for country in countries track by country.id">
+                <select class="form-control" id="field_country" name="country" ng-model="tempCompany.country"
+                        ng-options="country as country.countryName for country in countries track by country.id">
                     <option value=""></option>
                 </select>
             </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_city">City/Town</label>
-            <input type="text" class="form-control" required name="city" id="field_city"
-                   ng-model="tempCompany.city" placeholder="e.g.Dhaka"
-                />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_postalCode">Postal Code</label>
-            <input type="text" class="form-control" name="postalCode" id="field_postalCode"
-                   ng-model="tempCompany.postalCode" placeholder="4 digits code"
-                />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_house">House Number</label>
-            <input type="text" class="form-control" name="house" id="field_house"
-                   ng-model="tempCompany.house" placeholder="#12"
-                />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_RoadNo">Road No</label>
-            <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
-                   ng-model="tempCompany.RoadNo" placeholder="e.g.Road A11"
-                />
-        </div>
-        <div class="form-group col-md-12 pull right">
-            <label class="control-label" for="field_RoadNo"></label>
-        <button type="reset" class="btn btn-default">Reset</button>
-        <button class="btn btn-danger">Cancel</button>
-        <button type="submit" class="btn btn-primary">Submit Request</button>
-        </div>
+            <div class="form-group col-md-6">
+                <label class="control-label" for="field_city">City/Town</label>
+                <input type="text" class="form-control" required name="city" id="field_city"
+                       ng-model="tempCompany.city" placeholder="e.g.Dhaka"
+                    />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label" for="field_postalCode">Postal Code</label>
+                <input type="text" class="form-control" name="postalCode" id="field_postalCode"
+                       ng-model="tempCompany.postalCode" placeholder="4 digits code"
+                    />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label" for="field_house">House Number</label>
+                <input type="text" class="form-control" name="house" id="field_house"
+                       ng-model="tempCompany.house" placeholder="#12"
+                    />
+            </div>
+            <div class="form-group col-md-6">
+                <label class="control-label" for="field_RoadNo">Road No</label>
+                <input type="text" class="form-control" name="RoadNo" id="field_RoadNo"
+                       ng-model="tempCompany.RoadNo" placeholder="e.g.Road A11"
+                    />
+            </div>
+            <div class="form-group col-md-12 pull right">
+                <label class="control-label" for="field_RoadNo"></label>
+                <button type="reset" class="btn btn-default">Reset</button>
+                <button class="btn btn-danger">Cancel</button>
+                <button type="submit" class="btn btn-primary">Submit Request</button>
+            </div>
 
-</form>
+        </form>
 
     </div>
     <div class="col-md-2"></div>

@@ -54,7 +54,12 @@
             <tbody>
                 <tr ng-repeat="companyInformation in companyInformations | filter:{companyName:searchQuery} track by companyInformation.id">
                     <!--<td><a ui-sref="companyInformation.detail({id:companyInformation.id})">{{companyInformation.id}}</a></td>-->
-                    <td>{{companyInformation.logo}}</td>
+                    <td>
+                        <!--{{companyInformation.logo}}-->
+                        <img width="50px" height="50px"
+                             data-ng-src="{{'data:' + companyInformation.companyType + ';base64,' + companyInformation.logo}}"
+                             style="max-height: 100px;" ng-if="companyInformation.logo"/>
+                    </td>
                     <td>{{$index+1}}</td>
                     <td>{{companyInformation.companyName}}</td>
                     <td>{{companyInformation.shortName}}</td>
