@@ -12,6 +12,7 @@ angular.module('appstoreApp')
      $scope.types = [];
      $scope.foundSug=false;
      $scope.products = Product.query();
+     console.log($scope.products);
      $scope.categories=SoftwareCategory.query();
 
         $scope.search = function (q) {
