@@ -20,14 +20,14 @@ spring:
             enabled: false
     datasource:
         driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
-        url: jdbc:mysql://localhost:3306/appstore?useUnicode=true&characterEncoding=utf8
+        url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8
         name:
         username: root
-        password:
+        password: password
     jpa:
         database-platform: org.hibernate.dialect.MySQLInnoDBDialect
         database: MYSQL
-        show_sql: false
+        show_sql: true
         properties:
             hibernate.cache.use_second_level_cache: true
             hibernate.cache.use_query_cache: false
