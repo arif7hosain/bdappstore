@@ -87,7 +87,9 @@ color:white;}
 
 
 
-
+.no-padding{
+    padding: 0px;
+}
 
 #footer{
     width:100%;
