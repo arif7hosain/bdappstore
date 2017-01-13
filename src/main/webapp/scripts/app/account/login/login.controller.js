@@ -16,7 +16,7 @@ angular.module('appstoreApp')
             }).then(function () {
                 $scope.authenticationError = false;
                 if ($rootScope.previousStateName === 'register') {
-                    $state.go('home');
+                    $state.go('/home');
                 } else {
                     $rootScope.back();
                 }

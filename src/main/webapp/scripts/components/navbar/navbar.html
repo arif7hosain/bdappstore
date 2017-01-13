@@ -35,7 +35,7 @@
                         <span>
                             <span class="glyphicon glyphicon-th-list"></span>
                             <span class="hidden-sm">
-                                Entities
+                               Entity Menu
                             </span>
                             <b class="caret"></b>
                         </span>
@@ -79,7 +79,7 @@
                         <span>
                             <span class="glyphicon glyphicon-user"></span>
                             <span class="hidden-sm">
-                                Account
+                               {{account.firstName}}&nbsp;{{account.lastName}}
                             </span>
                             <b class="caret"></b>
                         </span>
@@ -91,14 +91,14 @@
                             &#xA0;<span>Password</span></a></li>
                         <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>-->
                             <!--&#xA0;<span>Sessions</span></a></li>-->
-                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
-                            &#xA0;<span>Sign out</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span>
                             &#xA0;<span>Sign in</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Publisher Account</span></a></li>
                         <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
                             <!--&#xA0;<span>Publisher Account</span></a></li>-->
+                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
+                            &#xA0;<span>Sign out</span></a></li>
                     </ul>
                 </li>
                 <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" class="dropdown pointer">

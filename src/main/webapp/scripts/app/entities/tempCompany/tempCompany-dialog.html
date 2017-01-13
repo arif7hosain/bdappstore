@@ -13,24 +13,7 @@
             <!--<input type="text" class="form-control" id="id" name="id"-->
                     <!--ng-model="tempCompany.id" readonly />-->
         <!--</div>-->
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_username">Username</label>
-            <input type="text" class="form-control" name="username" id="field_username"
-                    ng-model="tempCompany.username"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_email">Email</label>
-            <input type="text" class="form-control" name="email" id="field_email"
-                    ng-model="tempCompany.email"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_password">Password</label>
-            <input type="text" class="form-control" name="password" id="field_password"
-                    ng-model="tempCompany.password"
-                     />
-        </div>
+
         <div class="form-group col-md-6">
             <label class="control-label" for="field_branchName">BranchName</label>
             <input type="text" class="form-control" name="branchName" id="field_branchName"
@@ -181,37 +164,12 @@
                     ng-model="tempCompany.RoadNo"
                      />
         </div>
-        <!--<div class="form-group col-md-6">-->
-            <!--<label class="control-label" for="field_CreatedDate">CreatedDate</label>-->
-            <!--<input type="date" class="form-control" name="CreatedDate" id="field_CreatedDate"-->
-                    <!--ng-model="tempCompany.CreatedDate"-->
-                     <!--/>-->
-        <!--</div>-->
-        <!--<div class="form-group col-md-6">-->
-            <!--<label class="control-label" for="field_updatedDate">UpdatedDate</label>-->
-            <!--<input type="date" class="form-control" name="updatedDate" id="field_updatedDate"-->
-                    <!--ng-model="tempCompany.updatedDate"-->
-                     <!--/>-->
-        <!--</div>-->
-        <!--<div class="form-group col-md-6">-->
-            <!--<label class="control-label" for="field_createBy">CreateBy</label>-->
-            <!--<input type="text" class="form-control" name="createBy" id="field_createBy"-->
-                    <!--ng-model="tempCompany.createBy"-->
-                     <!--/>-->
-        <!--</div>-->
-        <!--<div class="form-group col-md-6">-->
-            <!--<label class="control-label" for="field_updatedBy">UpdatedBy</label>-->
-            <!--<input type="text" class="form-control" name="updatedBy" id="field_updatedBy"-->
-                    <!--ng-model="tempCompany.updatedBy"-->
-                     <!--/>-->
-        <!--</div>-->
         <div class="form-group col-md-6">
             <label class="control-label" for="field_activeStatus">ActiveStatus</label>
             <input type="number" class="form-control" name="activeStatus" id="field_activeStatus"
                     ng-model="tempCompany.activeStatus"
                      />
         </div>
-
         <div class="form-group col-md-6">
             <label for="field_country">country</label>
             <select class="form-control" id="field_country" name="country" ng-model="tempCompany.country" ng-options="country as country.countryName for country in countrys track by country.id">
@@ -232,11 +190,13 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
-        </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
-        </button>
+        <div class="form-group col-md-6">
+            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+            </button>
+            <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+                <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+            </button>
+        </div>
     </div>
 </form>
