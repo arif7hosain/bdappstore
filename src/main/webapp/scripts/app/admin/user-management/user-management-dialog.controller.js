@@ -16,6 +16,7 @@ angular.module('appstoreApp').controller('UserManagementDialogController',
         };
 
         $scope.save = function () {
+        console.log($scope.user);
             $scope.isSaving = true;
             if ($scope.user.id != null) {
                 User.update($scope.user, onSaveSuccess, onSaveError);

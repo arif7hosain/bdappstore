@@ -3,12 +3,9 @@ package com.appstore.web.rest;
 import com.appstore.domain.*;
 import com.appstore.domain.enumeration.BranchType;
 import com.appstore.repository.*;
-import com.appstore.repository.search.ComAddressSearchRepository;
-import com.appstore.repository.search.ComBranchSearchRepository;
-import com.appstore.repository.search.CompanyInformationSearchRepository;
+import com.appstore.repository.search.*;
 import com.appstore.web.rest.dto.UserDTO;
 import com.codahale.metrics.annotation.Timed;
-import com.appstore.repository.search.TempCompanySearchRepository;
 import com.appstore.web.rest.util.HeaderUtil;
 import com.appstore.web.rest.util.PaginationUtil;
 import org.slf4j.Logger;
@@ -26,6 +23,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
@@ -54,6 +52,9 @@ public class TempCompanyResource {
 
     @Inject
     private UserRepository userRepository;
+
+    @Inject
+    private UserSearchRepository userSearchRepository;
 
     @Inject
     private ComBranchRepository comBranchRepository;
@@ -183,6 +184,7 @@ public class TempCompanyResource {
 //        User currentUser=userRepository.getUserByEmail(temp.getEmail());
         Optional<User> currentUser=userRepository.findOneByEmail(temp.getEmail());
         User u=currentUser.get();
+        u.setActivated(true);
         System.out.print("user.............>start");
         System.out.print(u);
         System.out.print("user.............>end");
@@ -237,6 +239,10 @@ public class TempCompanyResource {
         ComAddress comAddress=comAddressRepository.save(address);
         comAddressSearchRepository.save(comAddress);
 
+
+//        authorities.
+        userRepository.save(u);
+        userSearchRepository.save(u);
 
         return tepmResult;
     }

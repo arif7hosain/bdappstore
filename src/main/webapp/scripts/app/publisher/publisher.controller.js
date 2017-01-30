@@ -37,9 +37,10 @@ angular.module('appstoreApp').controller('CreatePublisher',
             $scope.upazilas = Upazila.query();
 
             var onSaveSuccess = function (result) {
+            alert('success');
                 $scope.$emit('appstoreApp:tempCompanyUpdate', result);
-
-                $scope.isSaving = false;
+                 $state.go('publisher.success', null, {reload: true});
+//                $scope.isSaving = false;
             };
             var onSaveError = function (result) {
                 $scope.isSaving = false;
