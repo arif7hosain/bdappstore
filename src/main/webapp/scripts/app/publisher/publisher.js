@@ -34,5 +34,21 @@ angular.module('appstoreApp')
                    },
                     resolve: {
                     }
+            })
+            .state('publisher.dashboard', {
+                parent: 'account',
+                url: '/company/dashboard',
+                data: {
+                    authorities: [],
+                    pageTitle: 'Welcome to Company Dashboard !'
+                },
+                views: {
+                       'content@': {
+                           templateUrl: 'scripts/app/publisher/dashboard.html',
+                           controller: 'CompanyDashboard'
+                       }
+                   },
+                    resolve: {
+                    }
             });
     });

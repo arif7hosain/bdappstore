@@ -3,7 +3,7 @@
 angular.module('appstoreApp')
     .controller('UserManagementController', function ($scope, User, ParseLinks) {
         $scope.users = [];
-        $scope.authorities = ["ROLE_USER", "ROLE_ADMIN"];
+        $scope.authorities = ["ROLE_USER", "ROLE_ADMIN","ROLE_COMPANY"];
 
         $scope.page = 1;
         $scope.loadAll = function () {
