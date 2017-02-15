@@ -95,7 +95,7 @@
                             &#xA0;<span>Sign in</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Publisher Account</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.dashboard" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
+                        <li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.profile" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Profile</span></a></li>
                         <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
                             <!--&#xA0;<span>Publisher Account</span></a></li>-->

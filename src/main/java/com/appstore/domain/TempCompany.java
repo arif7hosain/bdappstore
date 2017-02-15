@@ -83,7 +83,9 @@ public class TempCompany implements Serializable {
     @Column(name = "logo")
     private byte[] logo;
 
-    @Column(name = "logo_content_type")        private String logoContentType;
+    @Column(name = "logo_content_type")
+    private String logoContentType;
+
     @Enumerated(EnumType.STRING)
     @Column(name = "company_type")
     private CompanyType companyType;
@@ -134,7 +136,7 @@ public class TempCompany implements Serializable {
     @JoinColumn(name = "upazila_id")
     private Upazila upazila;
 
-    
+
     public Long getId() {
         return id;
     }

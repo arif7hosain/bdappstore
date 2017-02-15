@@ -3,6 +3,7 @@ package com.appstore.repository;
 import com.appstore.domain.CompanyInformation;
 
 import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -11,4 +12,6 @@ import java.util.List;
  */
 public interface CompanyInformationRepository extends JpaRepository<CompanyInformation,Long> {
 
+    @Query("select companyInformation from CompanyInformation companyInformation where companyInformation.user.login= :login")
+    CompanyInformation getCompampanyByLogin(@Param("login") String login);
 }

@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('appstoreApp').controller('CreatePublisher',
-    ['$scope', '$stateParams', 'DataUtils', 'TempCompany', 'Country', 'ServiceCategory', 'Upazila','Auth','$timeout',
-        function($scope, $stateParams,  DataUtils,  TempCompany, Country, ServiceCategory, Upazila,Auth,$timeout) {
+    ['$scope', '$stateParams','$state', 'DataUtils', 'TempCompany', 'Country', 'ServiceCategory', 'Upazila','Auth','$timeout',
+        function($scope, $stateParams, $state,  DataUtils,  TempCompany, Country, ServiceCategory, Upazila,Auth,$timeout) {
 
              $scope.registerAccount = {};
              $scope.tempCompany = {};
@@ -86,13 +86,21 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.companyInformation;
         $scope.tempCompany.businessDescription;
 //        $scope.tempCompany.tempCompany.shortDescription;
-//        $scope.tempCompany.country.id;
+ //     $scope.tempCompany.country.id;
         $scope.tempCompany.city;
         $scope.tempCompany.postalCode;
         $scope.tempCompany.house;
         $scope.tempCompany.RoadNo;
         $scope.tempCompany.logo;
         $scope.tempCompany.logoContentType;
+
+
+        $scope.service=function(data){
+        $scope.tempCompany.serviceCategory=data;
+        console.log('.........>');
+        console.log(data);
+        console.log($scope.tempCompany);
+        };
 
         $scope.create_publisher_account=function(){
             $scope.tempCompany.username=$scope.registerAccount.login;

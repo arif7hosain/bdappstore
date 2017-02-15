@@ -34,13 +34,13 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
 public class CompanyInformationResource {
 
     private final Logger log = LoggerFactory.getLogger(CompanyInformationResource.class);
-        
+
     @Inject
     private CompanyInformationRepository companyInformationRepository;
-    
+
     @Inject
     private CompanyInformationSearchRepository companyInformationSearchRepository;
-    
+
     /**
      * POST  /companyInformations -> Create a new companyInformation.
      */
@@ -89,7 +89,7 @@ public class CompanyInformationResource {
     public ResponseEntity<List<CompanyInformation>> getAllCompanyInformations(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of CompanyInformations");
-        Page<CompanyInformation> page = companyInformationRepository.findAll(pageable); 
+        Page<CompanyInformation> page = companyInformationRepository.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/companyInformations");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
@@ -138,5 +138,14 @@ public class CompanyInformationResource {
         return StreamSupport
             .stream(companyInformationSearchRepository.search(queryStringQuery(query)).spliterator(), false)
             .collect(Collectors.toList());
+    }
+
+    @RequestMapping(value = "/_search/companyInformations/profile/{login}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public CompanyInformation getCompanyProfileInfoByLogin(@PathVariable String login) {
+        log.debug("REST request to search CompanyInformations for query {}", login);
+        return companyInformationRepository.getCompampanyByLogin(login);
     }
 }

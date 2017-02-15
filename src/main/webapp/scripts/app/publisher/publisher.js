@@ -50,5 +50,21 @@ angular.module('appstoreApp')
                    },
                     resolve: {
                     }
+            })
+            .state('publisher.profile', {
+                parent: 'account',
+                url: '/company/profile',
+                data: {
+                    authorities: [],
+                    pageTitle: 'Welcome to Company Profile !'
+                },
+                views: {
+                       'content@': {
+                           templateUrl: 'scripts/app/publisher/dashboard.html',
+                           controller: 'PublisherProfileController'
+                       }
+                   },
+                    resolve: {
+                    }
             });
     });
