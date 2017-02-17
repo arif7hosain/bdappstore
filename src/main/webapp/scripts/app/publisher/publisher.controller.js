@@ -90,6 +90,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.city;
         $scope.tempCompany.postalCode;
         $scope.tempCompany.house;
+        $scope.tempCompany.contactNumber;
         $scope.tempCompany.RoadNo;
         $scope.tempCompany.logo;
         $scope.tempCompany.logoContentType;

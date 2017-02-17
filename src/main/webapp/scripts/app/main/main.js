@@ -7,7 +7,8 @@ angular.module('appstoreApp')
                 parent: 'site',
                 url: '/',
                 data: {
-                    authorities: []
+                    authorities: [],
+                     pageTitle: 'Welcome to Leading Software Marketing Platform in Bangladesh !'
                 },
                 views: {
                     'content@': {
@@ -16,7 +17,7 @@ angular.module('appstoreApp')
                     }
                 },
                 resolve: {
-                    
+
                 }
             });
     });

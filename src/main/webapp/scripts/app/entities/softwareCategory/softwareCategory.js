@@ -7,7 +7,7 @@ angular.module('appstoreApp')
                 parent: 'entity',
                 url: '/softwareCategorys',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN,ROLE_USER'],
                     pageTitle: 'SoftwareCategorys'
                 },
                 views: {
@@ -23,7 +23,7 @@ angular.module('appstoreApp')
                 parent: 'entity',
                 url: '/softwareCategory/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                     pageTitle: 'SoftwareCategory'
                 },
                 views: {
@@ -42,7 +42,7 @@ angular.module('appstoreApp')
                 parent: 'softwareCategory',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
@@ -75,7 +75,7 @@ angular.module('appstoreApp')
                 parent: 'softwareCategory',
                 url: '/{id}/edit',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
@@ -98,7 +98,7 @@ angular.module('appstoreApp')
                 parent: 'softwareCategory',
                 url: '/{id}/delete',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_ADMIN'],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({

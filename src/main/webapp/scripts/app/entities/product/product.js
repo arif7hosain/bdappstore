@@ -7,7 +7,7 @@ angular.module('appstoreApp')
                 parent: 'entity',
                 url: '/products',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'Products'
                 },
                 views: {

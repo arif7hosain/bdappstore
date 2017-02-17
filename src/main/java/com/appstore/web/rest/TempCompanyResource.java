@@ -239,6 +239,7 @@ public class TempCompanyResource {
         address.setComBranch(comBranch);
         address.setPostalCode(temp.getPostalCode());
         address.setRoadNo(temp.getRoadNo());
+        address.setContactNumber(temp.getContactNumber());
         ComAddress comAddress=comAddressRepository.save(address);
         comAddressSearchRepository.save(comAddress);
 
