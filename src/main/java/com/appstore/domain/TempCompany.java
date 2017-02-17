@@ -41,7 +41,7 @@ public class TempCompany implements Serializable {
     private String branchName;
 
     @Column(name = "branch_type")
-    private String BranchType;
+    private String branchType;
 
     @Column(name = "company_name")
     private String companyName;
@@ -107,7 +107,7 @@ public class TempCompany implements Serializable {
     private String house;
 
     @Column(name = "road_no")
-    private String RoadNo;
+    private String roadNo;
 
     @Column(name = "created_date")
     private LocalDate CreatedDate;
@@ -178,11 +178,11 @@ public class TempCompany implements Serializable {
     }
 
     public String getBranchType() {
-        return BranchType;
+        return branchType;
     }
 
     public void setBranchType(String BranchType) {
-        this.BranchType = BranchType;
+        this.branchType = BranchType;
     }
 
     public String getCompanyName() {
@@ -346,11 +346,11 @@ public class TempCompany implements Serializable {
     }
 
     public String getRoadNo() {
-        return RoadNo;
+        return roadNo;
     }
 
     public void setRoadNo(String RoadNo) {
-        this.RoadNo = RoadNo;
+        this.roadNo = RoadNo;
     }
 
     public LocalDate getCreatedDate() {
@@ -442,7 +442,7 @@ public class TempCompany implements Serializable {
             ", email='" + email + "'" +
             ", password='" + password + "'" +
             ", branchName='" + branchName + "'" +
-            ", BranchType='" + BranchType + "'" +
+            ", BranchType='" + branchType + "'" +
             ", companyName='" + companyName + "'" +
             ", shortName='" + shortName + "'" +
             ", companyInformation='" + companyInformation + "'" +
@@ -463,7 +463,7 @@ public class TempCompany implements Serializable {
             ", contactNumber='" + contactNumber + "'" +
             ", postalCode='" + postalCode + "'" +
             ", house='" + house + "'" +
-            ", RoadNo='" + RoadNo + "'" +
+            ", RoadNo='" + roadNo + "'" +
             ", CreatedDate='" + CreatedDate + "'" +
             ", updatedDate='" + updatedDate + "'" +
             ", createBy='" + createBy + "'" +

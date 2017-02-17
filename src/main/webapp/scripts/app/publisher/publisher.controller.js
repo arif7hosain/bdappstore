@@ -80,7 +80,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.email;
         $scope.tempCompany.password;
         $scope.tempCompany.branchName;
-        $scope.tempCompany.BranchType;
+        $scope.tempCompany.branchType;
         $scope.tempCompany.companyName;
         $scope.tempCompany.shortName;
         $scope.tempCompany.companyInformation;
@@ -93,8 +93,6 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.RoadNo;
         $scope.tempCompany.logo;
         $scope.tempCompany.logoContentType;
-
-
         $scope.service=function(data){
         $scope.tempCompany.serviceCategory=data;
         console.log('.........>');
@@ -102,11 +100,10 @@ angular.module('appstoreApp').controller('CreatePublisher',
         console.log($scope.tempCompany);
         };
 
-        $scope.create_publisher_account=function(){
+            $scope.create_publisher_account=function(){
             $scope.tempCompany.username=$scope.registerAccount.login;
             $scope.tempCompany.email=$scope.registerAccount.email;
             $scope.tempCompany.password=$scope.registerAccount.password;
-
             console.log('..............');
             console.log($scope.tempCompany);
             if($scope.tempCompany){

@@ -12,6 +12,7 @@ angular.module('appstoreApp')
                 $scope.links = ParseLinks.parse(headers('link'));
                 $scope.totalItems = headers('X-Total-Count');
                 $scope.comAddresss = result;
+
             });
         };
         $scope.loadPage = function(page) {

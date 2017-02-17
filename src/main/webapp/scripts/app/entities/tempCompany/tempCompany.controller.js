@@ -21,7 +21,6 @@ angular.module('appstoreApp')
         $scope.loadAll();
 
         $scope.approve=function(data){
-            alert(data);
             ApproveCompany.query({id:data},function(results){
                 console.log(results);
             });

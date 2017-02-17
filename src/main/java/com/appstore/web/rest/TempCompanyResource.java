@@ -82,6 +82,7 @@ public class TempCompanyResource {
     @Timed
     public ResponseEntity<TempCompany> createTempCompany(@RequestBody TempCompany tempCompany) throws URISyntaxException {
         log.debug("REST request to save TempCompany : {}", tempCompany);
+        log.debug("REST request to save TempCompany : {}>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<", tempCompany);
         if (tempCompany.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("tempCompany", "idexists", "A new tempCompany cannot already have an ID")).body(null);
         }
@@ -219,11 +220,11 @@ public class TempCompanyResource {
         branch.setCity(temp.getCity());
         branch.setCompanyInformation(ci);
         System.out.print("---------------->" + BranchType.Headquarter + "<----------------");
-//        if(temp.getBranchType().equalsIgnoreCase("Headquarter")){
-//            branch.setBranchType(BranchType.Headquarter);
-//        }else{
-//            branch.setBranchType(BranchType.Regional);
-//       }
+        if(temp.getBranchType().equalsIgnoreCase("Headquarter")){
+            branch.setBranchType(BranchType.Headquarter);
+        }else if(temp.getBranchType().equalsIgnoreCase("Regional")){
+            branch.setBranchType(BranchType.Regional);
+       }
         ComBranch comBranch=comBranchRepository.save(branch);
         comBranchSearchRepository.save(comBranch);
 
@@ -236,6 +237,8 @@ public class TempCompanyResource {
         address.setContactNumber(temp.getContactNumber());
         address.setHouse(temp.getHouse());
         address.setComBranch(comBranch);
+        address.setPostalCode(temp.getPostalCode());
+        address.setRoadNo(temp.getRoadNo());
         ComAddress comAddress=comAddressRepository.save(address);
         comAddressSearchRepository.save(comAddress);
 
