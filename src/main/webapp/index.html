@@ -18,9 +18,22 @@
         <link rel="stylesheet" href="assets/styles/simple-sidebar.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="assets/css/components.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
+        <link rel="stylesheet" href="assets/css/responsee.css">
+        <link rel="stylesheet" href="assets/css/template-style.css">
+
+        <script type="text/javascript" src="assets/js/responsee.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="assets/js/modernizr.js"></script>
+        <script type="text/javascript" src="assets/js/responsee.js"></script>
+        <script type="text/javascript" src="assets/js/template-scripts.js"></script>
+
+
+
         <!-- endbuild -->
     </head>
-    <body ng-app="appstoreApp">
+    <body ng-app="appstoreApp" class="size-1140">
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -29,94 +42,207 @@
         <div class="container-fluid no-padding">
             <!--class="well"-->
             <div ui-view="content"></div>
+            <!--<footer>-->
+                <!--<div class="footer" id="footer">-->
+                    <!--<div class="container">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Contacts</h3>-->
+                                <!--<ul>-->
+                                    <!--<address>-->
+                                    <!--<p style="color:white;">BDAppStore Inc<br>Section 1, Mirpur<br>Dhaka, Bangladesh 1215<br>+880-1754-2823-887<br>bdappstore.replaye@gmail.com</p>-->
+                                    <!--</address>-->
+                                <!--</ul>-->
+                            <!--</div>-->
 
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3> Company </h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="">About</a></li>-->
+                                    <!--<li><a href="">Support</a></li>-->
+                                    <!--<li><a href="">Contact</a></li>-->
+                                    <!--<li><a href="">Services</a></li>-->
+                                    <!--<li><a href="">FAQ</a></li>-->
+                                    <!--<li><a href="">Developer</a></li>-->
+                                    <!--<li><a href="">News</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Social </h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>-->
+                                    <!--<li><a href="">Google</a></li>-->
+                                    <!--<li><a href="">Youtube</a></li>-->
+                                    <!--<li><a href="">Twitter</a></li>-->
+                                    <!--<li><a href="">Google +</a></li>-->
+                                    <!--<li><a href="https://bd.linkedin.com/in/arif-hosain-0861288b-->
+                                    <!--">LinkedIn</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Support</h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>-->
+                                    <!--<li><a href="">Product Support</a></li>-->
+                                    <!--<li><a href="">Why Sign up?</a></li>-->
+                                    <!--<li><a href="">Quick Support</a></li>-->
+                                    <!--<li><a href="">Others</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">-->
+                                <!--<h3> Leave a comment ! </h3>-->
+                                <!--<ul>-->
+                                    <!--<li>-->
+                                        <!--<div class="input-append newsletter-box text-center">-->
+                                            <!--<input type="text" class="full text-center" placeholder="Email ">-->
+                                            <!--<button class="btn  bg-gray" type="button">Comment <i class="fa fa-long-arrow-right"> </i> </button>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <!--<ul class="social">-->
+                                    <!--<li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;/.row&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.container&ndash;&gt;-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/.footer&ndash;&gt;-->
 
+                <!--<div class="footer-bottom">-->
+                    <!--<div class="container">-->
+                       <!--<center> <p> Copyright © bdappstore.com Inc 2017. All right reserved. </p></center>-->
+                        <!--<div class="pull-right">-->
+                            <!--<ul class="nav nav-pills payments">-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-visa"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-mastercard"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-amex"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-paypal"></i></li>&ndash;&gt;-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/.footer-bottom&ndash;&gt;-->
+            <!--</footer>-->
             <footer>
-                <div class="footer" id="footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Contacts</h3>
-                                <ul>
-                                    <address>
-                                    <p style="color:white;">BDAppStore Inc<br>Section 1, Mirpur<br>Dhaka, Bangladesh 1215<br>+880-1754-2823-887<br>bdappstore.replaye@gmail.com</p>
-                                    </address>
-                                </ul>
-                            </div>
+                <!-- Social -->
+                <div class="background-primary padding text-center">
+                    <a href="/"><i class="icon-facebook_circle icon2x text-white"></i></a>
+                    <a href="/"><i class="icon-twitter_circle icon2x text-white"></i></a>
+                    <a href="/"><i class="icon-google_plus_circle icon2x text-white"></i></a>
+                    <a href="/"><i class="icon-instagram_circle icon2x text-white"></i></a>
+                </div>
 
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3> Company </h3>
-                                <ul>
-                                    <li><a href="">About</a></li>
-                                    <li><a href="">Support</a></li>
-                                    <li><a href="">Contact</a></li>
-                                    <li><a href="">Services</a></li>
-                                    <li><a href="">FAQ</a></li>
-                                    <li><a href="">Developer</a></li>
-                                    <li><a href="">News</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Social </h3>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>
-                                    <li><a href="">Google</a></li>
-                                    <li><a href="">Youtube</a></li>
-                                    <li><a href="">Twitter</a></li>
-                                    <li><a href="">Google +</a></li>
-                                    <li><a href="https://bd.linkedin.com/in/arif-hosain-0861288b
-                                    ">LinkedIn</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Support</h3>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>
-                                    <li><a href="">Product Support</a></li>
-                                    <li><a href="">Why Sign up?</a></li>
-                                    <li><a href="">Quick Support</a></li>
-                                    <li><a href="">Others</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                                <h3> Leave a comment ! </h3>
-                                <ul>
-                                    <li>
-                                        <div class="input-append newsletter-box text-center">
-                                            <input type="text" class="full text-center" placeholder="Email ">
-                                            <button class="btn  bg-gray" type="button">Comment <i class="fa fa-long-arrow-right"> </i> </button>
+                <!-- Main Footer -->
+                <section class="section background-dark">
+                    <div class="line">
+                        <div class="margin">
+                            <!-- Collumn 1 -->
+                            <div class="s-12 m-12 l-4 margin-m-bottom-2x">
+                                <h4 class="text-uppercase text-strong">Our Philosophy</h4>
+                                <p class="text-size-20"><em>"Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt."</em><p>
+
+                                <div class="line">
+                                    <h4 class="text-uppercase text-strong margin-top-30">About Our Company</h4>
+                                    <div class="margin">
+                                        <div class="s-12 m-12 l-4 margin-m-bottom">
+                                            <a class="image-hover-zoom" href="/"><img src="img/blog-04.jpg" alt=""></a>
                                         </div>
-                                    </li>
-                                </ul>
-                                <ul class="social">
-                                    <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                                </ul>
+                                        <div class="s-12 m-12 l-8 margin-m-bottom">
+                                            <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat.</p>
+                                            <a class="text-more-info text-primary-hover" href="/">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Collumn 2 -->
+                            <div class="s-12 m-12 l-4 margin-m-bottom-2x">
+                                <h4 class="text-uppercase text-strong">Contact Us</h4>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="icon-placepin text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><b>Adress:</b> Responsive Street 7, London, UK</p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="icon-mail text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><a href="/" class="text-primary-hover"><b>E-mail:</b> contact@sampledomain.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="icon-smartphone text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><b>Phone:</b> 0700 000 987</p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="icon-twitter text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><a href="/" class="text-primary-hover"><b>Twitter</b></a></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="icon-facebook text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11">
+                                        <p><a href="/" class="text-primary-hover"><b>Facebook</b></a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Collumn 3 -->
+                            <div class="s-12 m-12 l-4">
+                                <h4 class="text-uppercase text-strong">Leave a Message</h4>
+                                <form class="customform text-white">
+                                    <div class="line">
+                                        <div class="margin">
+                                            <div class="s-12 m-12 l-6">
+                                                <input name="email" class="required email border-radius" placeholder="Your e-mail" title="Your e-mail" type="text" />
+                                            </div>
+                                            <div class="s-12 m-12 l-6">
+                                                <input name="name" class="name border-radius" placeholder="Your name" title="Your name" type="text" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="s-12">
+                                        <textarea name="message" class="required message border-radius" placeholder="Your message" rows="3"></textarea>
+                                    </div>
+                                    <div class="s-12"><button class="submit-form button background-primary border-radius text-white" type="submit">Submit Button</button></div>
+                                </form>
                             </div>
                         </div>
-                        <!--/.row-->
                     </div>
-                    <!--/.container-->
-                </div>
-                <!--/.footer-->
+                </section>
+                <hr class="break margin-top-bottom-0" style="border-color: rgba(0, 38, 51, 0.80);">
 
-                <div class="footer-bottom">
-                    <div class="container">
-                       <center> <p> Copyright © bdappstore.com Inc 2017. All right reserved. </p></center>
-                        <div class="pull-right">
-                            <ul class="nav nav-pills payments">
-                                <!--<li><i class="fa fa-cc-visa"></i></li>-->
-                                <!--<li><i class="fa fa-cc-mastercard"></i></li>-->
-                                <!--<li><i class="fa fa-cc-amex"></i></li>-->
-                                <!--<li><i class="fa fa-cc-paypal"></i></li>-->
-                            </ul>
+                <!-- Bottom Footer -->
+                <section class="padding background-dark">
+                    <div class="line">
+                        <div class="s-12 l-6">
+                            <p class="text-size-12">Copyright 2016, Vision Design - graphic zoo</p>
+                            <p class="text-size-12">All images have been purchased from Bigstock. Do not use the images in your website.</p>
+                        </div>
+                        <div class="s-12 l-6">
+                            <a class="right text-size-12" href="http://www.myresponsee.com" title="Responsee - lightweight responsive framework">Design and coding<br> by Responsee Team</a>
                         </div>
                     </div>
-                </div>
-                <!--/.footer-bottom-->
+                </section>
             </footer>
         </div><!--container -fluid-->
 
@@ -284,6 +410,13 @@
     <script src="scripts/components/entities/companyInformation/companyInformation.service.js"></script>
     <script src="scripts/components/entities/companyInformation/companyInformation.search.service.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress.js"></script>
+    <script src="scripts/app/entities/contact/contact.controller.js"></script>
+    <script src="scripts/app/entities/contact/contact.js"></script>
+    <script src="scripts/app/entities/contact/about.controller.js"></script>
+
+
+
+
     <script src="scripts/app/entities/comAddress/comAddress.controller.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress-dialog.controller.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress-delete-dialog.controller.js"></script>
