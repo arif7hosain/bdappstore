@@ -1,131 +1,165 @@
-<!--<div id="top-header"></div>-->
-
-<nav class="navbar navbar-inverse " role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-            <div class="navbar-brand">
-                <span><img src="assets/images/success.png" height="20px" width="20px"></span>
-                <span><a  href="#/"><span>App Store</span></a></span>
+<header>
+    <div id="topbar">
+        <div class="line">
+            <div class="s-12 m-6 l-6">
+                <p>CONTACT US: <strong>+880 1754 282 387</strong> | <strong>bdappstore.replaye@gmail.com</strong></p>
+            </div>
+            <div class="s-12 m-6 l-6">
+                <div class="social right">
+                    <a><span class="fa fa-facebook"></span></a> <a><span class="fa fa-twitter"></span></a> <a><span class="fa fa-google-plus"></span></a> <a><span class="fa fa-youtube"></span></a>
+                </div>
             </div>
         </div>
-        <!--<form class="navbar-form navbar-right" role="search">-->
-            <!--<a class="btn btn-success">Create Publisher</a>-->
-            <!--<a class="btn btn-primary" ui-sref="login" >Login</a>-->
-            <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
-            <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
-        <!--</form>-->
-        <div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">
-            <ul class="nav navbar-nav navbar-right">
-                <!--<li ui-sref-active="active">-->
-                    <!--<a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">-->
-                        <!--<span class="glyphicon glyphicon-home"></span>-->
-                        <!--<span class="hidden-sm">Home</span>-->
-                    <!--</a>-->
-                <!--</li>-->
-                <!-- jhipster-needle-001 - JHipster will add new menu items here -->
-                <!--<li><button type="button" class="btn btn-info btn-sm">Login</button></li>-->
-                <li has-authority="ROLE_ADMIN" ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="">
-                        <span>
-                            <span class="glyphicon glyphicon-th-list"></span>
-                            <span class="hidden-sm">
-                               Entity Menu
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!--<li ui-sref-active="active" ><a ui-sref="country" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
-                        <!--&#xA0;<span >Country</span></a></li>-->
-                        <!--<li ui-sref-active="active" ><a ui-sref="division" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
-                        <!--&#xA0;<span >Division</span></a></li>-->
-                        <!--<li ui-sref-active="active" ><a ui-sref="district" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
-                        <!--&#xA0;<span >District</span></a></li>-->
-                        <!--<li ui-sref-active="active" ><a ui-sref="upazila" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
-                        <!--&#xA0;<span >Upazila</span></a></li>-->
-                        <li ui-sref-active="active" ><a ui-sref="softwareCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Software Category</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="serviceCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Service Category</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Approved Company</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="comAddress" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Address</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Branch</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="tempCompany" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Pending Request</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="product" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Uploaded Software</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="productCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Product-Category</span></a></li>
-                        <li ui-sref-active="active" ><a ui-sref="productPortfolio" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
-                        &#xA0;<span >Product-Images</span></a></li>
-                        <!-- jhipster-needle-002 - JHipster will add entities to the menu here -->
-                    </ul>
-                </li>
-                <li ng-class="{active: $state.includes('account')}" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">
-                        <span>
-                            <span class="glyphicon glyphicon-user"></span>
-                            <span class="hidden-sm">
-                               {{account.firstName}}&nbsp;{{account.lastName}}
-                            </span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>-->
-                            <!--&#xA0;<span>Settings</span></a></li>-->
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>
-                            &#xA0;<span>Password</span></a></li>
-                        <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>-->
-                            <!--&#xA0;<span>Sessions</span></a></li>-->
-                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span>
-                            &#xA0;<span>Sign in</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span>Publisher Account</span></a></li>
-                        <li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.profile" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span>Profile</span></a></li>
-                        <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
-                            <!--&#xA0;<span>Publisher Account</span></a></li>-->
-                        <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
-                            &#xA0;<span>Sign out</span></a></li>
-                    </ul>
-                </li>
-                <li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" class="dropdown pointer">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="" id="admin-menu">
-                        <span>
-                            <span class="glyphicon glyphicon-tower"></span>
-                            <span class="hidden-sm">Administration</span>
-                            <b class="caret"></b>
-                        </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li ui-sref-active="active"><a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>
-                            &#xA0;<span>User management</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span>
-                            &#xA0;<span>Metrics</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span>
-                            &#xA0;<span>Health</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span>
-                            &#xA0;<span>Configuration</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>
-                            &#xA0;<span>Audits</span></a></li>
-                        <li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>
-                            &#xA0;<span>Logs</span></a></li>
-                        <li ng-hide="inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>
-                            &#xA0;<span>API</span></a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
     </div>
-</nav>
+    <nav>
+        <div class="line">
+            <div class="s-12 l-2">
+                <p class="logo"><strong>App</strong> Store</p>
+            </div>
+            <div class="top-nav s-12 l-10">
+                <p class="nav-text">Have a Touch</p>
+                <ul class="right">
+                    <li class="active-item"><a href="#carousel">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#our-work">Our Work</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+<!--&lt;!&ndash;<div id="top-header"></div>&ndash;&gt;-->
+
+<!--<nav class="navbar navbar-inverse " role="navigation">-->
+    <!--<div class="container">-->
+        <!--<div class="navbar-header">-->
+            <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">-->
+                <!--<span class="sr-only">Toggle navigation</span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+                <!--<span class="icon-bar"></span>-->
+            <!--</button>-->
+
+            <!--<div class="navbar-brand">-->
+                <!--<span><img src="assets/images/success.png" height="20px" width="20px"></span>-->
+                <!--<span><a  href="#/"><span>App Store</span></a></span>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash;<form class="navbar-form navbar-right" role="search">&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="btn btn-success">Create Publisher</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="btn btn-primary" ui-sref="login" >Login</a>&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;&ndash;&gt;-->
+        <!--&lt;!&ndash;</form>&ndash;&gt;-->
+        <!--<div class="collapse navbar-collapse" id="navbar-collapse" ng-switch="isAuthenticated()">-->
+            <!--<ul class="nav navbar-nav navbar-right">-->
+                <!--&lt;!&ndash;<li ui-sref-active="active">&ndash;&gt;-->
+                    <!--&lt;!&ndash;<a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="glyphicon glyphicon-home"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<span class="hidden-sm">Home</span>&ndash;&gt;-->
+                    <!--&lt;!&ndash;</a>&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                <!--&lt;!&ndash; jhipster-needle-001 - JHipster will add new menu items here &ndash;&gt;-->
+                <!--&lt;!&ndash;<li><button type="button" class="btn btn-info btn-sm">Login</button></li>&ndash;&gt;-->
+                <!--<li has-authority="ROLE_ADMIN" ui-sref-active="active" ng-switch-when="true" class="dropdown pointer">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="">-->
+                        <!--<span>-->
+                            <!--<span class="glyphicon glyphicon-th-list"></span>-->
+                            <!--<span class="hidden-sm">-->
+                               <!--Entity Menu-->
+                            <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ><a ui-sref="country" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&#xA0;<span >Country</span></a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ><a ui-sref="division" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&#xA0;<span >Division</span></a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ><a ui-sref="district" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&#xA0;<span >District</span></a></li>&ndash;&gt;-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ><a ui-sref="upazila" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>&ndash;&gt;-->
+                        <!--&lt;!&ndash;&#xA0;<span >Upazila</span></a></li>&ndash;&gt;-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="softwareCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Software Category</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="serviceCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Service Category</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="companyInformation" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Approved Company</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="comAddress" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Address</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="comBranch" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Branch</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="tempCompany" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Pending Request</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="product" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Uploaded Software</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="productCategory" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Product-Category</span></a></li>-->
+                        <!--<li ui-sref-active="active" ><a ui-sref="productPortfolio" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>-->
+                        <!--&#xA0;<span >Product-Images</span></a></li>-->
+                        <!--&lt;!&ndash; jhipster-needle-002 - JHipster will add entities to the menu here &ndash;&gt;-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li ng-class="{active: $state.includes('account')}" class="dropdown pointer">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="" id="account-menu">-->
+                        <!--<span>-->
+                            <!--<span class="glyphicon glyphicon-user"></span>-->
+                            <!--<span class="hidden-sm">-->
+                               <!--{{account.firstName}}&nbsp;{{account.lastName}}-->
+                            <!--</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="settings" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-wrench"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&#xA0;<span>Settings</span></a></li>&ndash;&gt;-->
+                        <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="password" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-lock"></span>-->
+                            <!--&#xA0;<span>Password</span></a></li>-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="sessions" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-cloud"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&#xA0;<span>Sessions</span></a></li>&ndash;&gt;-->
+                        <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span>-->
+                            <!--&#xA0;<span>Sign in</span></a></li>-->
+                        <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
+                            <!--&#xA0;<span>Publisher Account</span></a></li>-->
+                        <!--<li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.profile" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
+                            <!--&#xA0;<span>Profile</span></a></li>-->
+                        <!--&lt;!&ndash;<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>&ndash;&gt;-->
+                            <!--&lt;!&ndash;&#xA0;<span>Publisher Account</span></a></li>&ndash;&gt;-->
+                        <!--<li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>-->
+                            <!--&#xA0;<span>Sign out</span></a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+                <!--<li ng-class="{active: $state.includes('admin')}"  ng-switch-when="true" has-authority="ROLE_ADMIN" class="dropdown pointer">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" href="" id="admin-menu">-->
+                        <!--<span>-->
+                            <!--<span class="glyphicon glyphicon-tower"></span>-->
+                            <!--<span class="hidden-sm">Administration</span>-->
+                            <!--<b class="caret"></b>-->
+                        <!--</span>-->
+                    <!--</a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li ui-sref-active="active"><a ui-sref="user-management" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>-->
+                            <!--&#xA0;<span>User management</span></a></li>-->
+                        <!--<li ui-sref-active="active"><a ui-sref="metrics" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-dashboard"></span>-->
+                            <!--&#xA0;<span>Metrics</span></a></li>-->
+                        <!--<li ui-sref-active="active"><a ui-sref="health" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-heart"></span>-->
+                            <!--&#xA0;<span>Health</span></a></li>-->
+                        <!--<li ui-sref-active="active"><a ui-sref="configuration" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-list-alt"></span>-->
+                            <!--&#xA0;<span>Configuration</span></a></li>-->
+                        <!--<li ui-sref-active="active"><a ui-sref="audits" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-bell"></span>-->
+                            <!--&#xA0;<span>Audits</span></a></li>-->
+                        <!--<li ui-sref-active="active"><a ui-sref="logs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-tasks"></span>-->
+                            <!--&#xA0;<span>Logs</span></a></li>-->
+                        <!--<li ng-hide="inProduction" ui-sref-active="active"><a ui-sref="docs" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-book"></span>-->
+                            <!--&#xA0;<span>API</span></a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->

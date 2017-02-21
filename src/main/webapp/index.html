@@ -9,7 +9,7 @@
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css assets/styles/vendor.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel='stylesheet' href='bower_components/angular-loading-bar/build/loading-bar.css' />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
@@ -18,9 +18,53 @@
         <link rel="stylesheet" href="assets/styles/simple-sidebar.css">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="assets/css/components.css">
+        <link rel="stylesheet" href="assets/css/icons.css">
+        <link rel="stylesheet" href="assets/css/responsee.css">
+        <link rel="stylesheet" href="assets/css/template-style.css">
+        <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <script type="text/javascript" src="assets/js/jquery-1.8.3.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="assets/js/template-scripts.js"></script>
+        <script type="text/javascript" src="assets/js/responsee.js"></script>
+
+        <script type="text/javascript" src="assets/owl-carousel/owl.carousel.js"></script>
+        <script type="text/javascript" src="assets/owl-carousel/owl.carousel.min.js"></script>
+        <script type="text/javascript">
+         jQuery(document).ready(function($) {
+            var theme_slider = $("#owl-demo");
+            $("#owl-demo").owlCarousel({
+                navigation: false,
+                slideSpeed: 300,
+                paginationSpeed: 400,
+                autoPlay: 6000,
+                addClassActive: true,
+             // transitionStyle: "fade",
+                singleItem: true
+            });
+            $("#owl-demo2").owlCarousel({
+                slideSpeed: 300,
+                autoPlay: true,
+                navigation: true,
+                navigationText: ["&#xf007","&#xf006"],
+                pagination: false,
+                singleItem: true
+            });
+
+            // Custom Navigation Events
+            $(".next-arrow").click(function() {
+                theme_slider.trigger('owl.next');
+            })
+            $(".prev-arrow").click(function() {
+                theme_slider.trigger('owl.prev');
+            })
+        });
+      </script>
         <!-- endbuild -->
     </head>
-    <body ng-app="appstoreApp">
+    <body ng-app="appstoreApp" >
         <!--[if lt IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -31,93 +75,93 @@
             <div ui-view="content"></div>
 
 
-            <footer>
-                <div class="footer" id="footer">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Contacts</h3>
-                                <ul>
-                                    <address>
-                                    <p style="color:white;">BDAppStore Inc<br>Section 1, Mirpur<br>Dhaka, Bangladesh 1215<br>+880-1754-2823-887<br>bdappstore.replaye@gmail.com</p>
-                                    </address>
-                                </ul>
-                            </div>
+            <!--<footer>-->
+                <!--<div class="footer" id="footer">-->
+                    <!--<div class="container">-->
+                        <!--<div class="row">-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Contacts</h3>-->
+                                <!--<ul>-->
+                                    <!--<address>-->
+                                    <!--<p style="color:white;">BDAppStore Inc<br>Section 1, Mirpur<br>Dhaka, Bangladesh 1215<br>+880-1754-2823-887<br>bdappstore.replaye@gmail.com</p>-->
+                                    <!--</address>-->
+                                <!--</ul>-->
+                            <!--</div>-->
 
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3> Company </h3>
-                                <ul>
-                                    <li><a href="">About</a></li>
-                                    <li><a href="">Support</a></li>
-                                    <li><a href="">Contact</a></li>
-                                    <li><a href="">Services</a></li>
-                                    <li><a href="">FAQ</a></li>
-                                    <li><a href="">Developer</a></li>
-                                    <li><a href="">News</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Social </h3>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>
-                                    <li><a href="">Google</a></li>
-                                    <li><a href="">Youtube</a></li>
-                                    <li><a href="">Twitter</a></li>
-                                    <li><a href="">Google +</a></li>
-                                    <li><a href="https://bd.linkedin.com/in/arif-hosain-0861288b
-                                    ">LinkedIn</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">
-                                <h3>Support</h3>
-                                <ul>
-                                    <li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>
-                                    <li><a href="">Product Support</a></li>
-                                    <li><a href="">Why Sign up?</a></li>
-                                    <li><a href="">Quick Support</a></li>
-                                    <li><a href="">Others</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">
-                                <h3> Leave a comment ! </h3>
-                                <ul>
-                                    <li>
-                                        <div class="input-append newsletter-box text-center">
-                                            <input type="text" class="full text-center" placeholder="Email ">
-                                            <button class="btn  bg-gray" type="button">Comment <i class="fa fa-long-arrow-right"> </i> </button>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <ul class="social">
-                                    <li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>
-                                    <li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!--/.row-->
-                    </div>
-                    <!--/.container-->
-                </div>
-                <!--/.footer-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3> Company </h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="">About</a></li>-->
+                                    <!--<li><a href="">Support</a></li>-->
+                                    <!--<li><a href="">Contact</a></li>-->
+                                    <!--<li><a href="">Services</a></li>-->
+                                    <!--<li><a href="">FAQ</a></li>-->
+                                    <!--<li><a href="">Developer</a></li>-->
+                                    <!--<li><a href="">News</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Social </h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>-->
+                                    <!--<li><a href="">Google</a></li>-->
+                                    <!--<li><a href="">Youtube</a></li>-->
+                                    <!--<li><a href="">Twitter</a></li>-->
+                                    <!--<li><a href="">Google +</a></li>-->
+                                    <!--<li><a href="https://bd.linkedin.com/in/arif-hosain-0861288b-->
+                                    <!--">LinkedIn</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-2  col-md-2 col-sm-4 col-xs-6">-->
+                                <!--<h3>Support</h3>-->
+                                <!--<ul>-->
+                                    <!--<li><a href="https://www.facebook.com/SoftSale-192412247829780/">Facebook</a></li>-->
+                                    <!--<li><a href="">Product Support</a></li>-->
+                                    <!--<li><a href="">Why Sign up?</a></li>-->
+                                    <!--<li><a href="">Quick Support</a></li>-->
+                                    <!--<li><a href="">Others</a></li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                            <!--<div class="col-lg-3  col-md-3 col-sm-6 col-xs-12 ">-->
+                                <!--<h3> Leave a comment ! </h3>-->
+                                <!--<ul>-->
+                                    <!--<li>-->
+                                        <!--<div class="input-append newsletter-box text-center">-->
+                                            <!--<input type="text" class="full text-center" placeholder="Email ">-->
+                                            <!--<button class="btn  bg-gray" type="button">Comment <i class="fa fa-long-arrow-right"> </i> </button>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                                <!--<ul class="social">-->
+                                    <!--<li> <a href="#"> <i class=" fa fa-facebook">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-twitter">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-google-plus">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-pinterest">   </i> </a> </li>-->
+                                    <!--<li> <a href="#"> <i class="fa fa-youtube">   </i> </a> </li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--&lt;!&ndash;/.row&ndash;&gt;-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;/.container&ndash;&gt;-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/.footer&ndash;&gt;-->
 
-                <div class="footer-bottom">
-                    <div class="container">
-                       <center> <p> Copyright © bdappstore.com Inc 2017. All right reserved. </p></center>
-                        <div class="pull-right">
-                            <ul class="nav nav-pills payments">
-                                <!--<li><i class="fa fa-cc-visa"></i></li>-->
-                                <!--<li><i class="fa fa-cc-mastercard"></i></li>-->
-                                <!--<li><i class="fa fa-cc-amex"></i></li>-->
-                                <!--<li><i class="fa fa-cc-paypal"></i></li>-->
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!--/.footer-bottom-->
-            </footer>
+                <!--<div class="footer-bottom">-->
+                    <!--<div class="container">-->
+                       <!--<center> <p> Copyright © bdappstore.com Inc 2017. All right reserved. </p></center>-->
+                        <!--<div class="pull-right">-->
+                            <!--<ul class="nav nav-pills payments">-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-visa"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-mastercard"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-amex"></i></li>&ndash;&gt;-->
+                                <!--&lt;!&ndash;<li><i class="fa fa-cc-paypal"></i></li>&ndash;&gt;-->
+                            <!--</ul>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash;/.footer-bottom&ndash;&gt;-->
+            <!--</footer>-->
         </div><!--container -fluid-->
 
 
