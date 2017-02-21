@@ -3,7 +3,7 @@
         <ul class="side-var">
             <li ng-repeat="category in categories" class="left-menu"><h5><a href="#"><b>{{category.categoryName}}</b></a></h5></li>
         </ul>
-        <select  class="form-control drop-var" ng-change="getProducts()" name="categoryName" ng-model="category.categoryName" ng-options="category.id as category.categoryName for category in categories track by category.id"></select>
+        <select  class="form-control drop-var" ng-change="getProducts()" name="categoryName" ng-model="category.categoryName" ng-options="category.id as category.categoryName for category in categories track by category.id"><option value="">Select Category</option></select>
     </div>
     <div class="  col-sm-8 col-md-6">
         <div class="jumbotron">

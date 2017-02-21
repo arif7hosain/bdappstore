@@ -60,7 +60,7 @@ angular.module('appstoreApp')
                 },
                 views: {
                        'content@': {
-                           templateUrl: 'scripts/app/publisher/dashboard.html',
+                           templateUrl: 'scripts/app/publisher/publisher-profile.html',
                            controller: 'PublisherProfileController'
                        }
                    },
