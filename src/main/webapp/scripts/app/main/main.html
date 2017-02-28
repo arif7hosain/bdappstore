@@ -92,7 +92,13 @@
         <div class="line">
             <h1>Amazing Softwares Are Ready to Deploy</h1>
             <p>We help to enable your business by running software automation that can make sure your business is really dynamic and analyse your business trent to the competitive world market! </p>
-            <div class="s-12 m-4 l-2 center"><a class="white-btn" href="#contact">Find Your Software</a></div>
+            <div class="s-12 m-4 l-5 center">
+               <form ng-submit="getProducts(data)">
+                   <input  class="form-control" name="data" ng-model="data" id="data" placeholder="Type your software">
+                   <button ng-show="false" type="submit">Search</button>
+               </form>
+                <!--<a class="white-btn" href="#contact">Search</a>-->
+            </div>
         </div>
     </div>
     <!-- FEATURES -->

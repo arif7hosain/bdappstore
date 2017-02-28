@@ -62,6 +62,63 @@
             })
         });
       </script>
+        <script>
+$(document).ready(function() {
+
+    $('#contactForm').formValidation({
+        framework: 'bootstrap',
+        err: {
+            container: '#messages'
+        },
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            login: {
+                validators: {
+                    notEmpty: {
+                        message: 'The full name is required and cannot be empty'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email address is required and cannot be empty'
+                    },
+                    emailAddress: {
+                        message: 'The email address is not valid'
+                    }
+                }
+            },
+            password: {
+                validators: {
+                    notEmpty: {
+                        message: 'The title is required and cannot be empty'
+                    },
+                    stringLength: {
+                        max: 100,
+                        message: 'The title must be less than 100 characters long'
+                    }
+                }
+            },
+            companyName: {
+                validators: {
+                    notEmpty: {
+                        message: 'The content is required and cannot be empty'
+                    },
+                    stringLength: {
+                        max: 500,
+                        message: 'The content must be less than 500 characters long'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
         <!-- endbuild -->
     </head>
     <body ng-app="appstoreApp" >
@@ -236,6 +293,51 @@
                                 </div>
                             </div>
 
+                            <!-- Column 3 -->
+                            <div class="s-12 m-12 l-4 margin-m-bottom-2x">
+                                <h4 class="text-uppercase text-strong">Company Support</h4>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="fa fa-question text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><b>FAQ?</b></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="fa fa-newspaper-o text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><a href="/" class="text-primary-hover"><b>News</b></a></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="fa fa-user text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><b> Why Sign Up?</b></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="fa fa-support text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11 margin-bottom-10">
+                                        <p><a href="/" class="text-primary-hover"><b>Quick Support</b></a></p>
+                                    </div>
+                                </div>
+                                <div class="line">
+                                    <div class="s-1 m-1 l-1 text-center">
+                                        <i class="fa fa-info text-primary text-size-12"></i>
+                                    </div>
+                                    <div class="s-11 m-11 l-11">
+                                        <p><a href="https://www.facebook.com/thebdappstore" class="text-primary-hover"><b>About</b></a></p>
+                                    </div>
+                                </div>
+                            </div>
+
 
 
                         </div>
@@ -375,6 +477,7 @@
     <script src="scripts/app/error/error.js"></script>
     <script src="scripts/app/main/main.js"></script>
     <script src="scripts/app/main/main.controller.js"></script>
+    <script src="scripts/app/main/search-result.js"></script>
     <script src="scripts/app/publisher/publisher.controller.js"></script>
     <script src="scripts/app/publisher/publisher.js"></script>
     <script src="scripts/app/publisher/dashboard.controller.js"></script>

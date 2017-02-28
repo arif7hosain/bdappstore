@@ -1,44 +1,9 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('MainController', function ($scope, Principal,SoftwareCategory,Product, ProductSearch) {
-//        Principal.identity().then(function(account) {
-//            $scope.account = account;
-//            $scope.isAuthenticated = Principal.isAuthenticated;
-//
-//        });
-
-     $scope.products = [];
-     $scope.types = [];
-     $scope.foundSug=false;
-     $scope.products = Product.query();
-     console.log($scope.products);
-     $scope.categories=SoftwareCategory.query();
-
-        $scope.search = function (q) {
-            ProductSearch.query({query: q}, function(result) {
-                $scope.products = result;
-                console.log($scope.products.length);
-            }, function(response) {
-                if(response.status === 404) {
-                    $scope.loadAll();
-                }
-            });
-        };
+    .controller('MainController', function ($scope,$state,Principal) {
      $scope.getProducts=function(data){
-
+          $state.go('home.result({q:data})', null, {reload: true});
+         alert(data);
      };
-
-     $scope.type=function(q){
-        ProductSearch.query({query: q}, function(result) {
-            $scope.types = result;
-             $scope.foundSug=true;
-            console.log($scope.products.length);
-        }, function(response) {
-            if(response.status === 404) {
-                $scope.loadAll();
-            }
-        });
-     };
-
     });

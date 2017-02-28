@@ -6,6 +6,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
 
              $scope.registerAccount = {};
              $scope.tempCompany = {};
+             $scope.tempCompany.email;
               $timeout(function (){angular.element('[ng-model="registerAccount.login"]').focus();});
             $scope.register = function () {
                 if ($scope.registerAccount.password !== $scope.confirmPassword) {
@@ -38,7 +39,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
 
             var onSaveSuccess = function (result) {
 //                $scope.$emit('appstoreApp:tempCompanyUpdate', result);
-                 $state.go('publisher.success', null, {reload: true});
+                 $state.go('district.detail({id:5})', null, {reload: true});
 //                $scope.isSaving = false;
             };
             var onSaveError = function (result) {
@@ -77,7 +78,6 @@ angular.module('appstoreApp').controller('CreatePublisher',
         $scope.tempCompany.companyName;
         $scope.tempCompany.shortName;
         $scope.tempCompany.username;
-        $scope.tempCompany.email;
         $scope.tempCompany.password;
         $scope.tempCompany.branchName;
         $scope.tempCompany.branchType;

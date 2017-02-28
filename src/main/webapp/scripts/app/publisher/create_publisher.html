@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-2"></div>
     <div class="jumbotron col-sm-8">
-        <form ng-submit="create_publisher_account()" method="post" role="form">
+        <form id="contactForm" ng-submit="create_publisher_account()" method="post" role="form">
             <h4>Create Your Software Publisher</h4>
             <hr>
             <div class="form-group col-sm-6">
@@ -145,10 +145,10 @@
                     </button>
                     <button ng-if="tempCompany.logo" type="file" ngf-select class="btn btn-primary"
                             ngf-change="setLogo($file, tempCompany)">
-                        Update Logo
+                       Company Logo
                     </button>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 com-logo">
                     <img width="80px" height="80px"
                          data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
                          style="max-height: 100px;" ng-if="tempCompany.logo"/>
@@ -251,8 +251,8 @@
             <div class="form-group col-md-12 pull right">
                 <label class="control-label" for="field_RoadNo"></label>
                 <button type="reset" class="btn btn-default">Reset</button>
-                <button class="btn btn-danger">Cancel</button>
-                <button type="submit" class="btn btn-primary">Submit Request</button>
+                <button type="button" ui-sref="home" class="btn btn-danger">Cancel</button>
+                <button type="submit" class="btn btn-success">Submit Request</button>
             </div>
 
         </form>

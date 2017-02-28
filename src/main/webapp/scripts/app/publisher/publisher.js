@@ -5,7 +5,7 @@ angular.module('appstoreApp')
         $stateProvider
             .state('publisher', {
                 parent: 'account',
-                url: '/publisher/register',
+                url: '/create-account',
                 data: {
                     authorities: [],
                     pageTitle: 'Registration'
@@ -21,7 +21,7 @@ angular.module('appstoreApp')
             })
             .state('publisher.success', {
                 parent: 'account',
-                url: '/publisher/register/success',
+                url: '/publisher/register/success/{email}',
                 data: {
                     authorities: [],
                     pageTitle: 'Registration Successful at Bangladeshi Largest App Store'

@@ -13,8 +13,4 @@ function($scope, $stateParams, $state,  DataUtils,Principal,GetCompany){
 
             });
         });
-
-
-
-
 }]);
