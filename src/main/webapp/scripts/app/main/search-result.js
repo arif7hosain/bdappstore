@@ -10,6 +10,7 @@ angular.module('appstoreApp')
      $scope.q=$stateParams.q;
 
         $scope.search = function (q) {
+        if(q){
             ProductSearch.query({query: q}, function(result) {
                 $scope.products = result;
                 console.log($scope.products);
@@ -19,22 +20,9 @@ angular.module('appstoreApp')
                     $scope.loadAll();
                 }
             });
-        };
-     $scope.getProducts=function(data){
-         alert(data);
-     };
-
-     $scope.type=function(q){
-
-        ProductSearch.query({query: q}, function(result) {
-            $scope.types = result;
-             $scope.foundSug=true;
-            console.log($scope.products.length);
-        }, function(response) {
-            if(response.status === 404) {
-                $scope.loadAll();
+            }else{
+            alert('');
+           $scope.products = Product.query();
             }
-        });
-     };
-
+        };
     });

@@ -3,7 +3,7 @@
     <!-- FEATURES -->
     <div id="features">
         <div class="line">
-            <div class="margin"><br>
+            <div ><br>
                 <form ng-submit="search(q)">
                     <div class="col-md-3"></div>
                     <div class="input-group col-md-6">
@@ -18,14 +18,26 @@
                     </div>
                     <div class="col-md-3"></div>
                 </form>
+            </div><br>
+            <div class="col-md-12">
+                <div class="col-md-6 col-md-offset-3">
+                    <div id="query_view">
+                        <ul>
+                            <li ng-repeat="product in products | orderBy:'productTitle'">
+                                <div id="product_desc">
+                                    <h4>{{product.productTitle}}</h4>
+                                    <h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>
+                                    <p>{{product.productDescription}}</p>
+                                    <button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </div><!--line-->
-        <div id="product_list" class="col-md-12">
-            <div class="col-md-6 col-md-offset-3">
 
-            </div>
-
-        </div>
 
     </div>
 

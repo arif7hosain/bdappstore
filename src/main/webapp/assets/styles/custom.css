@@ -15,7 +15,7 @@ color:white;
     max-height:auto;
     min-height:300px;
     width:100%;
-    background-color:#FAEDE9;
+
     border-radius:5px;
 }
 #query_view,#side-var ul li{
@@ -28,8 +28,7 @@ color:white;
     margin-top:5px;
     height:auto;
     padding:10px;
-    background:#B2BABB;
-    border-radius:10px;
+    background:#ebf0fa;
 }
 
 #contact,#about,#social{
