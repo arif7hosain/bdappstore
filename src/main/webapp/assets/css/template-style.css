@@ -180,8 +180,34 @@ p.logo strong {
 	position: relative;
 	z-index: 2;
 
-}
 
+}
+.four_feature{
+text-align: center;
+}
+#features i {
+	background: none repeat scroll 0 0 #92c500;
+	border-radius: 100px;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.3) inset;
+	color: #fff;
+	display: inline-block;
+	font-size: 2em;
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	width: 100px;
+}
+#features h2 {
+	font-size: 1em;
+	font-weight: 600;
+	margin: 1.25em 0;
+	text-transform: uppercase;
+}
+#features p {
+	color: #777;
+	font-size: 0.85em;
+	line-height: 1.5em;
+}
 #about-us {
 	background: none repeat scroll 0 0 #00283a;
 	clear: both;
