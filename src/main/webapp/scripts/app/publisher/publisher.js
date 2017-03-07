@@ -21,7 +21,7 @@ angular.module('appstoreApp')
             })
             .state('publisher.success', {
                 parent: 'account',
-                url: '/publisher/register/success/{email}',
+                url: '/publisher/register/success',
                 data: {
                     authorities: [],
                     pageTitle: 'Registration Successful at Bangladeshi Largest App Store'

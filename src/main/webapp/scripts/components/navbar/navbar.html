@@ -1,5 +1,5 @@
 <!--<nav  class="navbar navbar-inverse " role="navigation">-->
-<nav ng-show="false" class="navbar navbar-inverse " role="navigation">
+<nav  class="navbar navbar-inverse " role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -10,8 +10,8 @@
             </button>
 
             <div class="navbar-brand">
-                <span><img src="" height="20px" width="20px" alt="App Store"></span>
-                <span><a  href="#/"><span>App Store</span></a></span>
+                <!--<span><img src="" height="20px" width="20px" alt="App Store"></span>-->
+               <a  sref="home">App Store</a>
             </div>
         </div>
         <!--<form class="navbar-form navbar-right" role="search">-->
@@ -20,7 +20,7 @@
         <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
         <!--&lt;!&ndash;<button type="submit" class="btn btn-info">Submit</button>&ndash;&gt;-->
         <!--</form>-->
-        <div class="collapse navbar-collapse navbar-fixed-top" id="navbar-collapse" ng-switch="isAuthenticated()">
+        <div class="collapse navbar-collapse " id="navbar-collapse" ng-switch="isAuthenticated()">
             <ul class="nav navbar-nav navbar-right">
                 <!--<li ui-sref-active="active">-->
                 <!--<a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">-->
@@ -91,8 +91,8 @@
                             &#xA0;<span>Sign in</span></a></li>
                         <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Publisher Account</span></a></li>
-                        <li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.profile" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span>Profile</span></a></li>
+                        <li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.dashboard" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
+                            &#xA0;<span>Dashboard</span></a></li>
                         <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
                         <!--&#xA0;<span>Publisher Account</span></a></li>-->
                         <li ui-sref-active="active" ng-switch-when="true"><a href="" ng-click="logout()" id="logout" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-out"></span>
@@ -133,43 +133,42 @@
 
 
 
-<header>
-    <div id="topbar">
-        <div class="line">
-            <div class="s-12 m-6 l-6">
-                <div class="s-12 m-6 l-6" >
-                    <a><span class="fa fa-facebook"></span></a> <a><span class="fa fa-twitter"></span></a> <a><span class="fa fa-google-plus"></span></a> <a><span class="fa fa-youtube"></span></a>
-                </div>
-            </div>
-            <div class="social right">
-                <button  ui-sref="login"  class="btn btn-info btn-xs">Login</button>
-                <button  ui-sref="publisher" class="btn btn-primary btn-xs">Create Company</button>
-            </div>
-
-        </div>
-    </div>
-    <nav>
-        <div class="line">
-            <div class="s-12 l-2">
-                <p class="logo"><strong>App</strong> Store</p>
-            </div>
-            <!--<div class="l-2">-->
-               <!--<input type="text" name="q" class="form-control" placeholder="Search app [title, name, category]">-->
+<!--<header>-->
+    <!--<div id="topbar">-->
+        <!--<div class="line">-->
+            <!--<div class="s-12 m-6 l-6">-->
+                <!--<div class="s-12 m-6 l-6" >-->
+                    <!--<a><span class="fa fa-facebook"></span></a> <a><span class="fa fa-twitter"></span></a> <a><span class="fa fa-google-plus"></span></a> <a><span class="fa fa-youtube"></span></a>-->
+                <!--</div>-->
             <!--</div>-->
-            <div class="top-nav s-12 l-10">
-                <p class="nav-text">Have a Touch</p>
-                <ul class="right">
-                    <li class="active-item"><a href="#carousel">Home</a></li>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#our-work">Our Work</a></li>
-                    <li><a ui-sref="contact.about">About US</a></li>
-                    <li><a ui-sref="contact">Contact</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-</header>
+            <!--<div class="social right">-->
+                <!--<button   ui-sref="login"  class="btn btn-info btn-xs">Login</button>-->
+                <!--<button  ui-sref="publisher" class="btn btn-primary btn-xs">Create Company</button>-->
+            <!--</div>-->
 
+        <!--</div>-->
+    <!--</div>-->
+    <!--<nav>-->
+        <!--<div class="line">-->
+            <!--<div class="s-12 l-2">-->
+                <!--<p class="logo"><strong>App</strong> Store</p>-->
+                <!--&lt;!&ndash;<a sref="home"><strong>App</strong> Store</a>&ndash;&gt;-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="l-2">&ndash;&gt;-->
+               <!--&lt;!&ndash;<input type="text" name="q" class="form-control" placeholder="Search app [title, name, category]">&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--<div class="top-nav s-12 l-10">-->
+                <!--<p class="nav-text">Have a Touch</p>-->
+                <!--<ul class="right">-->
+                    <!--<li class="active-item"><a href="#carousel">Home</a></li>-->
+                    <!--<li><a href="#features">Features</a></li>-->
+                    <!--<li><a href="#our-work">Our Work</a></li>-->
+                    <!--<li><a ui-sref="contact.about">About US</a></li>-->
+                    <!--<li><a ui-sref="contact">Contact</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+<!--</header>-->
 
-<!--&lt;!&ndash;<div id="top-header"></div>&ndash;&gt;-->
 

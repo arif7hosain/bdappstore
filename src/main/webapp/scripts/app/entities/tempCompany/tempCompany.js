@@ -8,7 +8,7 @@ angular.module('appstoreApp')
                 url: '/temp_company',
                 data: {
                     authorities: ['ROLE_USER'],
-                    pageTitle: 'TempCompanys'
+                    pageTitle: 'Pending publisher application list'
                 },
                 views: {
                     'content@': {
@@ -42,7 +42,7 @@ angular.module('appstoreApp')
                 parent: 'tempCompany',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER','ROLE_ADMIN'],
+                    authorities: [],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({

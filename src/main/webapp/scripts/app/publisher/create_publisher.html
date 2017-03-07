@@ -2,7 +2,8 @@
     <div class="col-md-2"></div>
     <div class="jumbotron col-sm-8">
         <form id="contactForm" ng-submit="create_publisher_account()" method="post" role="form">
-            <h4>Create Your Software Publisher</h4>
+          <br><br><br><br>
+            <h3 style="color:green;">Create Your Software Publisher</h3>
             <hr>
             <div class="form-group col-sm-6">
                 <label class="control-label" for="login">Username</label>
@@ -139,7 +140,7 @@
             </div>
             <div class="form-group col-md-6" ngf-drop ngf-change="setLogo($file, tempCompany)">
                 <div class="col-md-6">
-                    <button ng-if="!tempCompany.logo" type="file" ngf-select class="btn btn-primary"
+                    <button ng-if="!tempCompany.logo" type="file" ngf-select class="btn btn-primary" accept="image/*"
                             ngf-change="setLogo($file, tempCompany)">
                         Attach Logo
                     </button>

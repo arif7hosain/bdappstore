@@ -39,7 +39,7 @@ angular.module('appstoreApp').controller('CreatePublisher',
 
             var onSaveSuccess = function (result) {
 //                $scope.$emit('appstoreApp:tempCompanyUpdate', result);
-                 $state.go('district.detail({id:5})', null, {reload: true});
+                 $state.go('publisher.success');
 //                $scope.isSaving = false;
             };
             var onSaveError = function (result) {
