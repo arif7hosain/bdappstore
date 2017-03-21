@@ -23,7 +23,7 @@ angular.module('appstoreApp')
                 parent: 'entity',
                 url: '/product/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'Product'
                 },
                 views: {
@@ -42,7 +42,7 @@ angular.module('appstoreApp')
                 parent: 'entity',
                 url: '/publisher/product/{id}',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: [],
                     pageTitle: 'Preview full software details'
                 },
                 views: {
