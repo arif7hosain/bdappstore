@@ -1,0 +1,148 @@
+<section>
+    <!-- CAROUSEL -->
+    <div id="carousel">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+        </div>
+    </div>
+    <!-- FIRST BLOCK -->
+    <!-- FEATURES -->
+    <div id="features">
+        <div class="line">
+            <div class="margin"><br>
+                <div class="col-md-3">
+                    <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
+                </div>
+                <div class="col-md-9">
+                    <form name="editForm" role="form" novalidate ng-submit="save()">
+                        <div ><!--modal div-->
+                            <!--<jh-alert-error></jh-alert-error>-->
+                            <!--<div class="form-group col-md-6">-->
+                            <!--<label for="id">ID</label>-->
+                            <!--<input type="text" class="form-control" id="id" name="id"-->
+                            <!--ng-model="product.id" readonly />-->
+                            <!--</div>-->
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productTitle">Product Title</label>
+                                <input type="text" class="form-control" name="productTitle" id="field_productTitle"
+                                       ng-model="product.productTitle"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productDescription">Product Description</label>
+                                <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                                       ng-model="product.productDescription"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productType">Product Type</label>
+                                <select class="form-control" name="productType" ng-model="product.productType" id="field_productType">
+                                    <option value="Web">Web</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Desktop">Desktop</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_Currency">Currency</label>
+                                <select class="form-control" name="Currency" ng-model="product.currency" id="field_Currency">
+                                    <option value="USD">USD</option>
+                                    <option value="BDT">BDT</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_price">Price</label>
+                                <input type="number" class="form-control" name="price" id="field_price"
+                                       ng-model="product.price"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_durationType">Duration Type</label>
+                                <select class="form-control" name="durationType" ng-model="product.durationType" id="field_durationType">
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Yearly">Yearly</option>
+                                    <option value="Permanently">Permanently</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isFurtherDevelopment">FurthervDevelopment</label>
+                                <input type="number" class="form-control" name="isFurtherDevelopment" id="field_isFurtherDevelopment"
+                                       ng-model="product.isFurtherDevelopment"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_liveUrl">Live Url</label>
+                                <input type="text" class="form-control" name="liveUrl" id="field_liveUrl"
+                                       ng-model="product.liveUrl"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_additionalLink">Additional Link</label>
+                                <input type="text" class="form-control" name="additionalLink" id="field_additionalLink"
+                                       ng-model="product.additionalLink"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isAvailable">Availability</label>
+                                <input type="number" class="form-control" name="isAvailable" id="field_isAvailable"
+                                       ng-model="product.isAvailable"
+                                    />
+                            </div>
+                            <!--<div class="form-group col-md-6">-->
+                            <!--<label class="control-label" for="field_createdDate">CreatedDate</label>-->
+                            <!--<input type="date" class="form-control" name="createdDate" id="field_createdDate"-->
+                            <!--ng-model="product.createdDate"-->
+                            <!--/>-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-md-6">-->
+                            <!--<label class="control-label" for="field_updatedDate">UpdatedDate</label>-->
+                            <!--<input type="date" class="form-control" name="updatedDate" id="field_updatedDate"-->
+                            <!--ng-model="product.updatedDate"-->
+                            <!--/>-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-md-6">-->
+                            <!--<label class="control-label" for="field_createBy">CreateBy</label>-->
+                            <!--<input type="text" class="form-control" name="createBy" id="field_createBy"-->
+                            <!--ng-model="product.createBy"-->
+                            <!--/>-->
+                            <!--</div>-->
+                            <!--<div class="form-group col-md-6">-->
+                            <!--<label class="control-label" for="field_updatedBy">UpdatedBy</label>-->
+                            <!--<input type="text" class="form-control" name="updatedBy" id="field_updatedBy"-->
+                            <!--ng-model="product.updatedBy"-->
+                            <!--/>-->
+                            <!--</div>-->
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isActive">IsActive</label>
+                                <input type="number" class="form-control" name="isActive" id="field_isActive"
+                                       ng-model="product.isActive"
+                                    />
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="field_companyInformation">Select Comapny</label>
+                                <select class="form-control" id="field_companyInformation" name="companyInformation" ng-model="product.companyInformation" ng-options="companyInformation as companyInformation.companyName for companyInformation in companyinformations track by companyInformation.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="field_serviceCategory">Select Service Category</label>
+                                <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="product.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div><!--end form div-->
+                        <div class="modal-footer">
+                            <button type="reset" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                                Clear</span>
+                            </button>
+                            <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-success">
+                                Add App</span>
+                            </button>
+                        </div>
+                    </form>
+                </div><!--end col-9-->
+            </div>
+        </div>
+    </div>
+    <!-- CONTACT -->
+</section>
+
