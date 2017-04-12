@@ -14,6 +14,8 @@ angular.module('appstoreApp').controller('CompanyInformationDialogController',
             });
         };
 
+
+
         var onSaveSuccess = function (result) {
             $scope.$emit('appstoreApp:companyInformationUpdate', result);
             $uibModalInstance.close(result);

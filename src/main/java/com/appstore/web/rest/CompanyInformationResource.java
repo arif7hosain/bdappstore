@@ -1,5 +1,8 @@
 package com.appstore.web.rest;
 
+
+import com.appstore.domain.User;
+import com.appstore.security.SecurityUtils;
 import com.codahale.metrics.annotation.Timed;
 import com.appstore.domain.CompanyInformation;
 import com.appstore.repository.CompanyInformationRepository;
@@ -145,7 +148,21 @@ public class CompanyInformationResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public CompanyInformation getCompanyProfileInfoByLogin(@PathVariable String login) {
+
         log.debug("REST request to search CompanyInformations for query {}", login);
         return companyInformationRepository.getCompampanyByLogin(login);
+    }
+
+    @RequestMapping(value = "/_search/companyInformations/info",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public CompanyInformation getCurrentCompany() {
+       String login=SecurityUtils.getCurrentUserLogin();
+       CompanyInformation companyInformation=companyInformationRepository.getCompampanyByLogin(login);
+        if(companyInformation !=null){
+            return companyInformation;
+        }else
+            return null;
     }
 }

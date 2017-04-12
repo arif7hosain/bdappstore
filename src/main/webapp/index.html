@@ -62,63 +62,7 @@
             })
         });
       </script>
-        <script>
-$(document).ready(function() {
 
-    $('#contactForm').formValidation({
-        framework: 'bootstrap',
-        err: {
-            container: '#messages'
-        },
-        icon: {
-            valid: 'glyphicon glyphicon-ok',
-            invalid: 'glyphicon glyphicon-remove',
-            validating: 'glyphicon glyphicon-refresh'
-        },
-        fields: {
-            login: {
-                validators: {
-                    notEmpty: {
-                        message: 'The full name is required and cannot be empty'
-                    }
-                }
-            },
-            email: {
-                validators: {
-                    notEmpty: {
-                        message: 'The email address is required and cannot be empty'
-                    },
-                    emailAddress: {
-                        message: 'The email address is not valid'
-                    }
-                }
-            },
-            password: {
-                validators: {
-                    notEmpty: {
-                        message: 'The title is required and cannot be empty'
-                    },
-                    stringLength: {
-                        max: 100,
-                        message: 'The title must be less than 100 characters long'
-                    }
-                }
-            },
-            companyName: {
-                validators: {
-                    notEmpty: {
-                        message: 'The content is required and cannot be empty'
-                    },
-                    stringLength: {
-                        max: 500,
-                        message: 'The content must be less than 500 characters long'
-                    }
-                }
-            }
-        }
-    });
-});
-</script>
         <!-- endbuild -->
     </head>
     <body ng-app="appstoreApp" >
@@ -470,7 +414,7 @@ $(document).ready(function() {
     <script src="scripts/app/admin/metrics/metrics.modal.controller.js"></script>
     <script src="scripts/app/admin/user-management/user-management-detail.controller.js"></script>
     <script src="scripts/app/admin/user-management/user-management-dialog.controller.js"></script>
-    <script src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/admin/user-management/user-management-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/admin/user-management/user-management.controller.js"></script>
     <script src="scripts/app/admin/user-management/user-management.js"></script>
     <script src="scripts/app/entities/entity.js"></script>
@@ -491,76 +435,76 @@ $(document).ready(function() {
     <script src="scripts/app/entities/country/country.js"></script>
     <script src="scripts/app/entities/country/country.controller.js"></script>
     <script src="scripts/app/entities/country/country-dialog.controller.js"></script>
-    <script src="scripts/app/entities/country/country-delete-dialog.controller.js"></script>
-    <script src="scripts/app/entities/country/country-detail.controller.js"></script>
+    <!--<script src="scripts/app/entities/country/country-delete-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/country/country-detail.controller.js"></script>-->
     <script src="scripts/components/entities/country/country.service.js"></script>
     <script src="scripts/components/entities/country/country.search.service.js"></script>
     <script src="scripts/app/entities/division/division.js"></script>
-    <script src="scripts/app/entities/division/division.controller.js"></script>
+    <!--<script src="scripts/app/entities/division/division.controller.js"></script>-->
     <script src="scripts/app/entities/division/division-dialog.controller.js"></script>
-    <script src="scripts/app/entities/division/division-delete-dialog.controller.js"></script>
-    <script src="scripts/app/entities/division/division-detail.controller.js"></script>
-    <script src="scripts/components/entities/division/division.service.js"></script>
-    <script src="scripts/components/entities/division/division.search.service.js"></script>
-    <script src="scripts/app/entities/district/district.js"></script>
-    <script src="scripts/app/entities/district/district.controller.js"></script>
-    <script src="scripts/app/entities/district/district-dialog.controller.js"></script>
-    <script src="scripts/app/entities/district/district-delete-dialog.controller.js"></script>
-    <script src="scripts/app/entities/district/district-detail.controller.js"></script>
-    <script src="scripts/components/entities/district/district.service.js"></script>
-    <script src="scripts/components/entities/district/district.search.service.js"></script>
-    <script src="scripts/app/entities/upazila/upazila.js"></script>
-    <script src="scripts/app/entities/upazila/upazila.controller.js"></script>
-    <script src="scripts/app/entities/upazila/upazila-dialog.controller.js"></script>
-    <script src="scripts/app/entities/upazila/upazila-delete-dialog.controller.js"></script>
-    <script src="scripts/app/entities/upazila/upazila-detail.controller.js"></script>
+    <!--<script src="scripts/app/entities/division/division-delete-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/division/division-detail.controller.js"></script>-->
+    <!--<script src="scripts/components/entities/division/division.service.js"></script>-->
+    <!--<script src="scripts/components/entities/division/division.search.service.js"></script>-->
+    <!--<script src="scripts/app/entities/district/district.js"></script>-->
+    <!--<script src="scripts/app/entities/district/district.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/district/district-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/district/district-delete-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/district/district-detail.controller.js"></script>-->
+    <!--<script src="scripts/components/entities/district/district.service.js"></script>-->
+    <!--<script src="scripts/components/entities/district/district.search.service.js"></script>-->
+    <!--<script src="scripts/app/entities/upazila/upazila.js"></script>-->
+    <!--<script src="scripts/app/entities/upazila/upazila.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/upazila/upazila-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/upazila/upazila-delete-dialog.controller.js"></script>-->
+    <!--<script src="scripts/app/entities/upazila/upazila-detail.controller.js"></script>-->
 
     <script src="scripts/app/entities/contact/about.controller.js"></script>
     <script src="scripts/app/entities/contact/contact.controller.js"></script>
     <script src="scripts/app/entities/contact/contact.js"></script>
 
 
-    <script src="scripts/components/entities/upazila/upazila.service.js"></script>
-    <script src="scripts/components/entities/upazila/upazila.search.service.js"></script>
+    <!--<script src="scripts/components/entities/upazila/upazila.service.js"></script>-->
+    <!--<script src="scripts/components/entities/upazila/upazila.search.service.js"></script>-->
     <script src="scripts/app/entities/softwareCategory/softwareCategory.js"></script>
     <script src="scripts/app/entities/softwareCategory/softwareCategory.controller.js"></script>
     <script src="scripts/app/entities/softwareCategory/softwareCategory-dialog.controller.js"></script>
-    <script src="scripts/app/entities/softwareCategory/softwareCategory-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/softwareCategory/softwareCategory-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/softwareCategory/softwareCategory-detail.controller.js"></script>
     <script src="scripts/components/entities/softwareCategory/softwareCategory.service.js"></script>
     <script src="scripts/components/entities/softwareCategory/softwareCategory.search.service.js"></script>
     <script src="scripts/app/entities/serviceCategory/serviceCategory.js"></script>
     <script src="scripts/app/entities/serviceCategory/serviceCategory.controller.js"></script>
     <script src="scripts/app/entities/serviceCategory/serviceCategory-dialog.controller.js"></script>
-    <script src="scripts/app/entities/serviceCategory/serviceCategory-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/serviceCategory/serviceCategory-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/serviceCategory/serviceCategory-detail.controller.js"></script>
     <script src="scripts/components/entities/serviceCategory/serviceCategory.service.js"></script>
     <script src="scripts/components/entities/serviceCategory/serviceCategory.search.service.js"></script>
     <script src="scripts/app/entities/companyInformation/companyInformation.js"></script>
     <script src="scripts/app/entities/companyInformation/companyInformation.controller.js"></script>
     <script src="scripts/app/entities/companyInformation/companyInformation-dialog.controller.js"></script>
-    <script src="scripts/app/entities/companyInformation/companyInformation-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/companyInformation/companyInformation-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/companyInformation/companyInformation-detail.controller.js"></script>
     <script src="scripts/components/entities/companyInformation/companyInformation.service.js"></script>
     <script src="scripts/components/entities/companyInformation/companyInformation.search.service.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress.controller.js"></script>
     <script src="scripts/app/entities/comAddress/comAddress-dialog.controller.js"></script>
-    <script src="scripts/app/entities/comAddress/comAddress-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/comAddress/comAddress-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/comAddress/comAddress-detail.controller.js"></script>
     <script src="scripts/components/entities/comAddress/comAddress.service.js"></script>
     <script src="scripts/components/entities/comAddress/comAddress.search.service.js"></script>
     <script src="scripts/app/entities/comBranch/comBranch.js"></script>
     <script src="scripts/app/entities/comBranch/comBranch.controller.js"></script>
     <script src="scripts/app/entities/comBranch/comBranch-dialog.controller.js"></script>
-    <script src="scripts/app/entities/comBranch/comBranch-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/comBranch/comBranch-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/comBranch/comBranch-detail.controller.js"></script>
     <script src="scripts/components/entities/comBranch/comBranch.service.js"></script>
     <script src="scripts/components/entities/comBranch/comBranch.search.service.js"></script>
     <script src="scripts/app/entities/tempCompany/tempCompany.js"></script>
     <script src="scripts/app/entities/tempCompany/tempCompany.controller.js"></script>
     <script src="scripts/app/entities/tempCompany/tempCompany-dialog.controller.js"></script>
-    <script src="scripts/app/entities/tempCompany/tempCompany-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/tempCompany/tempCompany-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/tempCompany/tempCompany-detail.controller.js"></script>
     <script src="scripts/components/entities/tempCompany/tempCompany.service.js"></script>
     <script src="scripts/components/entities/tempCompany/tempCompany.search.service.js"></script>
@@ -569,21 +513,21 @@ $(document).ready(function() {
     <script src="scripts/app/entities/product/product-vew.controller.js"></script>
     <script src="scripts/app/entities/product/product.controller.js"></script>
     <script src="scripts/app/entities/product/product-dialog.controller.js"></script>
-    <script src="scripts/app/entities/product/product-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/product/product-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/product/product-detail.controller.js"></script>
     <script src="scripts/components/entities/product/product.service.js"></script>
     <script src="scripts/components/entities/product/product.search.service.js"></script>
     <script src="scripts/app/entities/productCategory/productCategory.js"></script>
     <script src="scripts/app/entities/productCategory/productCategory.controller.js"></script>
     <script src="scripts/app/entities/productCategory/productCategory-dialog.controller.js"></script>
-    <script src="scripts/app/entities/productCategory/productCategory-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/productCategory/productCategory-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/productCategory/productCategory-detail.controller.js"></script>
     <script src="scripts/components/entities/productCategory/productCategory.service.js"></script>
     <script src="scripts/components/entities/productCategory/productCategory.search.service.js"></script>
     <script src="scripts/app/entities/productPortfolio/productPortfolio.js"></script>
     <script src="scripts/app/entities/productPortfolio/productPortfolio.controller.js"></script>
     <script src="scripts/app/entities/productPortfolio/productPortfolio-dialog.controller.js"></script>
-    <script src="scripts/app/entities/productPortfolio/productPortfolio-delete-dialog.controller.js"></script>
+    <!--<script src="scripts/app/entities/productPortfolio/productPortfolio-delete-dialog.controller.js"></script>-->
     <script src="scripts/app/entities/productPortfolio/productPortfolio-detail.controller.js"></script>
     <script src="scripts/components/entities/productPortfolio/productPortfolio.service.js"></script>
     <script src="scripts/components/entities/productPortfolio/productPortfolio.search.service.js"></script>

@@ -13,9 +13,112 @@
                     <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
                 </div>
                 <div class="col-md-9">
+                   <form>
+                       <span ng-show="!profileEditable" ng-click="editEnable()" class="btn btn-info btn-sm glyphicon glyphicon-edit pull-right">Edit</span><br>
+                       <div class="form-group">
+                           <input ng-show="false" type="text" class="form-control" id="id" name="id"
+                                  ng-model="companyInformation.id" readonly   />
+                       </div>
 
-                </div>
+                       <div class="form-group">
+                           <label class="control-label" for="field_companyName">Company Name</label>
+                           <input ng-show="profileEditable" ng-show="profileEditable" type="text" class="form-control" name="companyName" id="field_companyName"
+                                     ng-model="profile.companyName"
+                                  maxlength="45"  />
+                           <div ng-show="!profileEditable">{{profile.companyName}}</div>
+                       </div>
 
+                       <div class="form-group">
+                           <label class="control-label" for="field_shortName">Short Name</label>
+                            <div ng-show="!profileEditable">{{profile.shortName}}</div>
+                           <input ng-show="profileEditable" type="text" class="form-control" name="shortName" id="field_shortName"
+                                  ng-model="profile.shortName"
+                                  maxlength="45" />
+                       </div>
+
+
+                       <div class="form-group">
+                           <label class="control-label" for="field_companyInformation">Company Information</label>
+                           <textarea ng-show="profileEditable" type="text" class="form-control" name="companyInformation" id="field_companyInformation"
+                                  ng-model="profile.companyInformation"
+                                     cols="20" rows="4"></textarea>
+                           <div ng-show="!profileEditable">{{profile.companyInformation}}</div>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label" for="field_businessDescription">Business Description</label>
+                           <textarea ng-show="profileEditable" type="text" class="form-control" name="businessDescription" id="field_businessDescription"
+                                  ng-model="profile.businessDescription"
+                                  cols="20" rows="4"></textarea>
+                           <div ng-show="!profileEditable">{{profile.businessDescription}}</div>
+                       </div>
+                       <!--<div class="form-group">-->
+                           <!--<label class="control-label" for="field_shortDescription">Short Description</label>-->
+                           <!--<input ng-show="profileEditable" type="text" class="form-control" name="shortDescription" id="field_shortDescription"-->
+                                  <!--ng-model="profile.shortDescription"-->
+                               <!--/>-->
+                       <!--</div>-->
+                       <!--<div class="form-group" ngf-drop ngf-change="setLogo($file, companyInformation)">-->
+                           <!--<label class="control-label" for="field_logo">Logo</label>-->
+                           <!--<div>-->
+                               <!--<div class="help-block clearfix">-->
+                                   <!--<span class="pull-left">{{profile.logoContentType}} {{byteSize(profile.logo)}}</span>-->
+                                   <!--<button ng-show="profileEditable" ng-click="profile.logo=null;profile.logoContentType=null;"-->
+                                           <!--ng-if="profile.logo"-->
+                                           <!--class="btn btn-default btn-xs pull-right">-->
+                                       <!--<span class="glyphicon glyphicon-remove"></span>-->
+                                   <!--</button>-->
+                               <!--</div>-->
+                               <!--<button ng-show="profileEditable" type="file" ngf-select class="btn btn-default btn-block"-->
+                                       <!--ngf-change="setLogo($file, companyInformation)">-->
+                                   <!--Add blob-->
+                               <!--</button>-->
+                           <!--</div>-->
+                           <!--<input ng-show="profileEditable" type="hidden" class="form-control" name="logo" id="field_logo"-->
+                                  <!--ng-model="profile.logo"-->
+                               <!--/>-->
+                           <!--<input ng-show="profileEditable" type="hidden" class="form-control" name="logoContentType" id="field_logoContentType"-->
+                                  <!--ng-model="profile.logoContentType" />-->
+                       <!--</div>-->
+                       <div class="form-group">
+                           <label for="field_serviceCategory">Service Category</label>
+                           <select ng-show="profileEditable" class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="profile.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                               <option value=""></option>
+                           </select>
+                           <div ng-show="!profileEditable">{{profile.serviceCategory.serviceName}}</div>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label" for="field_website">Website</label>
+                           <input ng-show="profileEditable" type="text" class="form-control" name="website" id="field_website"
+                                  ng-model="profile.website"
+                               />
+                           <div ng-show="!profileEditable"><a href="{{profile.website}}">{{profile.website}}</a></div>
+                       </div>
+                       <div class="form-group">
+                           <label class="control-label" for="field_companyType">Company Type</label>
+                           <select ng-show="profileEditable" class="form-control" name="companyType" ng-model="profile.companyType" id="field_companyType">
+                               <option value="National">National</option>
+                               <option value="International">International</option>
+                           </select>
+                           <div ng-show="!profileEditable">{{profile.companyType}}</div>
+                       </div>
+                       <div class="form-group">
+                           <label for="field_country">Country</label>
+                           <select ng-show="profileEditable" class="form-control" id="field_country" name="country" ng-model="profile.country" ng-options="country as country.countryName for country in countrys track by country.id">
+                               <option value=""></option>
+                           </select>
+                           <div ng-show="!profileEditable">{{profile.country.countryName}}</div>
+                       </div>
+
+                       <div class="buttons">
+                           <button ng-show="profileEditable" ng-click="save()"  type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary pull-right">
+                               <span class="glyphicon glyphicon-ok-circle"></span>&nbsp;<span>Save</span>
+                           </button><span> </span>
+                           <button ng-show="profileEditable" type="button" class="btn btn-default pull-right" data-dismiss="modal" ng-click="clear()">
+                               <span class="glyphicon glyphicon-refresh"></span>&nbsp;<span>Reset</span>
+                           </button>
+                       </div>
+                   </form>
+                </div><!--div 9-->
             </div>
         </div>
     </div>
