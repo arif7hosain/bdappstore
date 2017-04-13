@@ -4,14 +4,15 @@ angular.module('appstoreApp').controller('AppNew',
     ['$scope', '$stateParams',  'Product', 'CompanyInformation', 'ServiceCategory',
         function($scope, $stateParams,  Product, CompanyInformation, ServiceCategory) {
 
+        if($stateParams.id){
+        var product_id=$stateParams.id;
+            Product.get({id : product_id}, function(result) {
+                $scope.product = result;
+            });
+        }
 
         $scope.companyinformations = CompanyInformation.query();
         $scope.servicecategorys = ServiceCategory.query();
-        $scope.load = function(id) {
-            Product.get({id : id}, function(result) {
-                $scope.product = result;
-            });
-        };
 
         var onSaveSuccess = function (result) {
             $scope.$emit('appstoreApp:productUpdate', result);

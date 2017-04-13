@@ -82,5 +82,24 @@ angular.module('appstoreApp')
                    },
                     resolve: {
                     }
-            });
+            })
+            .state('publisher.app-edit', {
+                 parent: 'account',
+                 url: '/company/app-edit/{id}',
+                 data: {
+                     authorities: ['ROLE_COMPANY'],
+                     pageTitle: 'Welcome to app edit page !'
+                 },
+                 views: {
+                     'content@': {
+                         templateUrl: 'scripts/app/publisher/product-dialog.html',
+                         controller: 'AppNew'
+                     }
+                 },
+                 resolve: {
+                     entity: ['$stateParams', 'Product', function($stateParams, Product) {
+                         return Product.get({id : $stateParams.id});
+                     }]
+                 }
+             });
     });

@@ -1,5 +1,10 @@
 package com.appstore.web.rest;
 
+import com.appstore.domain.CompanyInformation;
+import com.appstore.domain.User;
+import com.appstore.repository.CompanyInformationRepository;
+import com.appstore.security.SecurityUtils;
+import com.appstore.service.UserService;
 import com.codahale.metrics.annotation.Timed;
 import com.appstore.domain.Product;
 import com.appstore.repository.ProductRepository;
@@ -41,6 +46,13 @@ public class ProductResource {
     @Inject
     private ProductSearchRepository productSearchRepository;
 
+    @Inject
+    private UserService userService;
+
+    @Inject
+    private CompanyInformationRepository companyInformationRepository;
+
+
     /**
      * POST  /products -> Create a new product.
      */
@@ -53,6 +65,10 @@ public class ProductResource {
         if (product.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("product", "idexists", "A new product cannot already have an ID")).body(null);
         }
+
+        product.setCompanyInformation(getInfo());
+        product.setIsActive(1);
+        product.setView(1);
         Product result = productRepository.save(product);
         productSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/products/" + result.getId()))
@@ -156,5 +172,52 @@ public class ProductResource {
             .collect(Collectors.toList());
     }
 
+
+    public CompanyInformation getInfo(){
+      String username=SecurityUtils.getCurrentUserLogin();
+      Optional<User> u=userService.getUserWithAuthoritiesByLogin(username);
+      User user=u.get();
+      CompanyInformation companyInformation=productRepository.getCompany(user.getId());
+      if(companyInformation !=null)
+            return companyInformation;
+        else
+        return null;
+    }
+
+    /**
+     * GET  /products -> get all the products.
+     */
+    @RequestMapping(value = "/_search/products/currentUse",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Product> getAllAppsByCurrentUser()
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Products");
+        System.out.println(">>>>>>>>>>..com _ID"+getInfo().getId());
+        List<Product> products=productRepository.getPublisherApps(getInfo().getId());
+        if(!products.isEmpty())
+            return products;
+        else return null;
+
+    }
+
+    /**
+     * GET  /products -> get all the products.
+     */
+    @RequestMapping(value = "/_search/products/addView/{id}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public void addView(@PathVariable Long id)
+        throws URISyntaxException {
+        log.debug("REST request to get a page of Products");
+        Product products=productRepository.findOne(id);
+        Integer p=products.getView();
+        products.setView(p+1);
+        Product result = productRepository.save(products);
+        productSearchRepository.save(result);
+
+    }
 
 }

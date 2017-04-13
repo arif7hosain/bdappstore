@@ -78,6 +78,9 @@ public class Product implements Serializable {
     @Column(name = "is_active")
     private Integer isActive;
 
+    @Column(name = "view")
+    private Integer view;
+
     @ManyToOne
     @JoinColumn(name = "company_information_id")
     private CompanyInformation companyInformation;
@@ -207,6 +210,14 @@ public class Product implements Serializable {
         this.updatedBy = updatedBy;
     }
 
+    public Integer getView() {
+        return view;
+    }
+
+    public void setView(Integer view) {
+        this.view = view;
+    }
+
     public Integer getIsActive() {
         return isActive;
     }
@@ -260,6 +271,7 @@ public class Product implements Serializable {
             ", durationType='" + durationType + "'" +
             ", isFurtherDevelopment='" + isFurtherDevelopment + "'" +
             ", liveUrl='" + liveUrl + "'" +
+            ", view='" + view + "'" +
             ", additionalLink='" + additionalLink + "'" +
             ", isAvailable='" + isAvailable + "'" +
             ", createdDate='" + createdDate + "'" +

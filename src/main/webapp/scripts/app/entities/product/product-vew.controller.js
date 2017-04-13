@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('ViewProduct',function ($scope, $rootScope, $stateParams, entity, Product, CompanyInformation, ServiceCategory,GetAllProductPortfolio) {
+    .controller('ViewProduct',['$scope','$rootScope','$stateParams','entity','Product','CompanyInformation','ServiceCategory','GetAllProductPortfolio','AddView',
+    function ($scope, $rootScope, $stateParams, entity, Product, CompanyInformation, ServiceCategory,GetAllProductPortfolio,AddView) {
         $scope.product = entity;
         $scope.images=[];
         $scope.load = function (id) {
@@ -9,15 +10,11 @@ angular.module('appstoreApp')
                 $scope.product = result;
             });
         };
-        GetAllProductPortfolio.query({id:$scope.product.id},function(results){
+
+        GetAllProductPortfolio.query({id: $stateParams.id},function(results){
             $scope.images=results;
         });
 
+         AddView.query({id: $scope.product.id});
 
-
-//        var unsubscribe = $rootScope.$on('appstoreApp:productUpdate', function(event, result) {
-//            $scope.product = result;
-//        });
-//        $scope.$on('$destroy', unsubscribe);
-
-    });
+    }]);

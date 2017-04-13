@@ -45,7 +45,9 @@ public class CompanyInformation implements Serializable {
     @Column(name = "logo")
     private byte[] logo;
 
-    @Column(name = "logo_content_type")        private String logoContentType;
+    @Column(name = "logo_content_type")
+    private String logoContentType;
+
     @Column(name = "website")
     private String website;
 
@@ -76,7 +78,8 @@ public class CompanyInformation implements Serializable {
     @JoinColumn(name = "service_category_id")
     private ServiceCategory serviceCategory;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(name = "user_id")
     private User user;
 
 

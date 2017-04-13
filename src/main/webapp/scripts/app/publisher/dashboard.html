@@ -19,35 +19,40 @@
                             <th>App Title</th>
                             <th>App Type</th>
                             <th>Price</th>
-                            <th>Business Type</th>
-                            <th>View</th>
+                            <th>Payment Type</th>
+                            <th>Viewed</th>
                             <th>Status</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>JasperServer</td>
-                            <td>Reporting</td>
-                            <td>25 Taka</td>
-                            <td>Enterprise Reporting</td>
-                            <td>10</td>
-                            <td>Running</td>
-                        </tr> <tr>
-                            <td>JasperServer</td>
-                            <td>Reporting</td>
-                            <td>25 Taka</td>
-                            <td>Enterprise Reporting</td>
-                            <td>10</td>
-                            <td>Running</td>
-                        </tr> <tr>
-                            <td>JasperServer</td>
-                            <td>Reporting</td>
-                            <td>25 Taka</td>
-                            <td>Enterprise Reporting</td>
-                            <td>10</td>
-                            <td>Running</td>
+                        <tr ng-repeat="app in apps">
+                            {{app}}
+                            <td>{{app.productTitle}}</td>
+                            <td>{{app.productType}}</td>
+                            <td>{{app.price}} {{app.currency}}</td>
+                            <td>{{app.durationType}}</td>
+                            <td>{{app.view}}</td>
+                            <td>{{app.isActive}}</td>
+                            <td>
+                                <button type="submit"
+                                        ui-sref="division.detail({id:division.id})"
+                                        class="btn btn-info btn-sm">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                </button>
+                                <button type="submit"
+                                        ui-sref="publisher.app-edit({id:app.id})"
+                                        class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                                <button ng-show="false" type="submit"
+                                        ui-sref="division.delete({id:division.id})"
+                                        class="btn btn-danger btn-sm">
+                                    <span class="glyphicon glyphicon-remove-circle"></span>
+                                </button>
+                            </td>
+                            </td>
                         </tr>
-
                         </tbody>
                     </table>
                 </div>
