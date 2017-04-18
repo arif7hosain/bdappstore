@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('appstoreApp').controller('AppNew',
-    ['$scope', '$stateParams',  'Product', 'CompanyInformation', 'ServiceCategory',
-        function($scope, $stateParams,  Product, CompanyInformation, ServiceCategory) {
+    ['$scope','$state', '$stateParams',  'Product', 'CompanyInformation', 'ServiceCategory',
+        function($scope, $state, $stateParams,  Product, CompanyInformation, ServiceCategory) {
 
         if($stateParams.id){
         var product_id=$stateParams.id;
@@ -15,6 +15,7 @@ angular.module('appstoreApp').controller('AppNew',
         $scope.servicecategorys = ServiceCategory.query();
 
         var onSaveSuccess = function (result) {
+        $state.go('publisher.dashboard');
             $scope.$emit('appstoreApp:productUpdate', result);
             $scope.isSaving = false;
         };

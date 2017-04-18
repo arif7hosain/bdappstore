@@ -3,114 +3,109 @@
         <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
     </div>
     <div class="col-md-9">
+                    <form name="editForm" role="form" novalidate ng-submit="save()">
 
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                                    ng-click="clear()">&times;</button>
+                            <h4 ng-if="!product.id" class="modal-title" id="myProductLabel">Add New Product</h4>
+                            <h4 ng-if="product.id" class="modal-title" id="myProductLabel">Update Product</h4>
+                        </div>
+                        <div class="modal-body">
+                            <!--<jh-alert-error></jh-alert-error>-->
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productTitle">Product Title</label>
+                                <input type="text" class="form-control" name="productTitle" id="field_productTitle"
+                                       ng-model="product.productTitle"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productDescription">Product Description</label>
+                                <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                                       ng-model="product.productDescription"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_productType">Product Type</label>
+                                <select class="form-control" name="productType" ng-model="product.productType" id="field_productType">
+                                    <option value="Web">Web</option>
+                                    <option value="Mobile">Mobile</option>
+                                    <option value="Desktop">Desktop</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_Currency">Currency</label>
+                                <select class="form-control" name="Currency" ng-model="product.currency" id="field_Currency">
+                                    <option value="USD">USD</option>
+                                    <option value="BDT">BDT</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_price">Price</label>
+                                <input type="number" class="form-control" name="price" id="field_price"
+                                       ng-model="product.price"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_durationType">Duration Type</label>
+                                <select class="form-control" name="durationType" ng-model="product.durationType" id="field_durationType">
+                                    <option value="Monthly">Monthly</option>
+                                    <option value="Yearly">Yearly</option>
+                                    <option value="Permanently">Permanently</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isFurtherDevelopment">FurthervDevelopment</label>
+                                <input type="number" class="form-control" name="isFurtherDevelopment" id="field_isFurtherDevelopment"
+                                       ng-model="product.isFurtherDevelopment"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_liveUrl">Live Url</label>
+                                <input type="text" class="form-control" name="liveUrl" id="field_liveUrl"
+                                       ng-model="product.liveUrl"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_additionalLink">Additional Link</label>
+                                <input type="text" class="form-control" name="additionalLink" id="field_additionalLink"
+                                       ng-model="product.additionalLink"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isAvailable">Availability</label>
+                                <input type="number" class="form-control" name="isAvailable" id="field_isAvailable"
+                                       ng-model="product.isAvailable"
+                                    />
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="control-label" for="field_isActive">IsActive</label>
+                                <input type="number" class="form-control" name="isActive" id="field_isActive"
+                                       ng-model="product.isActive"
+                                    />
+                            </div>
 
-
-
-
-<form name="editForm" role="form" novalidate ng-submit="save()">
-
-    <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
-                ng-click="clear()">&times;</button>
-        <h4 ng-if="!product.id" class="modal-title" id="myProductLabel">Add New Product</h4>
-        <h4 ng-if="product.id" class="modal-title" id="myProductLabel">Update Product</h4>
-    </div>
-    <div class="modal-body">
-        <!--<jh-alert-error></jh-alert-error>-->
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_productTitle">Product Title</label>
-            <input type="text" class="form-control" name="productTitle" id="field_productTitle"
-                    ng-model="product.productTitle"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_productDescription">Product Description</label>
-            <input type="text" class="form-control" name="productDescription" id="field_productDescription"
-                    ng-model="product.productDescription"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_productType">Product Type</label>
-            <select class="form-control" name="productType" ng-model="product.productType" id="field_productType">
-                <option value="Web">Web</option>
-                <option value="Mobile">Mobile</option>
-                <option value="Desktop">Desktop</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_Currency">Currency</label>
-            <select class="form-control" name="Currency" ng-model="product.currency" id="field_Currency">
-                <option value="USD">USD</option>
-                <option value="BDT">BDT</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_price">Price</label>
-            <input type="number" class="form-control" name="price" id="field_price"
-                    ng-model="product.price"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_durationType">Duration Type</label>
-            <select class="form-control" name="durationType" ng-model="product.durationType" id="field_durationType">
-                <option value="Monthly">Monthly</option>
-                <option value="Yearly">Yearly</option>
-                <option value="Permanently">Permanently</option>
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_isFurtherDevelopment">FurthervDevelopment</label>
-            <input type="number" class="form-control" name="isFurtherDevelopment" id="field_isFurtherDevelopment"
-                    ng-model="product.isFurtherDevelopment"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_liveUrl">Live Url</label>
-            <input type="text" class="form-control" name="liveUrl" id="field_liveUrl"
-                    ng-model="product.liveUrl"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_additionalLink">Additional Link</label>
-            <input type="text" class="form-control" name="additionalLink" id="field_additionalLink"
-                    ng-model="product.additionalLink"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_isAvailable">Availability</label>
-            <input type="number" class="form-control" name="isAvailable" id="field_isAvailable"
-                    ng-model="product.isAvailable"
-                     />
-        </div>
-        <div class="form-group col-md-6">
-            <label class="control-label" for="field_isActive">IsActive</label>
-            <input type="number" class="form-control" name="isActive" id="field_isActive"
-                    ng-model="product.isActive"
-                     />
-        </div>
-
-        <div class="form-group col-md-6">
-            <label for="field_companyInformation">Select Comapny</label>
-            <select class="form-control" id="field_companyInformation" name="companyInformation" ng-model="product.companyInformation" ng-options="companyInformation as companyInformation.companyName for companyInformation in companyinformations track by companyInformation.id">
-                <option value=""></option>
-            </select>
-        </div>
-        <div class="form-group col-md-6">
-            <label for="field_serviceCategory">Select Service Category</label>
-            <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="product.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
-                <option value=""></option>
-            </select>
-        </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
-            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
-        </button>
-        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
-            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
-        </button>
-    </div>
-</form>
-    </div><!--div9-->
+                            <div class="form-group col-md-6">
+                                <label for="field_companyInformation">Select Comapny</label>
+                                <select class="form-control" id="field_companyInformation" name="companyInformation" ng-model="product.companyInformation" ng-options="companyInformation as companyInformation.companyName for companyInformation in companyinformations track by companyInformation.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="field_serviceCategory">Select Service Category</label>
+                                <select class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="product.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
+                                    <option value=""></option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+                                <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+                            </button>
+                            <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+                            </button>
+                        </div>
+                    </form>
+     </div> <!--div9-->
 </div>

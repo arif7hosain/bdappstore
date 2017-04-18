@@ -13,7 +13,11 @@
                     <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
                 </div>
                 <div class="col-md-9">
-                    <form name="editForm" role="form" novalidate ng-submit="save()">
+                    <div class="panel panel-info">
+                        <div class="panel-heading"><p>Add new App</p>
+                        </div>
+                        <div class="pane-body">
+                              <form name="editForm" role="form" novalidate ng-submit="save()">
                         <div ><!--modal div-->
                             <div class="form-group col-md-6">
                                 <label class="control-label" for="field_productTitle">Product Title</label>
@@ -107,6 +111,8 @@
                             </button>
                         </div>
                     </form>
+                        </div>
+                    </div>
                 </div><!--end col-9-->
             </div>
         </div>
