@@ -1,0 +1,143 @@
+<section>
+    <!-- CAROUSEL -->
+    <div id="carousel">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+        </div>
+    </div>
+    <!-- FIRST BLOCK -->
+    <!-- FEATURES -->
+    <div id="features">
+        <div class="line">
+            <div class="margin"><br>
+                <div class="col-sm-3 col-md-3">
+                    <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
+                </div>
+                <div class="col-sm-9 col-md-9">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
+                            <!--<th>SN</th>-->
+                            <!--<th jh-sort-by="username"><span>Username</span> </span></th>-->
+                            <th><span>Logo</span> </span></th>
+                            <th jh-sort-by="companyName"><span>Company Name</span> </span></th>
+                            <th jh-sort-by="email"><span>Email</span> </span></th>
+                            <!--<th jh-sort-by="password"><span>Password</span> </span></th>-->
+                            <!--<th jh-sort-by="branchName"><span>Branch Name</span> </span></th>-->
+                            <!--<th jh-sort-by="BranchType"><span>Branch Type</span> </span></th>-->
+
+                            <!--<th jh-sort-by="shortName"><span>Short Name</span> </span></th>-->
+                            <!--<th jh-sort-by="companyInformation"><span>CompanyInformation</span> </span></th>-->
+                            <!--<th jh-sort-by="businessDescription"><span>BusinessDescription</span> </span></th>-->
+                            <!--<th jh-sort-by="facebook"><span>Facebook</span> </span></th>-->
+                            <!--<th jh-sort-by="googlePlus"><span>GooglePlus</span> </span></th>-->
+                            <!--<th jh-sort-by="youtube"><span>Youtube</span> </span></th>-->
+                            <!--<th jh-sort-by="linkedin"><span>Linkedin</span> </span></th>-->
+                            <!--<th jh-sort-by="twitter"><span>Twitter</span> </span></th>-->
+                            <!--<th jh-sort-by="website"><span>Website</span> </span></th>-->
+                            <!--<th jh-sort-by="city"><span>City</span> </span></th>-->
+                            <!--<th jh-sort-by="shortDescription"><span>ShortDescription</span> </span></th>-->
+                            <!--<th jh-sort-by="logo"><span>Logo</span> </span></th>-->
+                            <!--<th jh-sort-by="companyType"><span>Company Type</span> </span></th>-->
+                            <!--<th jh-sort-by="addressType"><span>Address Type</span> </span></th>-->
+                            <!--<th jh-sort-by="officePhone"><span>Office Phone</span> </span></th>-->
+                            <!--<th jh-sort-by="contactNumber"><span>Contact Number</span> </span></th>-->
+                            <!--<th jh-sort-by="postalCode"><span>PostalCode</span> </span></th>-->
+                            <!--<th jh-sort-by="house"><span>House</span> </span></th>-->
+                            <!--<th jh-sort-by="RoadNo"><span>RoadNo</span> </span></th>-->
+                            <!--<th jh-sort-by="CreatedDate"><span>CreatedDate</span> </span></th>-->
+                            <!--<th jh-sort-by="updatedDate"><span>UpdatedDate</span> </span></th>-->
+                            <!--<th jh-sort-by="createBy"><span>CreateBy</span> </span></th>-->
+                            <!--<th jh-sort-by="updatedBy"><span>UpdatedBy</span> </span></th>-->
+                            <!--<th jh-sort-by="activeStatus"><span>ActiveStatus</span> </span></th>-->
+                            <th jh-sort-by="country.countryName"><span>Country</span> </span></th>
+                            <th jh-sort-by="serviceCategory.serviceName"><span>Service Category</span> </span></th>
+                            <!--<th jh-sort-by="upazila.upazilaName"><span>upazila</span> </span></th>-->
+
+                            <th>Status</th>
+                            <th>CRUD</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="tempCompany in tempCompanys |filter:{companyName:searchQuery} track by tempCompany.id">
+                            <!--<td>{{$index+1}}</td>-->
+                            <!--<td>{{tempCompany.username}}</td>-->
+                            <td><img width="5px" height="40px"
+                                     data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
+                                     style="max-height: 40px;" ng-if="tempCompany.logo"/></td>
+                            <td>{{tempCompany.companyName}}</td>
+                            <td>{{tempCompany.email}}</td>
+                            <!--<td>{{tempCompany.password}}</td>-->
+                            <!--<td>{{tempCompany.branchName}}</td>-->
+                            <!--<td>{{tempCompany.BranchType}}</td>-->
+
+                            <!--<td>{{tempCompany.shortName}}</td>-->
+                            <!--<td>{{tempCompany.companyInformation}}</td>-->
+                            <!--<td>{{tempCompany.businessDescription}}</td>-->
+                            <!--<td>{{tempCompany.facebook}}</td>-->
+                            <!--<td>{{tempCompany.googlePlus}}</td>-->
+                            <!--<td>{{tempCompany.youtube}}</td>-->
+                            <!--<td>{{tempCompany.linkedin}}</td>-->
+                            <!--<td>{{tempCompany.twitter}}</td>-->
+                            <!--<td>{{tempCompany.website}}</td>-->
+                            <!--<td>{{tempCompany.city}}</td>-->
+                            <!--<td>{{tempCompany.shortDescription}}</td>-->
+                            <!--<td>{{tempCompany.logo}}</td>-->
+                            <!--<td translate="{{'appstoreApp.CompanyType.' + tempCompany.companyType}}">{{tempCompany.companyType}}</td>-->
+                            <!--<td translate="{{'appstoreApp.AddressType.' + tempCompany.addressType}}">{{tempCompany.addressType}}</td>-->
+                            <!--<td>{{tempCompany.officePhone}}</td>-->
+                            <!--<td>{{tempCompany.contactNumber}}</td>-->
+                            <!--<td>{{tempCompany.postalCode}}</td>-->
+                            <!--<td>{{tempCompany.house}}</td>-->
+                            <!--<td>{{tempCompany.roadNo}}</td>-->
+                            <!--<td>{{tempCompany.CreatedDate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{tempCompany.updatedDate | date:'mediumDate'}}</td>-->
+                            <!--<td>{{tempCompany.createBy}}</td>-->
+                            <!--<td>{{tempCompany.updatedBy}}</td>-->
+                            <!--<td>{{tempCompany.activeStatus}}</td>-->
+                            <td>
+                                <a ui-sref="country.detail({id:tempCompany.country.id})">{{tempCompany.country.countryName}}</a>
+                            </td>
+                            <td>
+                                <a ui-sref="serviceCategory.detail({id:tempCompany.serviceCategory.id})">{{tempCompany.serviceCategory.serviceName}}</a>
+                            </td>
+                            <!--<td>-->
+                            <!--<a ui-sref="upazila.detail({id:tempCompany.upazila.id})">{{tempCompany.upazila.upazilaName}}</a>-->
+                            <!--</td>-->
+                            <td>
+                                <button ng-show="tempCompany.activeStatus==0 || tempCompany.activeStatus==null" ng-click="approve(tempCompany.id)"  ng-if="tempCompany.activeStatus==0 || tempCompany.activeStatus==null"  class="btn btn-info btn-xs" type="button">Approve</button>
+                                <button ng-click="ban(tempCompany.id)" ng-if="tempCompany.activeStatus==1"  class="btn btn-success btn-xs" type="button">Ban</button>
+                                <button ng-if="tempCompany.activeStatus==2"  class="btn btn-danger btn-xs" type="button">Rejected</button>
+                            </td>
+                            <td>
+                                <button type="submit"
+                                        ui-sref="tempCompany.detail({id:tempCompany.id})"
+                                        class="btn btn-info btn-xs">
+                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                    <!--&nbsp;<span> View</span>-->
+                                </button>
+                                <button ng-show="false" type="submit"
+                                        ui-sref="tempCompany.edit({id:tempCompany.id})"
+                                        class="btn btn-primary btn-xs">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                    <!--&nbsp;<span> Edit</span>-->
+                                </button>
+                                <button ng-show="false" type="submit"
+                                        ui-sref="tempCompany.delete({id:tempCompany.id})"
+                                        class="btn btn-danger btn-xs">
+                            <span class="glyphicon glyphicon-remove-circle">
+                                <!-- -->
+                            <!--</span>&nbsp;<span> Delete</span>-->
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- CONTACT -->
+</section>
+

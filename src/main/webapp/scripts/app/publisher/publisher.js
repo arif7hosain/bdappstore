@@ -101,5 +101,21 @@ angular.module('appstoreApp')
                          return Product.get({id : $stateParams.id});
                      }]
                  }
-             });
+             })
+             .state('publisher.company-list', {
+                     parent: 'account',
+                     url: '/publisher-list',
+                     data: {
+                         authorities: [],
+                         pageTitle: 'Pending publisher application list'
+                     },
+                     views: {
+                         'content@': {
+                             templateUrl: 'scripts/app/publisher/company-list.html',
+                             controller: 'CompanyList'
+                         }
+                     },
+                     resolve: {
+                     }
+                 });
     });

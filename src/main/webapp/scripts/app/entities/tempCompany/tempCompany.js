@@ -3,22 +3,22 @@
 angular.module('appstoreApp')
     .config(function ($stateProvider) {
         $stateProvider
-            .state('tempCompany', {
-                parent: 'entity',
-                url: '/temp_company',
-                data: {
-                    authorities: ['ROLE_USER'],
-                    pageTitle: 'Pending publisher application list'
-                },
-                views: {
-                    'content@': {
-                        templateUrl: 'scripts/app/entities/tempCompany/tempCompanys.html',
-                        controller: 'TempCompanyController'
-                    }
-                },
-                resolve: {
-                }
-            })
+//            .state('tempCompany', {
+//                parent: 'entity',
+//                url: '/temp_company',
+//                data: {
+//                    authorities: ['ROLE_USER'],
+//                    pageTitle: 'Pending publisher application list'
+//                },
+//                views: {
+//                    'content@': {
+//                        templateUrl: 'scripts/app/entities/tempCompany/tempCompanys.html',
+//                        controller: 'TempCompanyController'
+//                    }
+//                },
+//                resolve: {
+//                }
+//            })
             .state('tempCompany.detail', {
                 parent: 'entity',
                 url: '/tempCompany/{id}',
