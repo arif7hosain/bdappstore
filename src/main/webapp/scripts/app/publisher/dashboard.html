@@ -9,10 +9,11 @@
     <div id="features">
         <div class="line">
             <div class="margin"><br>
-                <div class="col-md-3">
+                <div class="col-sm-3 col-md-3">
                     <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
                 </div>
-                <div class="col-md-9">
+                <div class="col-sm-9 col-md-9">
+
                     <table class="table table-hover">
                         <thead>
                         <tr>
@@ -33,16 +34,16 @@
                             <td>{{app.price}} {{app.currency}}</td>
                             <td>{{app.durationType}}</td>
                             <td>{{app.view}}</td>
-                            <td>{{app.isActive}}</td>
+                            <!--<td>{{app.isActive}}</td>-->
+                            <td><span ng-if="app.isActive=1">Active</span><span ng-if="app.isActive=0">In-Active</span></td>
                             <td>
-                                <button type="submit"
-                                        ui-sref="division.detail({id:division.id})"
-                                        class="btn btn-info btn-sm">
+                                <button type="submit" data-toggle="modal" data-target="#myModal" ng-click="app_view(app.id)"
+                                        class="btn btn-info btn-xs">
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                 </button>
                                 <button type="submit"
                                         ui-sref="publisher.app-edit({id:app.id})"
-                                        class="btn btn-primary btn-sm">
+                                        class="btn btn-primary btn-xs">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </button>
                                 <button ng-show="false" type="submit"
@@ -55,6 +56,7 @@
                         </tr>
                         </tbody>
                     </table>
+                    <div class="col-sm-12 col-md-12" id="chartContainer" style="height: 300px; width: 100%;"></div>
                 </div>
 
             </div>
@@ -62,3 +64,4 @@
     </div>
     <!-- CONTACT -->
 </section>
+<ng-include src="'scripts/app/publisher/app-preview.html'"></ng-include>

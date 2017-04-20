@@ -1,0 +1,41 @@
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <!--<div class="modal-header">-->
+                <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+                <!--<h4 class="modal-title">Modal Header</h4>-->
+            <!--</div>-->
+            <div class="modal-body">
+                <div>
+                    <label>App Title</label>
+                    <div><p>{{product.productTitle}}</p></div>
+                </div>
+                <div>
+                    <label>App App Type</label>
+                    <div><p>{{product.productType}}</p></div>
+                </div>
+                <div>
+                    <label>App Description</label>
+                    <div><p>{{product.productDescription}}</p></div>
+                </div>
+                <div>
+                    <label>Amount</label>
+                    <div><p>{{product.price}} {{product.currency}}</p></div>
+                </div>
+                <div>
+                    <label>Future Development</label>
+                    <div><p>
+                        <span ng-show="product.isFurtherDevelopment==1">Yes</span>
+                        <span ng-if="product.isFurtherDevelopment==0">No</span>
+                    </p></div>
+                </div>
+            </div>
+            <!--<div class="modal-footer">-->
+                <!--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+            <!--</div>-->
+        </div>
+
+    </div>
+</div>

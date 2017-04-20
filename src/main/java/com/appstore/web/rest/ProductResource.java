@@ -193,9 +193,16 @@ public class ProductResource {
     @Timed
     public List<Product> getAllAppsByCurrentUser()
         throws URISyntaxException {
+        List<Product> products=null;
+
+        if(SecurityUtils.isCurrentUserInRole("ROLE_ADMIN")){
+            products =productRepository.getActiveProductList();
+            return products;
+        }
+
         log.debug("REST request to get a page of Products");
         System.out.println(">>>>>>>>>>..com _ID"+getInfo().getId());
-        List<Product> products=productRepository.getPublisherApps(getInfo().getId());
+        products=productRepository.getPublisherApps(getInfo().getId());
         if(!products.isEmpty())
             return products;
         else return null;

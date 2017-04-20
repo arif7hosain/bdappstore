@@ -1,8 +1,8 @@
 <ul class="list-group">
-    <a ui-sref="publisher.profile"><li class="list-group-item">Company Profile</li></a>
-    <a ui-sref="publisher.dashboard"><li class="list-group-item">My Apps</li></a>
-    <a><li class="list-group-item">Analytic Report</li></a>
-    <a ui-sref="publisher.app-new"><li class="list-group-item">Add App</li></a>
-    <a><li class="list-group-item">Delete Company</li></a>
-    <a><li class="list-group-item">Privacy Setting</li></a>
+    <a ui-sref="publisher.profile"><li has-authority="ROLE_COMPANY" class="list-group-item"><b>Company Profile</b></li></a>
+    <a ui-sref="publisher.dashboard"><li class="list-group-item"><b>App List</b></li></a>
+    <a ui-sref="publisher.app-new"><li has-authority="ROLE_COMPANY" class="list-group-item"><b>Add App</b></li></a>
+    <a><li has-authority="ROLE_COMPANY" class="list-group-item"><b>Delete Company</b></li></a>
+    <a><li has-authority="ROLE_COMPANY" class="list-group-item"><b>Privacy Setting</b></li></a>
+    <a><li has-authority="ROLE_ADMIN" class="list-group-item"><b>Publisher List</b></li></a>
 </ul>

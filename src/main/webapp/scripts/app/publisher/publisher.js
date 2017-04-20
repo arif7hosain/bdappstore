@@ -40,7 +40,7 @@ angular.module('appstoreApp')
                 url: '/company/dashboard',
                 data: {
                     authorities: [],
-                    pageTitle: 'Welcome to Company Dashboard !'
+                    pageTitle: 'Welcome to AppStore App Publisher !'
                 },
                 views: {
                        'content@': {

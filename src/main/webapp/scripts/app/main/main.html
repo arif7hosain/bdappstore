@@ -1,34 +1,3 @@
-<!--<div class="row">-->
-    <!--<div class=" col-sm-2 col-md-3">-->
-        <!--<ul class="side-var">-->
-            <!--<li ng-repeat="category in categories" class="left-menu"><h5><a href="#"><b>{{category.categoryName}}</b></a></h5></li>-->
-        <!--</ul>-->
-        <!--<select  class="form-control drop-var" ng-change="getProducts()" name="categoryName" ng-model="category.categoryName" ng-options="category.id as category.categoryName for category in categories track by category.id"><option value="">Select Category</option></select>-->
-    <!--</div>-->
-    <!--<div class="  col-sm-8 col-md-6">-->
-        <!--<div class="jumbotron">-->
-            <!--<form role="form" ng-submit="search(q)">-->
-                <!--<input ng-change="type(q)"type="text" class="form-control" name="q" ng-model="q" placeholder="Search by Software's Name, Category, Feature ...">-->
-                    <!--<center><span style="color:green;" ng-if="foundSug"><b>{{types.length}} Applications found !</b></span></center>-->
-            <!--</form>-->
-        <!--</div>-->
-        <!--<div id="query_view">-->
-            <!--<ul>-->
-                <!--<li ng-repeat="product in products | orderBy:'productTitle'">-->
-                    <!--<div id="product_desc">-->
-                        <!--<h4>{{product.productTitle}}</h4>-->
-                        <!--<h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>-->
-                        <!--<p>{{product.productDescription}}</p>-->
-                        <!--<button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>-->
-                    <!--</div>-->
-                <!--</li>-->
-            <!--</ul>-->
-        <!--</div>-->
-    <!--</div>-->
-    <!--<div class=" col-sm-2 col-md-3">-->
-    <!--</div>-->
-<!--</div>-->
-
 
 <section>
     <!-- CAROUSEL -->
@@ -93,8 +62,8 @@
             <h1>Amazing Softwares Are Ready to Deploy</h1>
             <p>We help to enable your business by running software automation that can make sure your business is really dynamic and analyse your business trent to the competitive world market! </p>
             <div class="s-12 m-4 l-5 center">
-               <form ng-submit="getProducts(data)">
-                   <input  class="form-control" name="data" ng-model="data" id="data" placeholder="Type your software">
+               <form ng-submit="home.result({q:data})">
+                   <input class="form-control" name="data" ng-model="data" id="data" placeholder="Type your software">
                    <button ng-show="false" type="submit">Search</button>
                </form>
                 <!--<a class="white-btn" href="#contact">Search</a>-->
@@ -109,22 +78,22 @@
                     <i class=" icon3x"><i class="fa fa-user" aria-hidden="true"></i></i>
                     <!--<span class="fa fa-sign-up icon3x"></span>-->
                     <h2>Company/Owner SignUp</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    <p>Publisher SignUp enables to publish apps to make it available to the customers so that they can search and view apps remotely.</p>
                 </div>
                 <div class="s-12 m-6 l-3 margin-bottom">
                     <i class="fa fa-plus icon3x"></i>
                     <h2>Publish App</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat adipiscing.</p>
+                    <p>After SignUp, Publisher will add their apps to the app list as many as apps they are willing to publish.</p>
                 </div>
                 <div class="s-12 m-6 l-3 margin-bottom">
                     <i class="fa fa-search icon3x"></i>
                     <h2>Find App Online</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna erat volutpat.</p>
+                    <p>All published apps are available to be searched. Customer can search their desired apps using searching apps keyword like app title, company name, and app category.</p>
                 </div>
                 <div class="s-12 m-6 l-3 margin-bottom">
                     <i class="fa fa-desktop icon3x"></i>
                     <h2>Buy & Deploy</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat nonummy.</p>
+                    <p>Whenever customer want, they can buy their required apps from from app publishers using the contact information from application.</p>
                 </div>
             </div>
         </div>
