@@ -13,7 +13,13 @@
                     <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
                 </div>
                 <div class="col-sm-9 col-md-9">
-
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <center>
+                            <label class="radio-inline"><input ng-click="getPub(2)" type="radio" name="optradio">Approved</label>
+                            <label class="radio-inline"><input ng-click="getPub(1)" type="radio" name="optradio">Penning Request</label>
+                            <label class="radio-inline"><input ng-click="getPub(3)" type="radio" name="optradio">Banned</label>
+                        </center>
+                    </div>
                     <table class="table table-striped">
                         <thead>
                         <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">

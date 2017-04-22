@@ -11,4 +11,7 @@ import java.util.List;
  */
 public interface TempCompanyRepository extends JpaRepository<TempCompany,Long> {
 
+    @Query("select temp from TempCompany temp where temp.activeStatus = 0 ")
+    List<TempCompany> getPendingRequest();
+
 }

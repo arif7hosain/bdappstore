@@ -86,6 +86,7 @@ public class TempCompanyResource {
         if (tempCompany.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("tempCompany", "idexists", "A new tempCompany cannot already have an ID")).body(null);
         }
+        tempCompany.setActiveStatus(0);
         TempCompany result = tempCompanyRepository.save(tempCompany);
         tempCompanySearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/tempCompanys/" + result.getId()))

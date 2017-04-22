@@ -120,7 +120,7 @@ angular.module('appstoreApp')
              })
              .state('publisher.company-list', {
                      parent: 'account',
-                     url: '/publisher-list',
+                     url: '/app-publisher-list',
                      data: {
                          authorities: [],
                          pageTitle: 'Pending publisher application list'

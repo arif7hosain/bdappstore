@@ -25,6 +25,10 @@ angular.module('appstoreApp')
                 console.log(results);
             });
         };
+        $scope.getPub=function(status){
+
+            alert(status);
+        }
 
 
 
