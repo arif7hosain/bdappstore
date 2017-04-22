@@ -107,7 +107,8 @@
                 </div>
             </div>
             <div class="col-sm-12">
-                <h4>Publisher Basic Information</h4>
+
+                <h3 style="color:green;">Publisher Basic Information</h3>
             </div>
             <div class="form-group col-sm-12">
                 <label class="control-label" for="field_companyName">Company Name</label>
@@ -253,7 +254,7 @@
                 <label class="control-label" for="field_RoadNo"></label>
                 <button type="reset" class="btn btn-default">Reset</button>
                 <button type="button" ui-sref="home" class="btn btn-danger">Cancel</button>
-                <button type="submit" class="btn btn-success">Submit Request</button>
+                <button type="submit" class="btn btn-success" ng-disabled="editForm.$invalid || isSaving">Submit Request</button>
             </div>
 
         </form>

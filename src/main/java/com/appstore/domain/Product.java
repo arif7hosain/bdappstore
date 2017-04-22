@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -30,12 +31,15 @@ public class Product implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NotNull
     @Column(name = "product_title")
     private String productTitle;
 
+    @NotNull
     @Column(name = "product_description")
     private String productDescription;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "product_type")
     private ProductType productType;
@@ -47,6 +51,7 @@ public class Product implements Serializable {
     @Column(name = "price")
     private Double price;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(name = "duration_type")
     private DurationType durationType;

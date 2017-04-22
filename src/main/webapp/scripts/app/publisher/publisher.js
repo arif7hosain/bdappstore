@@ -19,6 +19,22 @@ angular.module('appstoreApp')
                     resolve: {
                     }
             })
+            .state('publisher.chart', {
+                parent: 'account',
+                url: '/dashboard-chart',
+                data: {
+                    authorities: [],
+                    pageTitle: 'BD App Store Dashboard'
+                },
+                views: {
+                       'content@': {
+                           templateUrl: 'scripts/app/publisher/chart.html',
+                           controller: 'DashboardChart'
+                       }
+                   },
+                    resolve: {
+                    }
+            })
             .state('publisher.success', {
                 parent: 'account',
                 url: '/publisher/register/success',

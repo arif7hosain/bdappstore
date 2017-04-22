@@ -27,10 +27,13 @@
                         <span class="hidden-sm">Home</span>
                     </a>
                 </li>
-                <li ui-sref-active="active">
+                <li has-authority="ROLE_ADMIN" ui-sref-active="active">
                     <a ui-sref="publisher.dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
-                </li> <li ui-sref-active="active">
-                    <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                </li><li has-authority="ROLE_COMPANY" ui-sref-active="active">
+                    <a ui-sref="publisher.dashboard"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                </li>
+                <li has-authority="ROLE_ADMIN" ui-sref-active="active">
+                    <a ui-sref="publisher.chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                 </li>
                 <li ui-sref-active="active">
                     <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
@@ -39,7 +42,7 @@
                     <a ui-sref="contact.about">About US</a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="home.result({q: ''})"><i class="fa fa-fw fa-table"></i> Find</a>
+                    <a ui-sref="home.result({q: ''})"><i class="fa fa-search"></i> Find</a>
                 </li>
                 <li ui-sref-active="active">
                     <a ui-sref="contact"><i class="fa fa-fw fa-table"></i> Contact</a>
@@ -105,8 +108,10 @@
                         <!--&#xA0;<span>Sessions</span></a></li>-->
                         <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="login" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-log-in"></span>
                             &#xA0;<span>Sign in</span></a></li>
-                        <li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
-                            &#xA0;<span>Publisher Account</span></a></li>
+                        <li ui-sref-active="active" ng-switch-when="false"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-user"></span>
+                            &#xA0;<span>Create Publisher</span></a></li>
+                        <!--<li ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->
+                            <!--&#xA0;<span>Publisher Account</span></a></li>-->
                         <li has-authority="ROLE_COMPANY" ui-sref-active="active" ng-switch-when="true"><a ui-sref="publisher.dashboard" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>
                             &#xA0;<span>Dashboard</span></a></li>
                         <!--<li ui-sref-active="active" ng-switch-when="false"><a ui-sref="register" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-plus-sign"></span>-->

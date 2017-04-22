@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.inject.Inject;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -56,6 +57,7 @@ public class CompanyInformationResource {
         if (companyInformation.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("companyInformation", "idexists", "A new companyInformation cannot already have an ID")).body(null);
         }
+//        companyInformation=companyInformation.setCreatedDate();
         CompanyInformation result = companyInformationRepository.save(companyInformation);
         companyInformationSearchRepository.save(result);
         return ResponseEntity.created(new URI("/api/companyInformations/" + result.getId()))

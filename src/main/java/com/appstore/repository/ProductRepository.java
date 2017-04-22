@@ -24,4 +24,7 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     @Query("select product from Product product where product.isActive = 1")
     List<Product> getActiveProductList();
 
+    @Query("select product from Product product where product.isActive = 1")
+    List<Product> getByCategory();
+
 }

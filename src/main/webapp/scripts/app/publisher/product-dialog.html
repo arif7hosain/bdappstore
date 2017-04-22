@@ -20,19 +20,19 @@
                               <form name="editForm" role="form" novalidate ng-submit="save()">
                         <div ><!--modal div-->
                             <div class="form-group col-md-6">
-                                <label class="control-label" for="field_productTitle">Product Title</label>
+                                <label class="control-label" for="field_productTitle">App Title</label>
                                 <input type="text" class="form-control" name="productTitle" id="field_productTitle"
                                        ng-model="product.productTitle" required
                                     />
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="control-label" for="field_productDescription">Product Description</label>
-                                <input type="text" class="form-control" name="productDescription" id="field_productDescription"
+                                <label class="control-label" for="field_productDescription">App Description</label>
+                                <textarea placeholder="app description is here" type="text" class="form-control" name="productDescription" id="field_productDescription"
                                        ng-model="product.productDescription" required
-                                    />
+                                    cols="4" role="3"></textarea>
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="control-label" for="field_productType">Product Type</label>
+                                <label class="control-label" for="field_productType">App Type</label>
                                 <select required class="form-control" name="productType" ng-model="product.productType" id="field_productType">
                                     <option value="Web">Web</option>
                                     <option value="Mobile">Mobile</option>
@@ -53,7 +53,7 @@
                                     />
                             </div>
                             <div class="form-group col-md-6">
-                                <label class="control-label" for="field_durationType">Duration Type</label>
+                                <label class="control-label" for="field_durationType">Payment Duration</label>
                                 <select required class="form-control" name="durationType" ng-model="product.durationType" id="field_durationType">
                                     <option value="Monthly">Monthly</option>
                                     <option value="Yearly">Yearly</option>
@@ -80,25 +80,19 @@
                             <div class="form-group col-md-6">
                                 <label class="control-label" for="field_additionalLink">Additional Link</label>
                                 <input type="text" class="form-control" name="additionalLink" id="field_additionalLink"
-                                       ng-model="product.additionalLink"
-                                    />
-                            </div>
-                            <div class="form-group col-md-6">
-                                <label class="control-label" for="field_isAvailable">Availability</label>
-                                <input type="number" class="form-control" name="isAvailable" id="field_isAvailable"
-                                       ng-model="product.isAvailable"
+                                       ng-model="product.additionalLink" placeholder="optional"
                                     />
                             </div>
                             <!--<div class="form-group col-md-6">-->
-                                <!--<label for="field_companyInformation">Select Comapny</label>-->
-                                <!--<select class="form-control" id="field_companyInformation" name="companyInformation" ng-model="product.companyInformation" ng-options="companyInformation as companyInformation.companyName for companyInformation in companyinformations track by companyInformation.id">-->
-                                    <!--<option value=""></option>-->
-                                <!--</select>-->
+                                <!--<label class="control-label" for="field_isAvailable">Availability</label>-->
+                                <!--<input type="number" class="form-control" name="isAvailable" id="field_isAvailable"-->
+                                       <!--ng-model="product.isAvailable"-->
+                                    <!--/>-->
                             <!--</div>-->
                             <div class="form-group col-md-6">
-                                <label for="field_serviceCategory">Select Service Category</label>
-                                <select required class="form-control" id="field_serviceCategory" name="serviceCategory" ng-model="product.serviceCategory" ng-options="serviceCategory as serviceCategory.serviceName for serviceCategory in servicecategorys track by serviceCategory.id">
-                                    <option value=""></option>
+                                <label for="field_softwareCategory">Select Category</label>
+                                <select class="form-control" id="field_softwareCategory" name="softwareCategory" ng-model="productCategory.softwareCategory" ng-options="softwareCategory as softwareCategory.categoryName for softwareCategory in categories track by softwareCategory.id" required>
+                                    <option value="">Select App Category</option>
                                 </select>
                             </div>
                         </div><!--end form div-->

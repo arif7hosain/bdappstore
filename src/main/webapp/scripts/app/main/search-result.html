@@ -7,7 +7,7 @@
                 <form ng-submit="search(q)">
                     <div class="col-md-3"></div>
                     <div class="input-group col-md-6">
-
+<!--<center><h1>Search App Store</h1></center>-->
                         <input type="text" class="  search-query form-control" name="q" ng-model="q"
                                placeholder="Find your software here."/>
                                 <span class="input-group-btn">
@@ -20,19 +20,33 @@
                 </form>
             </div><br>
             <div class="col-md-12">
-                <div class="col-sm-12 col-xs-12 col-md-6 col-md-offset-3">
-                    <div id="query_view">
-                        <ul>
-                            <li ng-repeat="product in products | orderBy:'productTitle'">
-                                <div id="product_desc">
-                                    <h4>{{product.productTitle}}</h4>
-                                    <h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>
-                                    <p>{{product.productDescription}}</p>
-                                    <button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>
-                                </div>
-                            </li>
-                        </ul>
+                <div class="col-md-3 col-sm-3">
+                    <h2>All Software Categories</h2>
+                    <ul class="nav nav-pills nav-stacked" ng-repeat="cat in categories">
+                        <li><a href="http://www.jquery2dotnet.com">{{cat.categoryName}}<span class="pull-right"><b></b></span></a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 col-sm-6">
+                    <div class="col-sm-12 col-xs-12">
+                        <div id="query_view">
+                            <ul>
+                                <li ng-repeat="product in products | orderBy:'productTitle'">
+                                    <div id="product_desc">
+                                        <h4>{{product.productTitle}}</h4>
+                                        <h5>by <a href="#">{{product.companyInformation.companyName}}</a></h5>
+                                        <p>{{product.productDescription}}</p>
+                                        <button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+                <div class="col-md-3 col-sm-3">
+                    <h2>Software Services</h2>
+                    <ul class="nav nav-pills nav-stacked" ng-repeat="serv in services">
+                        <li><a href="http://www.jquery2dotnet.com">{{serv.serviceName}}</a></li>
+                    </ul>
                 </div>
 
             </div>

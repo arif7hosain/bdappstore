@@ -67,6 +67,7 @@ public class ProductResource {
         }
 
         product.setCompanyInformation(getInfo());
+        product.setServiceCategory(getInfo().getServiceCategory());
         product.setIsActive(1);
         product.setView(1);
         Product result = productRepository.save(product);
@@ -226,5 +227,24 @@ public class ProductResource {
         productSearchRepository.save(result);
 
     }
+
+//
+//    /**
+//     * GET  /products -> get all the products.
+//     */
+//    @RequestMapping(value = "/_search/products/category/{id}",
+//        method = RequestMethod.GET,
+//        produces = MediaType.APPLICATION_JSON_VALUE)
+//    @Timed
+//    public Product getAppByCategory(@PathVariable Long id)
+//        throws URISyntaxException {
+//        log.debug("REST request to get a page of Products");
+//        Product products=productRepository.
+//        Integer p=products.getView();
+//        products.setView(p+1);
+//        Product result = productRepository.save(products);
+//        productSearchRepository.save(result);
+//
+//    }
 
 }
