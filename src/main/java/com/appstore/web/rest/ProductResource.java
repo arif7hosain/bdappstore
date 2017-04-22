@@ -213,7 +213,7 @@ public class ProductResource {
     /**
      * GET  /products -> get all the products.
      */
-    @RequestMapping(value = "/_search/products/addView/{id}",
+    @RequestMapping(value = "/products/addView/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed

@@ -26,11 +26,6 @@
                         <span class="glyphicon glyphicon-home"></span>
                         <span class="hidden-sm">Home</span>
                     </a>
-                </li><li>
-                    <a ui-sref="home" data-toggle="collapse" data-target=".navbar-collapse.in">
-                        <span class="glyphicon glyphicon-home"></span>
-                        <span class="hidden-sm">Home</span>
-                    </a>
                 </li>
 
                 <li has-authority="ROLE_ADMIN" ui-sref-active="active">
@@ -42,7 +37,7 @@
                     <a ui-sref="publisher.chart"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
                 </li>
                 <li ui-sref-active="active">
-                    <a ui-sref="contact.about">About US</a>
+                    <a ui-sref="contact.about" data-toggle="collapse" data-target=".navbar-collapse.in">About US</a>
                 </li>
 
                 <li ui-sref-active="active">

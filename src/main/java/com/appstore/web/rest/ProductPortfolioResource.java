@@ -94,7 +94,7 @@ public class ProductPortfolioResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/_search/productPortfolios/getPortfolioByProduct/{id}",
+    @RequestMapping(value = "/productPortfolios/getPortfolioByProduct/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed

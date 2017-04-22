@@ -12,7 +12,7 @@ angular.module('appstoreApp')
         });
     })
     .factory('AddView', function ($resource) {
-        return $resource('api/_search/products/addView/:id', {}, {
+        return $resource('api/products/addView/:id', {}, {
             'query': { method: 'GET', isArray: false}
         });
     });
