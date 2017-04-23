@@ -1,8 +1,6 @@
 'use strict';
-
 angular.module('appstoreApp')
 	.controller('ProductDeleteController', function($scope, $uibModalInstance, entity, Product) {
-
         $scope.product = entity;
         $scope.clear = function() {
             $uibModalInstance.dismiss('cancel');
@@ -13,5 +11,4 @@ angular.module('appstoreApp')
                     $uibModalInstance.close(true);
                 });
         };
-
-    });
+});

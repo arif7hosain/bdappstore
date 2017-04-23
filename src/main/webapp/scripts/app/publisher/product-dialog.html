@@ -95,6 +95,32 @@
                                     <option value="">Select App Category</option>
                                 </select>
                             </div>
+                            <div class="form-group col-md-12" ngf-drop ngf-change="setImage($file, productPortfolio)">
+                                <!--<label class="control-label" for="field_image">Image</label>-->
+                                <div>
+                                    <div class="help-block clearfix">
+                                        <img
+                                            data-ng-src="{{'data:' + productPortfolio.imageContentType + ';base64,' + productPortfolio.image}}"
+                                            style="max-height: 50px;" ng-if="productPortfolio.image"/>
+
+                                        <!--<span class="pull-left">{{productPortfolio.imageContentType}} {{byteSize(productPortfolio.image)}}</span>-->
+                                        <button ng-click="productPortfolio.image=null;productPortfolio.imageContentType=null;"
+                                                ng-if="productPortfolio.image"
+                                                class="btn btn-default btn-xs pull-right">
+                                            <span class="glyphicon glyphicon-remove"></span>
+                                        </button>
+                                    </div>
+                                    <button type="file" ngf-select class="btn btn-default "
+                                            ngf-change="setImage($file, productPortfolio)">
+                                        Add Image
+                                    </button>
+                                </div>
+                                <input type="hidden" class="form-control" name="image" id="field_image"
+                                       ng-model="productPortfolio.image"
+                                    />
+                                <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                                       ng-model="productPortfolio.imageContentType" />
+                            </div>
                         </div><!--end form div-->
                         <div class="modal-footer">
                             <button type="reset" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
