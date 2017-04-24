@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('ResultController', function ($scope,$state,$stateParams, Principal,SoftwareCategory,Product, ProductSearch,ServiceCategory) {
+    .controller('ResultController', function ($scope,$state,$stateParams, Principal,SoftwareCategory,Product, ProductSearch,ServiceCategory,SearchApps) {
 
      $scope.products = [];
      $scope.types = [];
@@ -13,18 +13,15 @@ angular.module('appstoreApp')
 
         $scope.search = function (q) {
         if(q){
-            ProductSearch.query({query: q}, function(result) {
-                $scope.products = result;
-                console.log($scope.products);
-                console.log($scope.products.length);
-            }, function(response) {
-                if(response.status === 404) {
-                    $scope.loadAll();
-                }
-            });
-            }else{
-            alert('');
-           $scope.products = Product.query();
-            }
+            SearchApps.query({query:q},function(res){
+                $scope.products=res;
+            })
+        }else{
+            $scope.products = Product.query();
+        }
+
+
+
+
         };
     });

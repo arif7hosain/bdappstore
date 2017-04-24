@@ -179,6 +179,17 @@ public class ProductResource {
             .collect(Collectors.toList());
     }
 
+    @RequestMapping(value = "/products/search/{query}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Product> getApps(@PathVariable String query) {
+        log.debug("REST request to search Products for query {}", query);
+        return StreamSupport
+            .stream(productSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .collect(Collectors.toList());
+    }
+
 
     public CompanyInformation getInfo(){
       String username=SecurityUtils.getCurrentUserLogin();
