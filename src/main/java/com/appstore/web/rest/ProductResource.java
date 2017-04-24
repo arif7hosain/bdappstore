@@ -136,7 +136,13 @@ public class ProductResource {
     @Timed
     public ResponseEntity<Product> getProduct(@PathVariable Long id) {
         log.debug("REST request to get Product : {}", id);
+
+        System.out.println(">>>>>>>>>>>>>>.."+id);
+
         Product product = productRepository.findOne(id);
+        System.out.println("<<<<<<<<<<<<<<<<<");
+        System.out.println(product);
+        System.out.println("<<<<<<<<<<<<<<<<<<");
         return Optional.ofNullable(product)
             .map(result -> new ResponseEntity<>(
                 result,

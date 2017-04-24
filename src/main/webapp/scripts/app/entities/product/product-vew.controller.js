@@ -6,8 +6,8 @@ angular.module('appstoreApp')
 
         $scope.product = entity;
         $scope.images={};
+
             Product.get({id: $stateParams.id}, function(result) {
-            console.log(result)
                 $scope.product = result;
                 GetAllProductPortfolio.query({id: $stateParams.id},function(results){
                     $scope.images=results[1];
