@@ -8,7 +8,7 @@ angular.module('appstoreApp')
         $scope.reverse = true;
         $scope.page = 1;
         $scope.loadAll = function() {
-            ServiceCategory.query({page: $scope.page - 1, size: 20, sort: [$scope.predicate + ',' + ($scope.reverse ? 'asc' : 'desc'), 'id']}, function(result, headers) {
+            ServiceCategory.query({page: $scope.page - 1, size: 3, sort: [$scope.predicate + ',' + ($scope.reverse ? 'asc' : 'desc'), 'id']}, function(result, headers) {
                 $scope.links = ParseLinks.parse(headers('link'));
                 $scope.totalItems = headers('X-Total-Count');
                 $scope.serviceCategorys = result;
