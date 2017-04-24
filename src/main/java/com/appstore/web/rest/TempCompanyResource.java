@@ -174,6 +174,22 @@ public class TempCompanyResource {
             .collect(Collectors.toList());
     }
 
+    /**
+     * SEARCH  /_search/tempCompanys/:query -> search for the tempCompany corresponding
+     * to the query.
+     */
+    @RequestMapping(value = "/_search/tempCompanys/Pending",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<TempCompany> getPendingCompany() {
+        List<TempCompany> companies=tempCompanyRepository.getPendingRequest();
+        if(!companies.isEmpty())
+            return companies;
+        else
+        return null;
+    }
+
     @RequestMapping(value = "/_search/tempCompanys/approveCompany/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)

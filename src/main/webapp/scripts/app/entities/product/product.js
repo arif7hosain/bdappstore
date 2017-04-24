@@ -61,7 +61,7 @@ angular.module('appstoreApp')
                 parent: 'product',
                 url: '/new',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_COMPANY'],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({
@@ -125,7 +125,7 @@ angular.module('appstoreApp')
                 parent: 'product',
                 url: '/add-product',
                 data: {
-                    authorities: [],
+                    authorities: ['ROLE_COMPANY'],
                     pageTitle: 'New product from here.'
                 },
                 views: {
@@ -141,7 +141,7 @@ angular.module('appstoreApp')
                 parent: 'product',
                 url: '/{id}/delete',
                 data: {
-                    authorities: ['ROLE_USER'],
+                    authorities: ['ROLE_COMPANY'],
                 },
                 onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
                     $uibModal.open({

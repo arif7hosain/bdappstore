@@ -1,62 +1,57 @@
-<div class="row">
-    <div class=" col-md-2">
-        <h4><a href="">{{product.companyInformation.companyName}}</a></h4>
-        <span><img ng-if="tempCompany.logo" width="80px" height="80px"
-                    data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
-                    style="max-height: 100px;" ng-if="tempCompany.logo"/></span>
-        <span><img src="/assets/images/success.png" height="80px" width="80px"></span>
-        <ul>
-            <li>Live Url <a href="{{product.liveUrl}}">Click Here</a></li>
-            <li>Software Price: <span>{{product.price}} {{product.currency}}</span></li>
-            <li>Duration Type: <span>{{product.durationType}}</span></li>
-            <li>Available: <span>{{product.isAvailable}}</span></li>
-        </ul>
+<section>
+    <!-- CAROUSEL -->
+    <div id="carousel">
+        <div id="owl-demo" class="owl-carousel owl-theme">
+        </div>
     </div>
-    <div class="col-md-8">
-        <table>
-            <tr>
-                <th>Images</th>
-                <td>
-                    <ul ng-repeat="img in images">
-                        <li>
-                            <img width="200px" height="200px"
-                                 data-ng-src="{{'data:' + img.imageContentType + ';base64,' + img.image}}"
-                                 style="max-height: 100px;" ng-if="img.image"/>
-                        </li>
-                    </ul>
-                </td>
-            </tr><tr>
-                <thead>
-                <th>Software Title</th>
-                </thead>
-                <tbody>
-                <td>{{product.productTitle}}</td>
-                </tbody>
-            </tr>
-            <tr>
-                <thead>
-                <th>Software Type</th>
-                </thead>
-                <tbody>
-                <td>{{product.productType}}</td>
-                </tbody>
-            </tr>
-            <tr>
-                <thead>
-                <th>Description</th>
-                </thead>
-                <tbody>
-                <td>{{product.productDescription}}</td>
-                </tbody>
-            </tr>
+    <!-- FIRST BLOCK -->
+    <!-- FEATURES -->
+    <div id="features">
+        <div class="line">
+            <div class="margin"><br>
+                <div class="col-sm-2 col-md-2">
+                </div>
+                <div id="app-view" class="col-sm-8 col-md-8">
+                   <div >
+                        <h2>{{product.companyInformation.companyName}}</h2>
+                        <h2>{{images.logoContentType}}</h2>
+                       <div class="col-md-6">
+                           <img width="100px" height="100px"
+                                data-ng-src="{{'data:' + images.imageContentType + ';base64,' + images.image}}"
+                                style="max-height: 400px;" ng-if="images.image"/>
+                       </div>
+                       <div class="col-md-6">
+                           <div class="form-group">
+                               <label>{{product.productTitle}}</label>
+                           </div>
+                           <div class="form-group">
+                               <label>App Type:</label> <span>{{product.productType}}</span>
+                           </div>
 
+                           <div class="form-group">
+                               <label>Duration Type:</label> <span>{{product.durationType}}</span>
+                           </div>
+                           <div class="form-group">
+                              <label>Available:</label> <span>{{product.isActive}}</span>
+                           </div>
+                           <div class="form-group">
+                              <label>Live URL:</label><a href="{{product.liveUrl}}">{{product.liveUrl}}</a>
+                           </div>
+                           <div class="form-group">
+                              <label>Price:</label> <span>{{product.price}} {{product.currency}}</span>
+                           </div>
+                       </div>
+                       <div class="col-md-12">
+                           <p style="padding:5px;text-align:justify;">{{product.productDescription}}</p>
+                       </div>
+                   </div>
 
-        </table>
+                </div>
+                <div class="col-sm-2 col-md-2">
+                </div>
+
+            </div>
+        </div>
     </div>
-    <div class="2">
-
-    </div>
-</div>
-
-
-<button class="btn btn-info" ng-click="action()"> click</button>
+    <!-- CONTACT -->
+</section>

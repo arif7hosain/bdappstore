@@ -56,10 +56,10 @@ public class CompanyInformation implements Serializable {
     private CompanyType companyType;
 
     @Column(name = "created_date")
-    private LocalDate CreatedDate;
+    private LocalDate CreatedDate=LocalDate.now();
 
     @Column(name = "updated_date")
-    private LocalDate updatedDate;
+    private LocalDate updatedDate=LocalDate.now();
 
     @Column(name = "create_by")
     private String createBy;

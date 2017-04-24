@@ -1,8 +1,8 @@
 'use strict';
 
 angular.module('appstoreApp').controller('AppNew',
-    ['$scope','$state', '$stateParams',  'Product', 'CompanyInformation', 'ServiceCategory','SoftwareCategory',
-        function($scope, $state, $stateParams,  Product, CompanyInformation, ServiceCategory,SoftwareCategory) {
+    ['$scope','$state', '$stateParams',  'Product', 'CompanyInformation', 'ServiceCategory','SoftwareCategory','ProductPortfolio','DataUtils',
+        function($scope, $state, $stateParams,  Product, CompanyInformation, ServiceCategory,SoftwareCategory,ProductPortfolio,DataUtils) {
 
         if($stateParams.id){
         var product_id=$stateParams.id;
@@ -10,6 +10,9 @@ angular.module('appstoreApp').controller('AppNew',
                 $scope.product = result;
             });
         }
+        $scope.appPics=[];
+        $scope.appPic={};
+        $scope.productPortfolio = {};
 
         $scope.companyinformations = CompanyInformation.query();
         $scope.servicecategorys = ServiceCategory.query();
@@ -35,4 +38,20 @@ angular.module('appstoreApp').controller('AppNew',
                 Product.save($scope.product, onSaveSuccess, onSaveError);
             }
         };
+
+        $scope.abbreviate = DataUtils.abbreviate;
+                $scope.byteSize = DataUtils.byteSize;
+                $scope.setImage = function ($file, productPortfolio) {
+                    if ($file) {
+                        var fileReader = new FileReader();
+                        fileReader.readAsDataURL($file);
+                        fileReader.onload = function (e) {
+                            var base64Data = e.target.result.substr(e.target.result.indexOf('base64,') + 'base64,'.length);
+                            $scope.$apply(function() {
+                                productPortfolio.image = base64Data;
+                                productPortfolio.imageContentType = $file.type;
+                            });
+                        };
+                    }
+                };
 }]);

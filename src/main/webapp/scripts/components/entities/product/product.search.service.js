@@ -6,13 +6,18 @@ angular.module('appstoreApp')
             'query': { method: 'GET', isArray: true}
         });
     })
+    .factory('SearchApps', function ($resource) {
+        return $resource('api/products/search/:query', {}, {
+            'query': { method: 'GET', isArray: true}
+        });
+    })
     .factory('GetAppsByCompany', function ($resource) {
         return $resource('api/_search/products/currentUse', {}, {
             'query': { method: 'GET', isArray: true}
         });
     })
     .factory('AddView', function ($resource) {
-        return $resource('api/_search/products/addView/:id', {}, {
+        return $resource('api/products/addView/:id', {}, {
             'query': { method: 'GET', isArray: false}
         });
     });

@@ -7,7 +7,7 @@ angular.module('appstoreApp')
         });
     })
     .factory('GetAllProductPortfolio', function ($resource) {
-        return $resource('api/_search/productPortfolios/getPortfolioByProduct/:id', {}, {
+        return $resource('api/productPortfolios/getPortfolioByProduct/:id', {}, {
             'query': { method: 'GET', isArray: true}
         });
     });

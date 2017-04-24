@@ -136,7 +136,13 @@ public class ProductResource {
     @Timed
     public ResponseEntity<Product> getProduct(@PathVariable Long id) {
         log.debug("REST request to get Product : {}", id);
+
+        System.out.println(">>>>>>>>>>>>>>.."+id);
+
         Product product = productRepository.findOne(id);
+        System.out.println("<<<<<<<<<<<<<<<<<");
+        System.out.println(product);
+        System.out.println("<<<<<<<<<<<<<<<<<<");
         return Optional.ofNullable(product)
             .map(result -> new ResponseEntity<>(
                 result,
@@ -167,6 +173,17 @@ public class ProductResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public List<Product> searchProducts(@PathVariable String query) {
+        log.debug("REST request to search Products for query {}", query);
+        return StreamSupport
+            .stream(productSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .collect(Collectors.toList());
+    }
+
+    @RequestMapping(value = "/products/search/{query}",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<Product> getApps(@PathVariable String query) {
         log.debug("REST request to search Products for query {}", query);
         return StreamSupport
             .stream(productSearchRepository.search(queryStringQuery(query)).spliterator(), false)
@@ -213,7 +230,7 @@ public class ProductResource {
     /**
      * GET  /products -> get all the products.
      */
-    @RequestMapping(value = "/_search/products/addView/{id}",
+    @RequestMapping(value = "/products/addView/{id}",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
