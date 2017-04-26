@@ -167,4 +167,14 @@ public class CompanyInformationResource {
         }else
             return null;
     }
+
+    @RequestMapping(value = "/_search/companyInformations/allActive",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    public List<CompanyInformation> getActiveCompanies() {
+       String login=SecurityUtils.getCurrentUserLogin();
+       List<CompanyInformation> companies=companyInformationRepository.activeCompanies();
+       return companies;
+    }
 }

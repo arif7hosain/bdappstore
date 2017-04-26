@@ -13,6 +13,6 @@ angular.module('appstoreApp')
     })
     .factory('GetPendingCompany', function ($resource) {
         return $resource('api/_search/tempCompanys/Pending', {}, {
-            'query': { method: 'GET', isArray: false}
+            'query': { method: 'GET', isArray: true}
         });
     });

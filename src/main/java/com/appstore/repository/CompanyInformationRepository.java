@@ -14,4 +14,8 @@ public interface CompanyInformationRepository extends JpaRepository<CompanyInfor
 
     @Query("select companyInformation from CompanyInformation companyInformation where companyInformation.user.login= :login")
     CompanyInformation getCompampanyByLogin(@Param("login") String login);
+
+    @Query("select companyInformation from CompanyInformation companyInformation where companyInformation.activeStatus= 1")
+    List<CompanyInformation> activeCompanies();
 }
+

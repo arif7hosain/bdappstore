@@ -50,6 +50,21 @@ angular.module('appstoreApp')
                    },
                     resolve: {
                     }
+            }).state('publisher.pending', {
+                parent: 'account',
+                url: '/publisher/pending',
+                data: {
+                    authorities: [],
+                    pageTitle: 'Registration Successful at Bangladeshi Largest App Store'
+                },
+                views: {
+                       'content@': {
+                           templateUrl: 'scripts/app/publisher/company-pending-list.html',
+                           controller: 'PendingPublisherController'
+                       }
+                   },
+                    resolve: {
+                    }
             })
             .state('publisher.dashboard', {
                 parent: 'account',

@@ -10,4 +10,9 @@ angular.module('appstoreApp')
         return $resource('api/_search/companyInformations/info', {}, {
             'query': { method: 'GET', isArray: false}
         });
+    })
+    .factory('ActiveCompanies', function ($resource) {
+        return $resource('api/_search/companyInformations/allActive', {}, {
+            'query': { method: 'GET', isArray: true}
+        });
     });

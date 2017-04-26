@@ -11,6 +11,7 @@ function($scope, $stateParams, DataUtils,GetAppsByCompany,Product){
             console.log(result);
         });
     };
+
     GetAppsByCompany.query(function(apps){ $scope.apps=apps;
     console.log('-->>')
     console.log(apps)

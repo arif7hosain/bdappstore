@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('appstoreApp')
-    .controller('CompanyList', function ($scope, $state, DataUtils, TempCompany, TempCompanySearch, ParseLinks,ApproveCompany) {
+    .controller('CompanyList', function ($scope, $state, DataUtils, TempCompany, TempCompanySearch, ParseLinks,ApproveCompany,ActiveCompanies,GetPendingCompany) {
 
         $scope.tempCompanys = [];
         $scope.predicate = 'id';
@@ -25,10 +25,20 @@ angular.module('appstoreApp')
                 console.log(results);
             });
         };
-        $scope.getPub=function(status){
 
-            alert(status);
-        }
+        $scope.getPub=function(status){
+            if(status==0){
+                GetPendingCompany.query(function(data){
+                    console.log(data);
+                });
+            }else if(status==1){
+                ActiveCompanies.query(function(d){
+                        console.log(d);
+                    });
+            }else if(status==2){
+               //banned companies
+            }
+        }//end function
 
 
 
@@ -85,6 +95,7 @@ angular.module('appstoreApp')
         };
 
         $scope.abbreviate = DataUtils.abbreviate;
-
         $scope.byteSize = DataUtils.byteSize;
+
+
     });
