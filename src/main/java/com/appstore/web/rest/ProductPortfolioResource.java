@@ -98,11 +98,12 @@ public class ProductPortfolioResource {
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
-    public List<ProductPortfolio> getAllProductPortfoliosByProduct(@PathVariable Long id)
+    public ProductPortfolio getAllProductPortfoliosByProduct(@PathVariable Long id)
         throws URISyntaxException {
         log.debug("REST request to get a page of ProductPortfolios");
-        List<ProductPortfolio> portfolios=productPortfolioRepository.getAllPortfoliosByProduct(id);
-        if(portfolios.isEmpty()){
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>."+id);
+        ProductPortfolio portfolios=productPortfolioRepository.getAllPortfoliosByProduct(id);
+        if(portfolios == null){
             return null;
         }
         return portfolios;

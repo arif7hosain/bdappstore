@@ -5,7 +5,7 @@ angular.module('appstoreApp')
         $stateProvider
             .state('product', {
                 parent: 'entity',
-                url: '/products',
+                url: '/apps',
                 data: {
                     authorities: [],
                     pageTitle: 'Products'
@@ -40,7 +40,7 @@ angular.module('appstoreApp')
             })
             .state('product.view', {
                 parent: 'entity',
-                url: '/publisher/product/{id}',
+                url: '/publisher/app/{id}',
                 data: {
                     authorities: [],
                     pageTitle: 'Preview full software details'

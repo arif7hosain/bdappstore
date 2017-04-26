@@ -9,8 +9,8 @@ angular.module('appstoreApp')
 
             Product.get({id: $stateParams.id}, function(result) {
                 $scope.product = result;
-                GetAllProductPortfolio.query({id: $stateParams.id},function(results){
-                    $scope.images=results[1];
+                GetAllProductPortfolio.query({id: $stateParams.id},function(data){
+                $scope.images=data;
                 });
             });
          AddView.query({id: $stateParams.id});

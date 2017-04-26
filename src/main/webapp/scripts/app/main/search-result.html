@@ -36,8 +36,9 @@
                             <ul>
                                 <li ng-repeat="product in products | orderBy:'productTitle'">
                                     <div id="product_desc">
-                                        <h2 style="color:white;"><a ui-sref="product.view({id:product.id})">{{product.productTitle}}</a></h2>
-                                        <h3>by <a href="#">{{product.companyInformation.companyName}}</a></h3>
+                                        <h3> <a ui-sref="product.view({id:product.id})">{{product.productTitle}}</a></h3>
+                                        <h2 style="color:white;"><a>{{product.companyInformation.companyName}}</a></h2>
+
                                         <p style="font-size:1.2em;">{{product.productDescription}}</p>
                                         <button class="btn btn-primary"  ui-sref="product.view({id:product.id})">View Profile</button>
                                     </div>

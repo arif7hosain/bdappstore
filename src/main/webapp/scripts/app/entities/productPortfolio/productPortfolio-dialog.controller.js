@@ -36,9 +36,7 @@ angular.module('appstoreApp').controller('ProductPortfolioDialogController',
         };
 
         $scope.abbreviate = DataUtils.abbreviate;
-
         $scope.byteSize = DataUtils.byteSize;
-
         $scope.setImage = function ($file, productPortfolio) {
             if ($file) {
                 var fileReader = new FileReader();

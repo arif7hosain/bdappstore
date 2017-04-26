@@ -46,6 +46,11 @@
                                         class="btn btn-primary btn-xs">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </button>
+                                <button type="submit"
+                                        data-toggle="modal" ng-click="app_img(app.id)" data-target="#addImage"
+                                        class="btn btn-success btn-xs">
+                                    <span class="glyphicon glyphicon-picture"></span>
+                                </button>
                                 <button ng-show="false" type="submit"
                                         ui-sref="division.delete({id:division.id})"
                                         class="btn btn-danger btn-sm">
@@ -65,3 +70,54 @@
     <!-- CONTACT -->
 </section>
 <ng-include src="'scripts/app/publisher/app-preview.html'"></ng-include>
+
+<!--====================================================== -->
+
+
+<div class="modal fade" id="addImage" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+            <!--<button type="button" class="close" data-dismiss="modal">&times;</button>-->
+            <h4 class="modal-title">{{product.productTitle}}</h4>
+            </div>
+            <div ><!--body-->
+                <!--<div>-->
+                    <!--<input type="file" class="btn btn-success btn-sm" >-->
+                <!--</div>-->
+                <div class="form-group col-md-12" ngf-drop ngf-change="setImage($file, photo)">
+                    <div>
+                        <div >
+                        <!--<div class="help-block">-->
+                        <!--<div class="help-block clearfix">-->
+                            <button ng-click="photo.image=null;photo.imageContentType=null;"
+                                    ng-if="photo.image"
+                                    class="btn btn-default btn-xs pull-right">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </button>
+                        </div>
+                        <input type="file" ngf-select class="btn btn-success"
+                                ngf-change="setImage($file, photo)" >
+                    </div>
+                    <input type="hidden" class="form-control" name="image" id="field_image"
+                           ng-model="photo.image"
+                        />
+                    <input type="hidden" class="form-control" name="imageContentType" id="field_imageContentType"
+                           ng-model="photo.imageContentType" />
+                    <img
+                        data-ng-src="{{'data:' + photo.imageContentType + ';base64,' + photo.image}}"
+                        style="max-height: 50px;" ng-if="photo.image"/>
+
+                    <span class="pull-left">{{photo.imageContentType}} {{byteSize(photo.image)}}</span>
+                </div>
+
+            </div><!--modal body-->
+            <div class="modal-footer">
+            <button type="button" class="btn btn-success" ng-click="add_all_image()" >Update</button>
+            </div>
+        </div>
+
+    </div>
+</div>

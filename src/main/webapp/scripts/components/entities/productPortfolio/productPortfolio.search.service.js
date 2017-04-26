@@ -8,6 +8,6 @@ angular.module('appstoreApp')
     })
     .factory('GetAllProductPortfolio', function ($resource) {
         return $resource('api/productPortfolios/getPortfolioByProduct/:id', {}, {
-            'query': { method: 'GET', isArray: true}
+            'query': { method: 'GET', isArray: false}
         });
     });

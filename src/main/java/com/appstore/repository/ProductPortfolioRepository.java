@@ -13,6 +13,6 @@ import java.util.List;
 public interface ProductPortfolioRepository extends JpaRepository<ProductPortfolio,Long> {
 
     @Query("select portfolio from ProductPortfolio portfolio  where portfolio.product.id=:id")
-    List<ProductPortfolio> getAllPortfoliosByProduct(@Param("id")Long id);
+    ProductPortfolio getAllPortfoliosByProduct(@Param("id")Long id);
 
 }

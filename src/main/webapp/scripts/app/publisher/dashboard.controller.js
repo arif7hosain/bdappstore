@@ -1,14 +1,19 @@
 'use strict';
 angular.module('appstoreApp')
-.controller('CompanyDashboard',['$scope', '$stateParams', 'DataUtils','GetAppsByCompany','Product',
-function($scope, $stateParams, DataUtils,GetAppsByCompany,Product){
+.controller('CompanyDashboard',['$scope', '$stateParams', 'DataUtils','GetAppsByCompany','Product','ProductPortfolio',
+function($scope, $stateParams, DataUtils,GetAppsByCompany,Product,ProductPortfolio){
 
     $scope.apps=[];
+    $scope.photos=[];
+    $scope.photo={};
     $scope.app_view=function(id){
         Product.get({id: id}, function(result) {
             $scope.product = result;
-            console.log('--')
-            console.log(result);
+        });
+    };
+    $scope.app_img=function(id){
+        Product.get({id: id}, function(result) {
+            $scope.product = result;
         });
     };
 
@@ -38,4 +43,48 @@ function($scope, $stateParams, DataUtils,GetAppsByCompany,Product){
         	});
         	chart.render();
     });
+
+
+$scope.photo.image=null;
+$scope.photo.imageContentType=null;
+$scope.photo.product=$scope.product;
+
+//    image====================================
+        $scope.abbreviate = DataUtils.abbreviate;
+        $scope.byteSize = DataUtils.byteSize;
+        $scope.setImage = function ($file, productPortfolio) {
+            if ($file) {
+                var fileReader = new FileReader();
+                fileReader.readAsDataURL($file);
+                fileReader.onload = function (e) {
+                    var base64Data = e.target.result.substr(e.target.result.indexOf('base64,') + 'base64,'.length);
+                    $scope.$apply(function() {
+                        productPortfolio.image = base64Data;
+                        productPortfolio.imageContentType = $file.type;
+                    });
+                };
+            }
+        };
+
+        var onSaveSuccess = function (result) {
+            $scope.$emit('appstoreApp:productPortfolioUpdate', result);
+            $scope.isSaving = false;
+        };
+
+        var onSaveError = function (result) {
+            $scope.isSaving = false;
+        };
+
+
+            $scope.add_all_image=function(){
+            $scope.photo.product=$scope.product;
+                $scope.isSaving = true;
+                if ($scope.photo.id != null) {
+                    ProductPortfolio.update($scope.photo, onSaveSuccess, onSaveError);
+                } else {
+                    ProductPortfolio.save($scope.photo, onSaveSuccess, onSaveError);
+                }
+            };
+
+
 }]);
