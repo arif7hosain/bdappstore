@@ -27,6 +27,9 @@
                         <span class="hidden-sm">Home</span>
                     </a>
                 </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="home.result({q: ''})" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-search"></i> Find</a>
+                </li>
 
                 <li has-authority="ROLE_ADMIN" ui-sref-active="active">
                     <a ui-sref="publisher.dashboard" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
@@ -40,9 +43,7 @@
                     <a ui-sref="contact.about" data-toggle="collapse" data-target=".navbar-collapse.in">About US</a>
                 </li>
 
-                <li ui-sref-active="active">
-                    <a ui-sref="home.result({q: ''})" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-search"></i> Find</a>
-                </li>
+
 
                 <li ui-sref-active="active">
                     <a ui-sref="contact" data-toggle="collapse" data-target=".navbar-collapse.in"><i class="fa fa-fw fa-table"></i> Contact</a>
