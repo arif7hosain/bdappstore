@@ -11,7 +11,7 @@ angular.module('appstoreApp')
 
         $scope.approve=function(id){
             ApproveCompany.query({id:id},function(results){
-                console.log(results);
+                $state.go('publisher.company-list');
             });
         };
     });

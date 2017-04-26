@@ -14,14 +14,6 @@
                     <ng-include src="'scripts/app/publisher/left-menu.html'"></ng-include>
                 </div>
                 <div class="col-sm-9 col-md-9">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <center>
-                            <label class="radio-inline"><input ng-click="getPub(0)" type="radio" name="optradio">Penning
-                                Request</label>
-                            <label class="radio-inline"><input ng-click="getPub(1)" type="radio" name="optradio">Approved</label>
-                            <label class="radio-inline"><input ng-click="getPub(2)" type="radio" name="optradio">Banned</label>
-                        </center>
-                    </div>
                     <table class="table table-striped">
                         <thead>
                         <tr jh-sort="predicate" ascending="reverse" callback="loadAll()">
@@ -39,51 +31,52 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr ng-repeat="tempCompany in tempCompanys |filter:{companyName:searchQuery} track by tempCompany.id">
+                        <!--<tr ng-repeat="publisher in publishers |filter:{companyName:searchQuery} track by tempCompany.id">-->
+                        <tr ng-repeat="publisher in publishers">
                             <!--<td>{{$index+1}}</td>-->
                             <!--<td>{{tempCompany.username}}</td>-->
-                            <td><img ng-click="imgShow()" id="myImg"  width="5px" height="40px"
-                                     data-ng-src="{{'data:' + tempCompany.logoContentType + ';base64,' + tempCompany.logo}}"
-                                     style="max-height: 20px; border-radius: 5px;" ng-if="tempCompany.logo"/></td>
-                            <td>{{tempCompany.companyName}}</td>
-                            <td>{{tempCompany.email}}</td>
+                            <td><img  width="5px" height="40px"
+                                     data-ng-src="{{'data:' + publisher.logoContentType + ';base64,' + publisher.logo}}"
+                                     style="max-height: 20px; border-radius: 5px;" ng-if="publisher.logo"/></td>
+                            <td>{{publisher.companyName}}</td>
+                            <td>{{publisher.user.email}}</td>
                             <td>
-                                <a ui-sref="country.detail({id:tempCompany.country.id})">{{tempCompany.country.countryName}}</a>
+                                <a>{{publisher.country.countryName}}</a>
                             </td>
                             <td>
-                                <a ui-sref="serviceCategory.detail({id:tempCompany.serviceCategory.id})">{{tempCompany.serviceCategory.serviceName}}</a>
+                                <a >{{publisher.serviceCategory.serviceName}}</a>
                             </td>
                             <!--<td>-->
                             <!--<a ui-sref="upazila.detail({id:tempCompany.upazila.id})">{{tempCompany.upazila.upazilaName}}</a>-->
                             <!--</td>-->
                             <td>
-                                <button ng-show="tempCompany.activeStatus==0 || tempCompany.activeStatus==null"
-                                        ng-click="approve(tempCompany.id)"
-                                        ng-if="tempCompany.activeStatus==0 || tempCompany.activeStatus==null"
+                                <button ng-show="publisher.activeStatus==0 || publisher.activeStatus==null"
+                                        ng-click="approve(publisher.id)"
+                                        ng-if="publisher.activeStatus==0 || publisher.activeStatus==null"
                                         class="btn btn-info btn-xs" type="button">Approve
                                 </button>
-                                <button ng-click="ban(tempCompany.id)" ng-if="tempCompany.activeStatus==1"
+                                <button ng-click="ban(publisher.id)" ng-if="publisher.activeStatus==1"
                                         class="btn btn-success btn-xs" type="button">Ban
                                 </button>
-                                <button ng-if="tempCompany.activeStatus==2" class="btn btn-danger btn-xs" type="button">
+                                <button ng-if="publisher.activeStatus==2" class="btn btn-danger btn-xs" type="button">
                                     Rejected
                                 </button>
                             </td>
                             <td>
                                 <button type="submit"
-                                        ui-sref="tempCompany.detail({id:tempCompany.id})"
+                                        ui-sref="publisher.detail({id:publisher.id})"
                                         class="btn btn-info btn-xs">
                                     <span class="glyphicon glyphicon-eye-open"></span>
                                     <!--&nbsp;<span> View</span>-->
                                 </button>
                                 <button ng-show="false" type="submit"
-                                        ui-sref="tempCompany.edit({id:tempCompany.id})"
+                                        ui-sref="publisher.edit({id:publisher.id})"
                                         class="btn btn-primary btn-xs">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                     <!--&nbsp;<span> Edit</span>-->
                                 </button>
                                 <button ng-show="false" type="submit"
-                                        ui-sref="tempCompany.delete({id:tempCompany.id})"
+                                        ui-sref="publisher.delete({id:publisher.id})"
                                         class="btn btn-danger btn-xs">
                             <!--<span class="glyphicon glyphicon-remove-circle">-->
                                 <!-- -->
