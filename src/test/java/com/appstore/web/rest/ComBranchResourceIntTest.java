@@ -121,10 +121,6 @@ public class ComBranchResourceIntTest {
         comBranch.setTwitter(DEFAULT_TWITTER);
         comBranch.setWebsite(DEFAULT_WEBSITE);
         comBranch.setCity(DEFAULT_CITY);
-        comBranch.setCreatedDate(DEFAULT_CREATED_DATE);
-        comBranch.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        comBranch.setCreateBy(DEFAULT_CREATE_BY);
-        comBranch.setUpdatedBy(DEFAULT_UPDATED_BY);
         comBranch.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -154,10 +150,6 @@ public class ComBranchResourceIntTest {
         assertThat(testComBranch.getTwitter()).isEqualTo(DEFAULT_TWITTER);
         assertThat(testComBranch.getWebsite()).isEqualTo(DEFAULT_WEBSITE);
         assertThat(testComBranch.getCity()).isEqualTo(DEFAULT_CITY);
-        assertThat(testComBranch.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testComBranch.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testComBranch.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testComBranch.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testComBranch.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -244,10 +236,6 @@ public class ComBranchResourceIntTest {
         comBranch.setTwitter(UPDATED_TWITTER);
         comBranch.setWebsite(UPDATED_WEBSITE);
         comBranch.setCity(UPDATED_CITY);
-        comBranch.setCreatedDate(UPDATED_CREATED_DATE);
-        comBranch.setUpdatedDate(UPDATED_UPDATED_DATE);
-        comBranch.setCreateBy(UPDATED_CREATE_BY);
-        comBranch.setUpdatedBy(UPDATED_UPDATED_BY);
         comBranch.setIsActive(UPDATED_IS_ACTIVE);
 
         restComBranchMockMvc.perform(put("/api/comBranchs")
@@ -269,10 +257,6 @@ public class ComBranchResourceIntTest {
         assertThat(testComBranch.getTwitter()).isEqualTo(UPDATED_TWITTER);
         assertThat(testComBranch.getWebsite()).isEqualTo(UPDATED_WEBSITE);
         assertThat(testComBranch.getCity()).isEqualTo(UPDATED_CITY);
-        assertThat(testComBranch.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testComBranch.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testComBranch.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testComBranch.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testComBranch.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

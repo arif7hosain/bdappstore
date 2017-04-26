@@ -11,19 +11,10 @@ angular.module('appstoreApp')
      $scope.services = ServiceCategory.query();
      $scope.q=$stateParams.q;
 
-//     $scope.loadAll = function() {
-//     alert('hi')
-//          Product.query({page: $scope.page - 1, size: 30, sort: [$scope.predicate + ',' + ($scope.reverse ? 'asc' : 'desc'), 'id']}, function(result, headers) {
-//                 $scope.links = ParseLinks.parse(headers('link'));
-//                 $scope.totalItems = headers('X-Total-Count');
-//                 $scope.products = result;
-//                 console.log('>pag.')
-//                 console.log(result)
-//             });
-//     }
+
 
         $scope.search = function (q) {
-//         $scope.loadAll();
+        alert('a');
             if(q){
                 SearchApps.query({query:q},function(res){
                 $scope.products=res;
@@ -32,17 +23,7 @@ angular.module('appstoreApp')
             $scope.products = Product.query();
             }
         };
-
+        $scope.getAppsByCat=function(id){
+            alert(id);
+        }
     });
-
-
-
-//        $scope.search = function () {
-//            TempCompanySearch.query({query: $scope.searchQuery}, function(result) {
-//                $scope.tempCompanys = result;
-//            }, function(response) {
-//                if(response.status === 404) {
-//                    $scope.loadAll();
-//                }
-//            });
-//        };

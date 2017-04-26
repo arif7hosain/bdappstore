@@ -97,10 +97,6 @@ public class SoftwareCategoryResourceIntTest {
         softwareCategory.setCategoryName(DEFAULT_CATEGORY_NAME);
         softwareCategory.setDescription(DEFAULT_DESCRIPTION);
         softwareCategory.setShortDescription(DEFAULT_SHORT_DESCRIPTION);
-        softwareCategory.setCreatedDate(DEFAULT_CREATED_DATE);
-        softwareCategory.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        softwareCategory.setCreateBy(DEFAULT_CREATE_BY);
-        softwareCategory.setUpdatedBy(DEFAULT_UPDATED_BY);
         softwareCategory.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -123,10 +119,6 @@ public class SoftwareCategoryResourceIntTest {
         assertThat(testSoftwareCategory.getCategoryName()).isEqualTo(DEFAULT_CATEGORY_NAME);
         assertThat(testSoftwareCategory.getDescription()).isEqualTo(DEFAULT_DESCRIPTION);
         assertThat(testSoftwareCategory.getShortDescription()).isEqualTo(DEFAULT_SHORT_DESCRIPTION);
-        assertThat(testSoftwareCategory.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testSoftwareCategory.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testSoftwareCategory.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testSoftwareCategory.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testSoftwareCategory.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -192,10 +184,6 @@ public class SoftwareCategoryResourceIntTest {
         softwareCategory.setCategoryName(UPDATED_CATEGORY_NAME);
         softwareCategory.setDescription(UPDATED_DESCRIPTION);
         softwareCategory.setShortDescription(UPDATED_SHORT_DESCRIPTION);
-        softwareCategory.setCreatedDate(UPDATED_CREATED_DATE);
-        softwareCategory.setUpdatedDate(UPDATED_UPDATED_DATE);
-        softwareCategory.setCreateBy(UPDATED_CREATE_BY);
-        softwareCategory.setUpdatedBy(UPDATED_UPDATED_BY);
         softwareCategory.setIsActive(UPDATED_IS_ACTIVE);
 
         restSoftwareCategoryMockMvc.perform(put("/api/softwareCategorys")
@@ -210,10 +198,6 @@ public class SoftwareCategoryResourceIntTest {
         assertThat(testSoftwareCategory.getCategoryName()).isEqualTo(UPDATED_CATEGORY_NAME);
         assertThat(testSoftwareCategory.getDescription()).isEqualTo(UPDATED_DESCRIPTION);
         assertThat(testSoftwareCategory.getShortDescription()).isEqualTo(UPDATED_SHORT_DESCRIPTION);
-        assertThat(testSoftwareCategory.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testSoftwareCategory.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testSoftwareCategory.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testSoftwareCategory.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testSoftwareCategory.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

@@ -18,7 +18,7 @@ import java.util.Objects;
 @Table(name = "product_category")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "productcategory")
-public class ProductCategory implements Serializable {
+public class ProductCategory extends  AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,18 +26,6 @@ public class ProductCategory implements Serializable {
 
     @Column(name = "comments")
     private String comments;
-
-    @Column(name = "created_date")
-    private LocalDate CreatedDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
 
     @Column(name = "is_active")
     private Integer isActive;
@@ -50,7 +38,7 @@ public class ProductCategory implements Serializable {
     @JoinColumn(name = "software_category_id")
     private SoftwareCategory softwareCategory;
 
-    
+
     public Long getId() {
         return id;
     }
@@ -67,37 +55,6 @@ public class ProductCategory implements Serializable {
         this.comments = comments;
     }
 
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
 
     public Integer getIsActive() {
         return isActive;
@@ -145,10 +102,10 @@ public class ProductCategory implements Serializable {
         return "ProductCategory{" +
             "id=" + id +
             ", comments='" + comments + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", CreatedDate='" + CreatedDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
             '}';
     }

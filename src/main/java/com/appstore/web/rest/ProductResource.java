@@ -217,7 +217,6 @@ public class ProductResource {
             products =productRepository.getActiveProductList();
             return products;
         }
-
         log.debug("REST request to get a page of Products");
         System.out.println(">>>>>>>>>>..com _ID"+getInfo().getId());
         products=productRepository.getPublisherApps(getInfo().getId());
@@ -241,6 +240,7 @@ public class ProductResource {
         Integer p=products.getView();
         products.setView(p+1);
         Product result = productRepository.save(products);
+
         productSearchRepository.save(result);
 
     }

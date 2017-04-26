@@ -91,10 +91,6 @@ public class ProductCategoryResourceIntTest {
     public void initTest() {
         productCategory = new ProductCategory();
         productCategory.setComments(DEFAULT_COMMENTS);
-        productCategory.setCreatedDate(DEFAULT_CREATED_DATE);
-        productCategory.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        productCategory.setCreateBy(DEFAULT_CREATE_BY);
-        productCategory.setUpdatedBy(DEFAULT_UPDATED_BY);
         productCategory.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -115,10 +111,6 @@ public class ProductCategoryResourceIntTest {
         assertThat(productCategorys).hasSize(databaseSizeBeforeCreate + 1);
         ProductCategory testProductCategory = productCategorys.get(productCategorys.size() - 1);
         assertThat(testProductCategory.getComments()).isEqualTo(DEFAULT_COMMENTS);
-        assertThat(testProductCategory.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testProductCategory.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testProductCategory.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testProductCategory.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testProductCategory.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -178,10 +170,6 @@ public class ProductCategoryResourceIntTest {
 
         // Update the productCategory
         productCategory.setComments(UPDATED_COMMENTS);
-        productCategory.setCreatedDate(UPDATED_CREATED_DATE);
-        productCategory.setUpdatedDate(UPDATED_UPDATED_DATE);
-        productCategory.setCreateBy(UPDATED_CREATE_BY);
-        productCategory.setUpdatedBy(UPDATED_UPDATED_BY);
         productCategory.setIsActive(UPDATED_IS_ACTIVE);
 
         restProductCategoryMockMvc.perform(put("/api/productCategorys")
@@ -194,10 +182,6 @@ public class ProductCategoryResourceIntTest {
         assertThat(productCategorys).hasSize(databaseSizeBeforeUpdate);
         ProductCategory testProductCategory = productCategorys.get(productCategorys.size() - 1);
         assertThat(testProductCategory.getComments()).isEqualTo(UPDATED_COMMENTS);
-        assertThat(testProductCategory.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testProductCategory.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testProductCategory.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testProductCategory.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testProductCategory.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

@@ -96,10 +96,6 @@ public class ProductPortfolioResourceIntTest {
         productPortfolio = new ProductPortfolio();
         productPortfolio.setImage(DEFAULT_IMAGE);
         productPortfolio.setImageContentType(DEFAULT_IMAGE_CONTENT_TYPE);
-        productPortfolio.setCreatedDate(DEFAULT_CREATED_DATE);
-        productPortfolio.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        productPortfolio.setCreateBy(DEFAULT_CREATE_BY);
-        productPortfolio.setUpdatedBy(DEFAULT_UPDATED_BY);
         productPortfolio.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -121,10 +117,6 @@ public class ProductPortfolioResourceIntTest {
         ProductPortfolio testProductPortfolio = productPortfolios.get(productPortfolios.size() - 1);
         assertThat(testProductPortfolio.getImage()).isEqualTo(DEFAULT_IMAGE);
         assertThat(testProductPortfolio.getImageContentType()).isEqualTo(DEFAULT_IMAGE_CONTENT_TYPE);
-        assertThat(testProductPortfolio.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testProductPortfolio.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testProductPortfolio.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testProductPortfolio.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testProductPortfolio.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -187,10 +179,6 @@ public class ProductPortfolioResourceIntTest {
         // Update the productPortfolio
         productPortfolio.setImage(UPDATED_IMAGE);
         productPortfolio.setImageContentType(UPDATED_IMAGE_CONTENT_TYPE);
-        productPortfolio.setCreatedDate(UPDATED_CREATED_DATE);
-        productPortfolio.setUpdatedDate(UPDATED_UPDATED_DATE);
-        productPortfolio.setCreateBy(UPDATED_CREATE_BY);
-        productPortfolio.setUpdatedBy(UPDATED_UPDATED_BY);
         productPortfolio.setIsActive(UPDATED_IS_ACTIVE);
 
         restProductPortfolioMockMvc.perform(put("/api/productPortfolios")
@@ -204,10 +192,6 @@ public class ProductPortfolioResourceIntTest {
         ProductPortfolio testProductPortfolio = productPortfolios.get(productPortfolios.size() - 1);
         assertThat(testProductPortfolio.getImage()).isEqualTo(UPDATED_IMAGE);
         assertThat(testProductPortfolio.getImageContentType()).isEqualTo(UPDATED_IMAGE_CONTENT_TYPE);
-        assertThat(testProductPortfolio.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testProductPortfolio.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testProductPortfolio.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testProductPortfolio.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testProductPortfolio.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

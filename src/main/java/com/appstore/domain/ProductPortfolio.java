@@ -18,7 +18,7 @@ import java.util.Objects;
 @Table(name = "product_portfolio")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "productportfolio")
-public class ProductPortfolio implements Serializable {
+public class ProductPortfolio extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,17 +31,6 @@ public class ProductPortfolio implements Serializable {
     @Column(name = "image_content_type")
     private String imageContentType;
 
-    @Column(name = "created_date")
-    private LocalDate CreatedDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
 
     @Column(name = "is_active")
     private Integer isActive;
@@ -73,38 +62,6 @@ public class ProductPortfolio implements Serializable {
 
     public void setImageContentType(String imageContentType) {
         this.imageContentType = imageContentType;
-    }
-
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
     }
 
     public Integer getIsActive() {
@@ -146,10 +103,10 @@ public class ProductPortfolio implements Serializable {
             "id=" + id +
             ", image='" + image + "'" +
             ", imageContentType='" + imageContentType + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", CreatedDate='" + CreatedDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
             '}';
     }

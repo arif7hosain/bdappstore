@@ -25,7 +25,7 @@ import com.appstore.domain.enumeration.DurationType;
 @Table(name = "product")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "product")
-public class Product implements Serializable {
+public class Product extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -68,18 +68,6 @@ public class Product implements Serializable {
     @Column(name = "is_available")
     private Integer isAvailable;
 
-    @Column(name = "created_date")
-    private LocalDate createdDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
     @Column(name = "is_active")
     private Integer isActive;
 
@@ -87,12 +75,13 @@ public class Product implements Serializable {
     private Integer view;
 
     @ManyToOne
-    @JoinColumn(name = "company_information_id")
+    @JoinColumn(name = "com_id")
     private CompanyInformation companyInformation;
 
     @ManyToOne
-    @JoinColumn(name = "service_category_id")
-    private ServiceCategory serviceCategory;
+    @JoinColumn(name = "category_id")
+    private SoftwareCategory softwareCategory;
+
 
 
     public Long getId() {
@@ -183,38 +172,6 @@ public class Product implements Serializable {
         this.isAvailable = isAvailable;
     }
 
-    public LocalDate getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDate createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
     public Integer getView() {
         return view;
     }
@@ -239,12 +196,12 @@ public class Product implements Serializable {
         this.companyInformation = companyInformation;
     }
 
-    public ServiceCategory getServiceCategory() {
-        return serviceCategory;
+    public SoftwareCategory getServiceCategory() {
+        return softwareCategory;
     }
 
     public void setServiceCategory(ServiceCategory serviceCategory) {
-        this.serviceCategory = serviceCategory;
+        this.softwareCategory = softwareCategory;
     }
 
     @Override
@@ -279,11 +236,11 @@ public class Product implements Serializable {
             ", view='" + view + "'" +
             ", additionalLink='" + additionalLink + "'" +
             ", isAvailable='" + isAvailable + "'" +
-            ", createdDate='" + createdDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
+            ", CreatedDate='" + this.getCreatedDate() + "'" +
+            ", updatedDate='" + this.getLastModifiedDate() + "'" +
+            ", createBy='" + this.getCreatedBy() + "'" +
+            ", updatedBy='" + this.getLastModifiedBy() + "'" +
             '}';
     }
 }

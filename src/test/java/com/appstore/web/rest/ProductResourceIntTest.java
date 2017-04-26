@@ -130,10 +130,6 @@ public class ProductResourceIntTest {
         product.setLiveUrl(DEFAULT_LIVE_URL);
         product.setAdditionalLink(DEFAULT_ADDITIONAL_LINK);
         product.setIsAvailable(DEFAULT_IS_AVAILABLE);
-        product.setCreatedDate(DEFAULT_CREATED_DATE);
-        product.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        product.setCreateBy(DEFAULT_CREATE_BY);
-        product.setUpdatedBy(DEFAULT_UPDATED_BY);
         product.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -163,10 +159,6 @@ public class ProductResourceIntTest {
         assertThat(testProduct.getLiveUrl()).isEqualTo(DEFAULT_LIVE_URL);
         assertThat(testProduct.getAdditionalLink()).isEqualTo(DEFAULT_ADDITIONAL_LINK);
         assertThat(testProduct.getIsAvailable()).isEqualTo(DEFAULT_IS_AVAILABLE);
-        assertThat(testProduct.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testProduct.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testProduct.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testProduct.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testProduct.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -253,10 +245,6 @@ public class ProductResourceIntTest {
         product.setLiveUrl(UPDATED_LIVE_URL);
         product.setAdditionalLink(UPDATED_ADDITIONAL_LINK);
         product.setIsAvailable(UPDATED_IS_AVAILABLE);
-        product.setCreatedDate(UPDATED_CREATED_DATE);
-        product.setUpdatedDate(UPDATED_UPDATED_DATE);
-        product.setCreateBy(UPDATED_CREATE_BY);
-        product.setUpdatedBy(UPDATED_UPDATED_BY);
         product.setIsActive(UPDATED_IS_ACTIVE);
 
         restProductMockMvc.perform(put("/api/products")
@@ -278,10 +266,6 @@ public class ProductResourceIntTest {
         assertThat(testProduct.getLiveUrl()).isEqualTo(UPDATED_LIVE_URL);
         assertThat(testProduct.getAdditionalLink()).isEqualTo(UPDATED_ADDITIONAL_LINK);
         assertThat(testProduct.getIsAvailable()).isEqualTo(UPDATED_IS_AVAILABLE);
-        assertThat(testProduct.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testProduct.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testProduct.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testProduct.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testProduct.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

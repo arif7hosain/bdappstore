@@ -20,7 +20,7 @@ import com.appstore.domain.enumeration.AddressType;
 @Table(name = "com_address")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "comaddress")
-public class ComAddress implements Serializable {
+public class ComAddress extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -48,18 +48,6 @@ public class ComAddress implements Serializable {
     @Column(name = "city")
     private String city;
 
-    @Column(name = "created_date")
-    private LocalDate CreatedDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
     @Column(name = "is_active")
     private Integer isActive;
 
@@ -71,7 +59,7 @@ public class ComAddress implements Serializable {
     @JoinColumn(name = "upazila_id")
     private Upazila upazila;
 
-    
+
     public Long getId() {
         return id;
     }
@@ -136,38 +124,6 @@ public class ComAddress implements Serializable {
         this.city = city;
     }
 
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
     public Integer getIsActive() {
         return isActive;
     }
@@ -220,10 +176,10 @@ public class ComAddress implements Serializable {
             ", house='" + house + "'" +
             ", RoadNo='" + RoadNo + "'" +
             ", city='" + city + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", CreatedDate='" + CreatedDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
             '}';
     }

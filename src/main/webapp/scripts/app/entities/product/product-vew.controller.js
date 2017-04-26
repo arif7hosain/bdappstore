@@ -13,7 +13,7 @@ angular.module('appstoreApp')
                     $scope.images=results[1];
                 });
             });
-         AddView.query({id: $scope.product.id});
+         AddView.query({id: $stateParams.id});
 
 
     }]);

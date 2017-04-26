@@ -32,26 +32,26 @@
             <column name="additional_link" type="varchar(255)"/>
             <column name="is_available" type="integer"/>
             <column name="created_date" type="date"/>
-            <column name="updated_date" type="date"/>
+            <column name="last_modified_date" type="date"/>
             <column name="create_by" type="varchar(255)"/>
-            <column name="updated_by" type="varchar(255)"/>
+            <column name="last_modified_by" type="varchar(255)"/>
             <column name="is_active" type="integer"/>
             <column name="view" type="integer"/>
-            <column name="company_information_id" type="bigint"/>
-            <column name="service_category_id" type="bigint"/>
+            <column name="com_id" type="bigint"/>
+            <column name="category_id" type="bigint"/>
         </createTable>
 
-        <addForeignKeyConstraint baseColumnNames="company_information_id"
+        <addForeignKeyConstraint baseColumnNames="com_id"
                                  baseTableName="product"
-                                 constraintName="fk_product_companyinformation_id"
+                                 constraintName="fk_com_id"
                                  referencedColumnNames="id"
                                  referencedTableName="company_information"/>
 
-        <addForeignKeyConstraint baseColumnNames="service_category_id"
+        <addForeignKeyConstraint baseColumnNames="category_id"
                                  baseTableName="product"
-                                 constraintName="fk_product_servicecategory_id"
+                                 constraintName="fk_cat_id"
                                  referencedColumnNames="id"
-                                 referencedTableName="service_category"/>
+                                 referencedTableName="software_category"/>
 
     </changeSet>
 </databaseChangeLog>

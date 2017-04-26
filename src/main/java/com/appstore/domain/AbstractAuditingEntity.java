@@ -2,6 +2,7 @@ package com.appstore.domain;
 
 import java.io.Serializable;
 
+import com.appstore.security.SecurityUtils;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
@@ -29,9 +30,9 @@ public abstract class AbstractAuditingEntity implements Serializable {
 
     @CreatedBy
     @NotNull
-    @Column(name = "created_by", nullable = false, length = 50, updatable = false)
+    @Column(name = "created_by", nullable = true, length = 50, updatable = false)
     @JsonIgnore
-    private String createdBy;
+    private String createdBy= SecurityUtils.getCurrentUserLogin();
 
     @CreatedDate
     @NotNull
@@ -42,7 +43,7 @@ public abstract class AbstractAuditingEntity implements Serializable {
     @LastModifiedBy
     @Column(name = "last_modified_by", length = 50)
     @JsonIgnore
-    private String lastModifiedBy;
+    private String lastModifiedBy=SecurityUtils.getCurrentUserLogin();
 
     @LastModifiedDate
     @Column(name = "last_modified_date")

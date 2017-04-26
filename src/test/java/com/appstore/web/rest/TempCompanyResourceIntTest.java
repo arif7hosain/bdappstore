@@ -174,10 +174,6 @@ public class TempCompanyResourceIntTest {
         tempCompany.setPostalCode(DEFAULT_POSTAL_CODE);
         tempCompany.setHouse(DEFAULT_HOUSE);
         tempCompany.setRoadNo(DEFAULT_ROAD_NO);
-        tempCompany.setCreatedDate(DEFAULT_CREATED_DATE);
-        tempCompany.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        tempCompany.setCreateBy(DEFAULT_CREATE_BY);
-        tempCompany.setUpdatedBy(DEFAULT_UPDATED_BY);
         tempCompany.setActiveStatus(DEFAULT_ACTIVE_STATUS);
     }
 
@@ -223,10 +219,6 @@ public class TempCompanyResourceIntTest {
         assertThat(testTempCompany.getPostalCode()).isEqualTo(DEFAULT_POSTAL_CODE);
         assertThat(testTempCompany.getHouse()).isEqualTo(DEFAULT_HOUSE);
         assertThat(testTempCompany.getRoadNo()).isEqualTo(DEFAULT_ROAD_NO);
-        assertThat(testTempCompany.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testTempCompany.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testTempCompany.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testTempCompany.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testTempCompany.getActiveStatus()).isEqualTo(DEFAULT_ACTIVE_STATUS);
     }
 
@@ -361,10 +353,6 @@ public class TempCompanyResourceIntTest {
         tempCompany.setPostalCode(UPDATED_POSTAL_CODE);
         tempCompany.setHouse(UPDATED_HOUSE);
         tempCompany.setRoadNo(UPDATED_ROAD_NO);
-        tempCompany.setCreatedDate(UPDATED_CREATED_DATE);
-        tempCompany.setUpdatedDate(UPDATED_UPDATED_DATE);
-        tempCompany.setCreateBy(UPDATED_CREATE_BY);
-        tempCompany.setUpdatedBy(UPDATED_UPDATED_BY);
         tempCompany.setActiveStatus(UPDATED_ACTIVE_STATUS);
 
         restTempCompanyMockMvc.perform(put("/api/tempCompanys")
@@ -402,10 +390,6 @@ public class TempCompanyResourceIntTest {
         assertThat(testTempCompany.getPostalCode()).isEqualTo(UPDATED_POSTAL_CODE);
         assertThat(testTempCompany.getHouse()).isEqualTo(UPDATED_HOUSE);
         assertThat(testTempCompany.getRoadNo()).isEqualTo(UPDATED_ROAD_NO);
-        assertThat(testTempCompany.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testTempCompany.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testTempCompany.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testTempCompany.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testTempCompany.getActiveStatus()).isEqualTo(UPDATED_ACTIVE_STATUS);
     }
 

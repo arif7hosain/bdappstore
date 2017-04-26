@@ -20,7 +20,7 @@ import com.appstore.domain.enumeration.BranchType;
 @Table(name = "com_branch")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "combranch")
-public class ComBranch implements Serializable {
+public class ComBranch extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -56,18 +56,6 @@ public class ComBranch implements Serializable {
 
     @Column(name = "city")
     private String city;
-
-    @Column(name = "created_date")
-    private LocalDate createdDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
 
     @Column(name = "is_active")
     private Integer isActive;
@@ -173,38 +161,6 @@ public class ComBranch implements Serializable {
         this.city = city;
     }
 
-    public LocalDate getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(LocalDate createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
     public Integer getIsActive() {
         return isActive;
     }
@@ -268,10 +224,10 @@ public class ComBranch implements Serializable {
             ", twitter='" + twitter + "'" +
             ", website='" + website + "'" +
             ", city='" + city + "'" +
-            ", createdDate='" + createdDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", createdDate='" + createdDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
             '}';
     }

@@ -120,10 +120,6 @@ public class CompanyInformationResourceIntTest {
         companyInformation.setLogoContentType(DEFAULT_LOGO_CONTENT_TYPE);
         companyInformation.setWebsite(DEFAULT_WEBSITE);
         companyInformation.setCompanyType(DEFAULT_COMPANY_TYPE);
-        companyInformation.setCreatedDate(DEFAULT_CREATED_DATE);
-        companyInformation.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        companyInformation.setCreateBy(DEFAULT_CREATE_BY);
-        companyInformation.setUpdatedBy(DEFAULT_UPDATED_BY);
         companyInformation.setActiveStatus(DEFAULT_ACTIVE_STATUS);
     }
 
@@ -152,10 +148,6 @@ public class CompanyInformationResourceIntTest {
         assertThat(testCompanyInformation.getLogoContentType()).isEqualTo(DEFAULT_LOGO_CONTENT_TYPE);
         assertThat(testCompanyInformation.getWebsite()).isEqualTo(DEFAULT_WEBSITE);
         assertThat(testCompanyInformation.getCompanyType()).isEqualTo(DEFAULT_COMPANY_TYPE);
-        assertThat(testCompanyInformation.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testCompanyInformation.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testCompanyInformation.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testCompanyInformation.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testCompanyInformation.getActiveStatus()).isEqualTo(DEFAULT_ACTIVE_STATUS);
     }
 
@@ -239,10 +231,6 @@ public class CompanyInformationResourceIntTest {
         companyInformation.setLogoContentType(UPDATED_LOGO_CONTENT_TYPE);
         companyInformation.setWebsite(UPDATED_WEBSITE);
         companyInformation.setCompanyType(UPDATED_COMPANY_TYPE);
-        companyInformation.setCreatedDate(UPDATED_CREATED_DATE);
-        companyInformation.setUpdatedDate(UPDATED_UPDATED_DATE);
-        companyInformation.setCreateBy(UPDATED_CREATE_BY);
-        companyInformation.setUpdatedBy(UPDATED_UPDATED_BY);
         companyInformation.setActiveStatus(UPDATED_ACTIVE_STATUS);
 
         restCompanyInformationMockMvc.perform(put("/api/companyInformations")
@@ -263,10 +251,6 @@ public class CompanyInformationResourceIntTest {
         assertThat(testCompanyInformation.getLogoContentType()).isEqualTo(UPDATED_LOGO_CONTENT_TYPE);
         assertThat(testCompanyInformation.getWebsite()).isEqualTo(UPDATED_WEBSITE);
         assertThat(testCompanyInformation.getCompanyType()).isEqualTo(UPDATED_COMPANY_TYPE);
-        assertThat(testCompanyInformation.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testCompanyInformation.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testCompanyInformation.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testCompanyInformation.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testCompanyInformation.getActiveStatus()).isEqualTo(UPDATED_ACTIVE_STATUS);
     }
 

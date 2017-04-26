@@ -81,7 +81,7 @@ public class TempCompanyResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     public ResponseEntity<TempCompany> createTempCompany(@RequestBody TempCompany tempCompany) throws URISyntaxException {
-        log.debug("REST request to save TempCompany : {}", tempCompany);
+        log.debug("REST request to save TempCompany : {}>>>>:", tempCompany);
         log.debug("REST request to save TempCompany : {}>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<", tempCompany);
         if (tempCompany.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("tempCompany", "idexists", "A new tempCompany cannot already have an ID")).body(null);

@@ -112,10 +112,6 @@ public class ComAddressResourceIntTest {
         comAddress.setHouse(DEFAULT_HOUSE);
         comAddress.setRoadNo(DEFAULT_ROAD_NO);
         comAddress.setCity(DEFAULT_CITY);
-        comAddress.setCreatedDate(DEFAULT_CREATED_DATE);
-        comAddress.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        comAddress.setCreateBy(DEFAULT_CREATE_BY);
-        comAddress.setUpdatedBy(DEFAULT_UPDATED_BY);
         comAddress.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -142,10 +138,6 @@ public class ComAddressResourceIntTest {
         assertThat(testComAddress.getHouse()).isEqualTo(DEFAULT_HOUSE);
         assertThat(testComAddress.getRoadNo()).isEqualTo(DEFAULT_ROAD_NO);
         assertThat(testComAddress.getCity()).isEqualTo(DEFAULT_CITY);
-        assertThat(testComAddress.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testComAddress.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testComAddress.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testComAddress.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testComAddress.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -223,10 +215,6 @@ public class ComAddressResourceIntTest {
         comAddress.setHouse(UPDATED_HOUSE);
         comAddress.setRoadNo(UPDATED_ROAD_NO);
         comAddress.setCity(UPDATED_CITY);
-        comAddress.setCreatedDate(UPDATED_CREATED_DATE);
-        comAddress.setUpdatedDate(UPDATED_UPDATED_DATE);
-        comAddress.setCreateBy(UPDATED_CREATE_BY);
-        comAddress.setUpdatedBy(UPDATED_UPDATED_BY);
         comAddress.setIsActive(UPDATED_IS_ACTIVE);
 
         restComAddressMockMvc.perform(put("/api/comAddresss")
@@ -245,10 +233,6 @@ public class ComAddressResourceIntTest {
         assertThat(testComAddress.getHouse()).isEqualTo(UPDATED_HOUSE);
         assertThat(testComAddress.getRoadNo()).isEqualTo(UPDATED_ROAD_NO);
         assertThat(testComAddress.getCity()).isEqualTo(UPDATED_CITY);
-        assertThat(testComAddress.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testComAddress.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testComAddress.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testComAddress.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testComAddress.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

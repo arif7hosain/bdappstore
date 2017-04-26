@@ -25,11 +25,11 @@
             <column name="description" type="varchar(255)"/>
             <column name="short_description" type="varchar(255)"/>
             <column name="created_date" type="date"/>
-            <column name="updated_date" type="date"/>
+            <column name="last_modified_date" type="date"/>
             <column name="create_by" type="varchar(255)"/>
-            <column name="updated_by" type="varchar(255)"/>
+            <column name="last_modified_by" type="varchar(255)"/>
             <column name="is_active" type="integer"/>
         </createTable>
-        
+
     </changeSet>
 </databaseChangeLog>

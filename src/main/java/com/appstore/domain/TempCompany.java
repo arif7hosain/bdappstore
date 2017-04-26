@@ -22,7 +22,7 @@ import com.appstore.domain.enumeration.AddressType;
 @Table(name = "temp_company")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "tempcompany")
-public class TempCompany implements Serializable {
+public class TempCompany extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -109,18 +109,18 @@ public class TempCompany implements Serializable {
     @Column(name = "road_no")
     private String roadNo;
 
-    @Column(name = "created_date")
-    private LocalDate CreatedDate=LocalDate.now();
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate=LocalDate.now();
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
-
+//    @Column(name = "created_date")
+//    private LocalDate CreatedDate=LocalDate.now();
+//
+//    @Column(name = "updated_date")
+//    private LocalDate updatedDate=LocalDate.now();
+//
+//    @Column(name = "create_by")
+//    private String createBy;
+//
+//    @Column(name = "updated_by")
+//    private String updatedBy;
+//
     @Column(name = "active_status")
     private Integer activeStatus;
 
@@ -353,38 +353,6 @@ public class TempCompany implements Serializable {
         this.roadNo = RoadNo;
     }
 
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
-
     public Integer getActiveStatus() {
         return activeStatus;
     }
@@ -464,10 +432,10 @@ public class TempCompany implements Serializable {
             ", postalCode='" + postalCode + "'" +
             ", house='" + house + "'" +
             ", RoadNo='" + roadNo + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+            ", CreatedDate='" + this.getCreatedDate() + "'" +
+            ", updatedDate='" + this.getLastModifiedDate() + "'" +
+            ", createBy='" + this.getCreatedBy() + "'" +
+            ", updatedBy='" + this.getLastModifiedBy() + "'" +
             ", activeStatus='" + activeStatus + "'" +
             '}';
     }

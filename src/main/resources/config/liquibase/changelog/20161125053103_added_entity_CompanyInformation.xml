@@ -31,9 +31,9 @@
             <column name="website" type="varchar(255)"/>
             <column name="company_type" type="varchar(255)"/>
             <column name="created_date" type="date"/>
-            <column name="updated_date" type="date"/>
+            <column name="last_modified_date" type="date"/>
             <column name="create_by" type="varchar(255)"/>
-            <column name="updated_by" type="varchar(255)"/>
+            <column name="last_modified_by" type="varchar(255)"/>
             <column name="active_status" type="integer"/>
             <column name="country_id" type="bigint"/>
             <column name="service_category_id" type="bigint"/>
@@ -41,7 +41,7 @@
                 <constraints unique="true"/>
             </column>
         </createTable>
-        
+
         <addForeignKeyConstraint baseColumnNames="country_id"
                                  baseTableName="company_information"
                                  constraintName="fk_companyinformation_country_id"

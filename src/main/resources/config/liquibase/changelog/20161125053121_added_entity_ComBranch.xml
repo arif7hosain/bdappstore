@@ -32,9 +32,9 @@
             <column name="website" type="varchar(255)"/>
             <column name="city" type="varchar(255)"/>
             <column name="created_date" type="date"/>
-            <column name="updated_date" type="date"/>
+            <column name="last_modified_date" type="date"/>
             <column name="create_by" type="varchar(255)"/>
-            <column name="updated_by" type="varchar(255)"/>
+            <column name="last_modified_by" type="varchar(255)"/>
             <column name="is_active" type="integer"/>
             <column name="com_id" type="bigint"/>
             <column name="service_category_id" type="bigint"/>

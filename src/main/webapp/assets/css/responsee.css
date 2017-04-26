@@ -60,6 +60,9 @@ img {
   max-width: none;
   width:100%;
 }
+.on-xs{
+display:none;
+}
 table {
   background:none repeat scroll 0 0 #fff;
   border:1px solid #f0f0f0;
@@ -481,6 +484,23 @@ ul.chevron .submenu > a:after, ul.chevron .sub-submenu > a:after,ul.chevron .asi
     text-align:center;
     vertical-align:middle;
   }
+.not-xs{
+display:none;
+}
+.on-xs{
+display:block;
+}
+#query_view{
+    width:100%;
+}
+#features {
+	background: none repeat scroll 0 0 #fff;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+	padding: 0em;
+	position: relative;
+	z-index: 2;
+}
+
   .aside-nav-text:after {
     content:"\f008";
     font-family:"mfg";

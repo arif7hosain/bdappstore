@@ -20,7 +20,7 @@ import com.appstore.domain.enumeration.CompanyType;
 @Table(name = "company_information")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "companyinformation")
-public class CompanyInformation implements Serializable {
+public class CompanyInformation extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -55,17 +55,6 @@ public class CompanyInformation implements Serializable {
     @Column(name = "company_type")
     private CompanyType companyType;
 
-    @Column(name = "created_date")
-    private LocalDate CreatedDate=LocalDate.now();
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate=LocalDate.now();
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
 
     @Column(name = "active_status")
     private Integer activeStatus;
@@ -163,37 +152,6 @@ public class CompanyInformation implements Serializable {
         this.companyType = companyType;
     }
 
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
-    }
 
     public Integer getActiveStatus() {
         return activeStatus;
@@ -257,10 +215,10 @@ public class CompanyInformation implements Serializable {
             ", logoContentType='" + logoContentType + "'" +
             ", website='" + website + "'" +
             ", companyType='" + companyType + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", CreatedDate='" + CreatedDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", activeStatus='" + activeStatus + "'" +
             '}';
     }

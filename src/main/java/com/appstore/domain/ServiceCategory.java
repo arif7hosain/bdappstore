@@ -16,7 +16,7 @@ import java.util.Objects;
 @Table(name = "service_category")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "servicecategory")
-public class ServiceCategory implements Serializable {
+public class ServiceCategory extends AbstractAuditingEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -31,22 +31,11 @@ public class ServiceCategory implements Serializable {
     @Column(name = "short_description")
     private String shortDescription;
 
-    @Column(name = "created_date")
-    private LocalDate CreatedDate;
-
-    @Column(name = "updated_date")
-    private LocalDate updatedDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @Column(name = "updated_by")
-    private String updatedBy;
 
     @Column(name = "is_active")
     private Integer isActive;
 
-    
+
     public Long getId() {
         return id;
     }
@@ -77,38 +66,6 @@ public class ServiceCategory implements Serializable {
 
     public void setShortDescription(String shortDescription) {
         this.shortDescription = shortDescription;
-    }
-
-    public LocalDate getCreatedDate() {
-        return CreatedDate;
-    }
-
-    public void setCreatedDate(LocalDate CreatedDate) {
-        this.CreatedDate = CreatedDate;
-    }
-
-    public LocalDate getUpdatedDate() {
-        return updatedDate;
-    }
-
-    public void setUpdatedDate(LocalDate updatedDate) {
-        this.updatedDate = updatedDate;
-    }
-
-    public String getCreateBy() {
-        return createBy;
-    }
-
-    public void setCreateBy(String createBy) {
-        this.createBy = createBy;
-    }
-
-    public String getUpdatedBy() {
-        return updatedBy;
-    }
-
-    public void setUpdatedBy(String updatedBy) {
-        this.updatedBy = updatedBy;
     }
 
     public Integer getIsActive() {
@@ -143,10 +100,10 @@ public class ServiceCategory implements Serializable {
             ", serviceName='" + serviceName + "'" +
             ", serviceDescription='" + serviceDescription + "'" +
             ", shortDescription='" + shortDescription + "'" +
-            ", CreatedDate='" + CreatedDate + "'" +
-            ", updatedDate='" + updatedDate + "'" +
-            ", createBy='" + createBy + "'" +
-            ", updatedBy='" + updatedBy + "'" +
+//            ", CreatedDate='" + CreatedDate + "'" +
+//            ", updatedDate='" + updatedDate + "'" +
+//            ", createBy='" + createBy + "'" +
+//            ", updatedBy='" + updatedBy + "'" +
             ", isActive='" + isActive + "'" +
             '}';
     }

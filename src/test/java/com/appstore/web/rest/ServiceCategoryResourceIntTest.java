@@ -97,10 +97,6 @@ public class ServiceCategoryResourceIntTest {
         serviceCategory.setServiceName(DEFAULT_SERVICE_NAME);
         serviceCategory.setServiceDescription(DEFAULT_SERVICE_DESCRIPTION);
         serviceCategory.setShortDescription(DEFAULT_SHORT_DESCRIPTION);
-        serviceCategory.setCreatedDate(DEFAULT_CREATED_DATE);
-        serviceCategory.setUpdatedDate(DEFAULT_UPDATED_DATE);
-        serviceCategory.setCreateBy(DEFAULT_CREATE_BY);
-        serviceCategory.setUpdatedBy(DEFAULT_UPDATED_BY);
         serviceCategory.setIsActive(DEFAULT_IS_ACTIVE);
     }
 
@@ -123,10 +119,6 @@ public class ServiceCategoryResourceIntTest {
         assertThat(testServiceCategory.getServiceName()).isEqualTo(DEFAULT_SERVICE_NAME);
         assertThat(testServiceCategory.getServiceDescription()).isEqualTo(DEFAULT_SERVICE_DESCRIPTION);
         assertThat(testServiceCategory.getShortDescription()).isEqualTo(DEFAULT_SHORT_DESCRIPTION);
-        assertThat(testServiceCategory.getCreatedDate()).isEqualTo(DEFAULT_CREATED_DATE);
-        assertThat(testServiceCategory.getUpdatedDate()).isEqualTo(DEFAULT_UPDATED_DATE);
-        assertThat(testServiceCategory.getCreateBy()).isEqualTo(DEFAULT_CREATE_BY);
-        assertThat(testServiceCategory.getUpdatedBy()).isEqualTo(DEFAULT_UPDATED_BY);
         assertThat(testServiceCategory.getIsActive()).isEqualTo(DEFAULT_IS_ACTIVE);
     }
 
@@ -192,10 +184,6 @@ public class ServiceCategoryResourceIntTest {
         serviceCategory.setServiceName(UPDATED_SERVICE_NAME);
         serviceCategory.setServiceDescription(UPDATED_SERVICE_DESCRIPTION);
         serviceCategory.setShortDescription(UPDATED_SHORT_DESCRIPTION);
-        serviceCategory.setCreatedDate(UPDATED_CREATED_DATE);
-        serviceCategory.setUpdatedDate(UPDATED_UPDATED_DATE);
-        serviceCategory.setCreateBy(UPDATED_CREATE_BY);
-        serviceCategory.setUpdatedBy(UPDATED_UPDATED_BY);
         serviceCategory.setIsActive(UPDATED_IS_ACTIVE);
 
         restServiceCategoryMockMvc.perform(put("/api/serviceCategorys")
@@ -210,10 +198,6 @@ public class ServiceCategoryResourceIntTest {
         assertThat(testServiceCategory.getServiceName()).isEqualTo(UPDATED_SERVICE_NAME);
         assertThat(testServiceCategory.getServiceDescription()).isEqualTo(UPDATED_SERVICE_DESCRIPTION);
         assertThat(testServiceCategory.getShortDescription()).isEqualTo(UPDATED_SHORT_DESCRIPTION);
-        assertThat(testServiceCategory.getCreatedDate()).isEqualTo(UPDATED_CREATED_DATE);
-        assertThat(testServiceCategory.getUpdatedDate()).isEqualTo(UPDATED_UPDATED_DATE);
-        assertThat(testServiceCategory.getCreateBy()).isEqualTo(UPDATED_CREATE_BY);
-        assertThat(testServiceCategory.getUpdatedBy()).isEqualTo(UPDATED_UPDATED_BY);
         assertThat(testServiceCategory.getIsActive()).isEqualTo(UPDATED_IS_ACTIVE);
     }
 

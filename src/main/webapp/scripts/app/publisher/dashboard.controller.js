@@ -12,6 +12,8 @@ function($scope, $stateParams, DataUtils,GetAppsByCompany,Product){
         });
     };
     GetAppsByCompany.query(function(apps){ $scope.apps=apps;
+    console.log('-->>')
+    console.log(apps)
      $scope.allApp=[];
      $scope.a_app={};
         for(var i=0; i<apps.length; i++){
